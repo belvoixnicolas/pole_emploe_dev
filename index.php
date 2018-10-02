@@ -1,5 +1,9 @@
 <?php 
     session_start();
+
+    require('./php/connect.php');
+    require('./php/liste_ville.php');
+
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">

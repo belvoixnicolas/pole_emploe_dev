@@ -1,9 +1,17 @@
+<?php 
+    $viles = liste_ville();
+    $content = '';
+    foreach ($viles as $row) {
+        $content .= '<option value="' . strtoupper($row) . '">' . $row . '</option>';
+    }
+?>
 <form id="form_dev" action="#" method="post">
     <input type="text" name="nom" placeholder="Nom">
     <input type="text" name="prenom" placeholder="Prénom">
     <input type="date" name="naissance" id="" placeholder="Date de naissance">
     <select name="ville">
         <option value="none">Ville</option>
+        <?php echo $content ?>
     </select>
     <input type="email" name="mail" placeholder="Email">
     <input type="email" name="verif_mail" placeholder="Email">
