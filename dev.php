@@ -5,7 +5,7 @@
     require('./php/connect.php');
     require('./php/secu_acces.php');
 
-    autoris_acces('1');
+    autoris_acces(1);
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
