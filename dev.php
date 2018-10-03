@@ -1,12 +1,11 @@
 <?php 
+    require('./php/user.php');
     session_start();
 
     require('./php/connect.php');
     require('./php/secu_acces.php');
 
-    //autoris_acces(1);
-
-    var_dump($_SESSION);
+    autoris_acces('1');
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
