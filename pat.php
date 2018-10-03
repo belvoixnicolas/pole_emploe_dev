@@ -2,6 +2,9 @@
     session_start();
     
     require('./php/connect.php');
+    require('./php/secu_acces.php');
+
+    autoris_acces(2);
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
