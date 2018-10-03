@@ -2,10 +2,10 @@
     $viles = liste_ville();
     $content = '';
     foreach ($viles as $row) {
-        $content .= '<option value="' . strtoupper($row) . '">' . $row . '</option>';
+        $content .= '<option value="' . $row . '">' . $row . '</option>';
     }
 ?>
-<form id="form_dev" action="#" method="post">
+<form id="form_dev" action="<?php echo $_SERVER['PHP_SELF']?>?form=dev" method="post">
     <input type="text" name="nom" placeholder="Nom">
     <input type="text" name="prenom" placeholder="Prénom">
     <input type="date" name="naissance" id="" placeholder="Date de naissance">
