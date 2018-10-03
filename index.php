@@ -39,7 +39,7 @@
                     header('Location: dev.php');
                 }
             }elseif ($_GET['form'] == 'pat' && $_POST['entreprise'] != '') {
-                $req = $dbh->prepare("INSERT INTO `usser` (`id`, `nom`, `prenom`, `date_naissance`, `date_creation`, `date_modif`, `derniere_connexion`, `mail`, `salt`, `mot_de_passe`, `img`, `verif`, `role`, `id_ville`) VALUES (NULL, :nom, :prenom, :date, :datecrea, :datemod, :dateco, :mail, :salt, :mdp, '', '0', '1', :id)");
+                $req = $dbh->prepare("INSERT INTO `usser` (`id`, `nom`, `prenom`, `date_naissance`, `date_creation`, `date_modif`, `derniere_connexion`, `mail`, `salt`, `mot_de_passe`, `img`, `verif`, `role`, `id_ville`) VALUES (NULL, :nom, :prenom, :date, :datecrea, :datemod, :dateco, :mail, :salt, :mdp, '', '0', '2', :id)");
                 $date = date('Y-m-d H:i:s');
 
                 if ($req->execute(array('nom' => $_POST['nom'], 'prenom' => $_POST['prenom'], 'date' => $date_nai, 'datecrea' => $date, 'datemod' => $date, 'dateco' => $date, 'mail' => $mail, 'salt' => $salt, 'mdp' => $mdp, 'id' => $id_ville))) {
