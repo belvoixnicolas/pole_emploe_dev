@@ -4,7 +4,7 @@
 
         <?php if (isset($_SESSION['user']) && $_SESSION['user'] != NULL) { ?>
             <button class="deco">
-                <i class="far fa-user"></i>
+                <i class="fas fa-sign-in-alt"></i>
                 <span>Déconnecxion</span>
             </button>
         <?php }else { ?>
