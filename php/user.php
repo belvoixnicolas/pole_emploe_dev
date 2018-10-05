@@ -1,4 +1,6 @@
 <?php
+require_once('./php/connect.php');
+
 class Utilisateur {
     // variable //
         private $_id;

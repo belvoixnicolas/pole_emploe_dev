@@ -1,4 +1,6 @@
 <?php
+    require_once('./php/connect.php');
+
     if (isset($_GET['form'])) {
         if ($_POST['nom'] != '' && $_POST['prenom'] != '' && $_POST['naissance'] != '' && $_POST['ville'] != 'none' && $_POST['mail'] != '' && $_POST['verif_mail'] != '' && $_POST['mdp'] != '' && $_POST['verif_mdp']) {
             $dbh = connect();

@@ -1,4 +1,6 @@
 <?php 
+    require_once('./php/connect.php');
+
     function liste_ville() {
         $dbh = connect();
         

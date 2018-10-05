@@ -6,10 +6,10 @@
         session_start();
     }
 
-    require('./php/connect.php');
-    require('./php/liste_ville.php');
-    require('./php/ident.php');
-    require('./php/inscription.php');
+    require_once('./php/connect.php');
+    require_once('./php/liste_ville.php');
+    require_once('./php/ident.php');
+    require_once('./php/inscription.php');
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">

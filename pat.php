@@ -1,9 +1,9 @@
 <?php 
-    require('./php/user.php');
+    require_once('./php/user.php');
     session_start();
     
-    require('./php/connect.php');
-    require('./php/secu_acces.php');
+    require_once('./php/connect.php');
+    require_once('./php/secu_acces.php');
 
     autoris_acces(2);
 ?>

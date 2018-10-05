@@ -1,5 +1,6 @@
 <?php
-    require('user.php');
+    require_once('./php/connect.php');
+    require_once('./php/user.php');
 
     if (isset($_POST['mail']) && isset($_POST['mdp']) && isset($_GET['form']) && $_GET['form'] == 'ident') {
         $_SESSION['user'] = ident($_POST['mail'], $_POST['mdp']);
