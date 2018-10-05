@@ -1,7 +1,7 @@
 <?php
     require_once('./php/connect.php');
 
-    if (isset($_GET['form'])) {
+    if (isset($_GET['form']) && $_GET['form'] != 'ident') {
         if ($_POST['nom'] != '' && $_POST['prenom'] != '' && $_POST['naissance'] != '' && $_POST['ville'] != 'none' && $_POST['mail'] != '' && $_POST['verif_mail'] != '' && $_POST['mdp'] != '' && $_POST['verif_mdp']) {
             $dbh = connect();
             $req = $dbh->prepare('SELECT id FROM ville WHERE ville = :ville');
@@ -54,9 +54,6 @@
                     }
                 }
             }
-        }else {
-            echo 'false';
-
         }
     }
 ?>
