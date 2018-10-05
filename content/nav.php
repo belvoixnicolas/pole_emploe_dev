@@ -23,10 +23,4 @@
     <?php } ?>
 </nav>
 
-<script>
-    jQuery(document).ready(function(){
-           $('nav .deco').click(function () {
-                window.location.href = 'index.php?action=deco';
-           });
-    });
-</script>
+<script src="./js/nav.js"></script>

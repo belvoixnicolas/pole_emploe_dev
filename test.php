@@ -17,7 +17,7 @@
         <title>dev</title>
     </head>
     <body>
-        <form action="<?php echo $_SERVER['REQUEST_URI']?>?id=5" method="post" enctype="multipart/form-data">
+        <form action="<?php echo $_SERVER['REQUEST_URI']?>" method="post" enctype="multipart/form-data">
             <input type="text" name="sujet" placeholder="Sujet">
             <textarea name="text" placeholder="Text"></textarea>
             

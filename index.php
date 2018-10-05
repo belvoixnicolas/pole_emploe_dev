@@ -20,6 +20,7 @@
         <title>site web</title>
     </head>
     <body id="index">
+        <?php echo notif_error($errors); ?>
         <!-- nav --> 
             <?php include './content/nav.php' ?>
         <!-- nav --> 

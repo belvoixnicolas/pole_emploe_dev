@@ -4,6 +4,7 @@
     
     require_once('./php/connect.php');
     require_once('./php/secu_acces.php');
+    require_once('./php/notif_error.php');
 
     autoris_acces(2);
 ?>
@@ -15,6 +16,7 @@
         <title>pat</title>
     </head>
     <body id="dev">
+        <?php echo notif_error($errors); ?>
         <!-- nav --> 
             <?php include './content/nav.php' ?>
         <!-- nav -->

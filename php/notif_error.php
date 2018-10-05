@@ -3,8 +3,8 @@
 
     if (isset($_SESSION['error'])) {
         $errors = $_SESSION['error'];
-        
-        echo notif_error($errors);
+    }else {
+        $errors = null;
     }
 
     $_SESSION['error'] = array();
