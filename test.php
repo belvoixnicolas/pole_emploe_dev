@@ -1,18 +1,6 @@
 <?php
-    require_once('./php/user.php');
-    session_start();
-
     require_once('./php/connect.php');
-    require_once('./php/envoie_mail.php');
 
-    $dbh = connect();
-    $req = $dbh->prepare('SELECT * FROM mail WHERE id_usser_recoi = :id');
-    $req->execute(array(':id' => 5));
-    
-    $notif = $dbh->prepare("INSERT INTO `notification` (`id`, `type`, `lien`, `date`, `id_usser`) VALUES (NULL, 'mail', 'machin', :date, :id)");
-    foreach ($req->fetch() as $row) {
-        $notif->execute(array(':date' => date('Y-m-d H:i:s'), ':id' => 5));
-    }
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
@@ -22,6 +10,56 @@
         <title>dev</title>
     </head>
     <body>
-       
+        <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+            <fieldset>
+                <label>
+                    <i class="far fa-star"></i>
+                    <input type="radio" name="note" value="1">
+                </label>
+
+                <label>
+                    <i class="far fa-star"></i>
+                    <input type="radio" name="note" value="2">
+                </label>
+
+                <label>
+                    <i class="far fa-star"></i>
+                    <input type="radio" name="note" value="3">
+                </label>
+
+                <label>
+                    <i class="far fa-star"></i>
+                    <input type="radio" name="note" value="4">
+                </label>
+
+                <label>
+                    <i class="far fa-star"></i>
+                    <input type="radio" name="note" value="5">
+                </label>
+            </fieldset>
+
+            <textarea name="text" placeholder="commentaire">
+
+            </textarea>
+
+            <input type="submit" value="envoyer">
+        </form>
+
+        <script>
+            jQuery(document).ready(function(){
+                $('input[name=note]').change(function () {
+                    var value = this.value;
+                    var etoiles = $('input[name=note]');
+
+                    for (i = 0; i < etoiles.length; i++) {
+                        if (i < value) {
+                            etoiles[i].className = 'fas fa-star';
+                        }else {
+                            etoiles[i].className = 'far fa-star';
+                        }
+                    }
+                });
+            });
+        </script>
     </body>
   </html>

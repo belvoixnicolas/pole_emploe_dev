@@ -2,12 +2,16 @@
     require_once('./php/connect.php');
     require_once('./php/uploid.php');
 
-    function envoie_mail($sujet, $text, $idenvoie) {
+    function envoie_mail($sujet, $text, $idrecois) {
         if ($sujet != '' && $text != '') {
             $dbh = connect();
             $envoie = $dbh->prepare('INSERT INTO `mail` (`id`, `sujet`, `text`, `date`, `id_usser`, `id_usser_recoi`) VALUES (NULL, :sujet, :text, :date, :idenvoie, :idrecoi)');
             
-            if ($envoie->execute(array(':sujet' => $sujet, ':text' => $text, ':date' => date('Y-m-d H:i:s'), ':idenvoie' => $_SESSION['user']->get('id'), ':idrecoi' => $idenvoie))) {
+            if ($envoie->execute(array(':sujet' => $sujet, ':text' => $text, ':date' => date('Y-m-d H:i:s'), ':idenvoie' => $_SESSION['user']->get('id'), ':idrecoi' => $idrecois))) {
+                $notif = $dbh->prepare("INSERT INTO `notification` (`id`, `type`, `date`, `id_usser`) VALUES (NULL, 'mail', :date, :id)");
+                $notif->execute(array(':date' => date('Y-m-d H:i:s'), ':id' => $idrecois));
+
+
                 if (isset($_FILES['join']) && $_FILES['join']['name'][0] != '') {
                     $id_mail = $dbh->prepare('SELECT id FROM mail WHERE id_usser = :idenvoie AND id_usser_recoi = :idrecoi');
                     $id_mail->execute(array(':idenvoie' => $_SESSION['user']->get('id'), ':idrecoi' => $_GET['id']));
