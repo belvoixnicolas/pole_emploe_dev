@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    if (isset($_GET['action']) && $_GET['action'] == 'deco') {
+    if (isset($_SESSION['user'])) {
         session_destroy();
         session_start();
     }

@@ -1,12 +1,12 @@
 <?php
-    require_once('./php/user.php');
-    session_start();
+        require_once('./php/user.php');
+        session_start();
 
-    require_once('./php/noter.php');
+        require_once('./php/offre.php');
 
-    if (isset($_POST['note']) && isset($_POST['text'])) {
-        noter($_POST['note'], $_POST['text'], $_SESSION['user']->get('id'), 5);
-    }
+   if (isset($_GET['test'])) {
+       $offre->engage($_SESSION['user']->get('id'), 5);
+   }
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
@@ -16,8 +16,6 @@
         <title>dev</title>
     </head>
     <body>
-        <?php 
-            include './content/form_note.php';
-        ?>
+        <a href="?test=5">Click ici</a>
     </body>
   </html>
