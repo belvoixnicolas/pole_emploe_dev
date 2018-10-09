@@ -1,0 +1,43 @@
+$hauteur: 10vh;
+
+nav {
+    position: fixed;
+    top: 0px;
+
+    .main_nav {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 1fr;
+        background: white;
+        height: $hauteur;
+        width: 99vw;
+        margin: .5vw .5vw 0;
+        padding: 0 1%;
+        border: 1px solid grey;
+
+        img {
+            min-height: 50%;
+            max-height: 80%;
+            align-self: center;
+            justify-self: left;
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            max-width: 20%; 
+
+            i {
+                font-size: 10em;
+            }
+        }
+    }
+
+    form {
+        display: none;
+    }
+}
+
+body {
+    padding-top: $hauteur + 1vh;
+}
