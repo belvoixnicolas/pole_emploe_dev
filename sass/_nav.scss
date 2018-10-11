@@ -2,16 +2,15 @@ $hauteur: 10vh;
 
 nav {
     position: fixed;
-    top: 0px;
+    top: .5vh;
 
     .main_nav {
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto min-content;
         grid-template-rows: 1fr;
         background: white;
         height: $hauteur;
         width: 99vw;
-        margin: .5vw .5vw 0;
         padding: 0 1%;
         border: 1px solid grey;
 
@@ -22,22 +21,85 @@ nav {
             justify-self: left;
         }
 
+        ul {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            align-items: center;
+
+            li {
+                margin: 2%;
+
+                a {
+                    color: black;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        margin-right: 8%;
+                    }
+
+                    span {
+                        font-size: 2em;
+                        width: fit-content;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+
         button {
+            display: flex;
             background: transparent;
             border: none;
-            max-width: 20%; 
+            align-self: center;
+            justify-self: flex-end;
 
             i {
-                font-size: 10em;
+                margin-right: 8%;
+            }
+        
+            span {
+                font-size: 2em;
             }
         }
     }
 
     form {
-        display: none;
+        display: flex;
+        flex-flow: column nowrap;
+        width: 20vw;
+        margin: .5vw;
+        padding: 1%;
+        float: right;
+        border: 1px solid black;
+
+        h4 {
+            font-size: 2em;
+            margin: 0 auto 5%;
+        }
+
+        input {
+            margin: 1% 0;
+        }
+
+        input[type=submit] {
+            width: 30%;
+            margin: 5% auto 0;
+        }
     }
 }
 
 body {
-    padding-top: $hauteur + 1vh;
+    padding: {
+        left: .5vw;
+        right: .5vw;
+        bottom: .5vw;
+        top: $hauteur + 1vh;
+    }
+}
+
+i {
+    font-size: 3em;
 }

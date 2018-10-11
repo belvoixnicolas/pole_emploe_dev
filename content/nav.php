@@ -6,24 +6,21 @@
             <?php if (isset($_SESSION['user']) && $_SESSION['user'] != NULL) { ?>
                 <li>
                     <a href="#" class="job">
-                        
-
-                        <span>
-                            <?php 
-                                if ($_SESSION['user']->get('role') == 1) { ?>
-                                    <i class="fas fa-terminal"></i>
-                                    <span>
-                                        Chercher une offre
-                                    </span>
-                                <?php } elseif ($_SESSION['user']->get('role') == 2) { ?>
-                                    <i class="fas fa-handshake"></i>
-                                    <span>
-                                        Chercher un développeur
-                                    </span>
-                                <?php }else {
-                                    echo 'erro';
-                                }
-                            ?>
+                        <?php 
+                            if ($_SESSION['user']->get('role') == 1) { ?>
+                                <i class="fas fa-terminal"></i>
+                                <span>
+                                    Chercher offre
+                                </span>
+                            <?php } elseif ($_SESSION['user']->get('role') == 2) { ?>
+                                <i class="fas fa-handshake"></i>
+                                <span>
+                                    Chercher un développeur
+                                </span>
+                            <?php }else {
+                                echo 'erro';
+                            }
+                        ?>
                         </span>
                     </a>
                 </li>
@@ -61,9 +58,10 @@
     </div>
     <?php if (isset($_SESSION['user']) == false) { ?>
         <form action="<?php echo $_SERVER['PHP_SELF']?>?form=ident" method="post">
+            <h4>Connexion</h4>
             <input type="text" name="mail" placeholder='Email'>
             <input type="password" name="mdp" placeholder="Mot de passe">
-            <input type="submit" value="tester">
+            <input type="submit" value="Connecter">
         </form>
     <?php } ?>
 </nav>

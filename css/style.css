@@ -366,18 +366,21 @@ textarea {
   padding: 0.2em 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 nav {
   position: fixed;
-  top: 0px;
+  top: 0.5vh;
 }
 nav .main_nav {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto min-content;
   grid-template-rows: 1fr;
   background: white;
   height: 10vh;
   width: 99vw;
-  margin: 0.5vw 0.5vw 0;
   padding: 0 1%;
   border: 1px solid grey;
 }
@@ -387,20 +390,117 @@ nav .main_nav img {
   align-self: center;
   justify-self: left;
 }
+nav .main_nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav .main_nav ul li {
+  margin: 2%;
+}
+nav .main_nav ul li a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+nav .main_nav ul li a i {
+  margin-right: 8%;
+}
+nav .main_nav ul li a span {
+  font-size: 2em;
+  width: fit-content;
+  white-space: nowrap;
+}
 nav .main_nav button {
+  display: flex;
   background: transparent;
   border: none;
-  max-width: 20%;
+  align-self: center;
+  justify-self: flex-end;
 }
 nav .main_nav button i {
-  font-size: 10em;
+  margin-right: 8%;
+}
+nav .main_nav button span {
+  font-size: 2em;
 }
 nav form {
-  display: none;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 20vw;
+  margin: 0.5vw;
+  padding: 1%;
+  float: right;
+  border: 1px solid black;
+}
+nav form h4 {
+  font-size: 2em;
+  margin: 0 auto 5%;
+}
+nav form input {
+  margin: 1% 0;
+}
+nav form input[type=submit] {
+  width: 30%;
+  margin: 5% auto 0;
 }
 
 body {
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  padding-bottom: 0.5vw;
   padding-top: 11vh;
+}
+
+i {
+  font-size: 3em;
+}
+
+#index header {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  height: 50vh;
+}
+#index header article {
+  width: 50%;
+}
+#index header article .expli, #index header article .inscription {
+  display: none;
+  grid-template-columns: auto;
+  grid-template-rows: min-content auto;
+  height: 100%;
+}
+#index header article .expli h4, #index header article .inscription h4 {
+  font-size: 3em;
+  padding: 1%;
+  text-align: center;
+}
+#index header article .expli p, #index header article .inscription p {
+  align-self: center;
+  padding: 20%;
+}
+#index header article .inscription {
+  display: grid;
+}
+
+#form_dev {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 3%;
+  padding: 2%;
+}
+#form_dev input[type=email], #form_dev input[type=password], #form_dev input[type=submit] {
+  grid-column: span 2;
+}
+#form_dev input[type=submit] {
+  width: 50%;
+  justify-self: center;
 }
 
 /*# sourceMappingURL=style.css.map */

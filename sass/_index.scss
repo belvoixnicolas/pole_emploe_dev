@@ -1,3 +1,39 @@
-body{
+#index {
+    header {
+        border: 1px solid black;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: stretch;
+        height: 50vh;
     
+        article {
+            width: 50%;
+
+            .expli {
+                //display: grid;
+                display: none;
+                grid-template-columns: auto;
+                grid-template-rows: min-content auto;
+                height: 100%;
+
+                h4 {
+                    font-size: 3em;
+                    padding: 1%;
+                    text-align: center;
+                }
+
+                p {
+                    align-self: center;
+                    padding: 20%;
+                }
+            }
+
+            .inscription {
+                @extend .expli;
+                display: grid;
+
+            }
+        }
+    }
 }
