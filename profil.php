@@ -17,9 +17,7 @@
     $user = $dbh->prepare('SELECT nom, prenom, derniere_connexion, img, verif, role, ville FROM usser INNER JOIN ville ON usser.id_ville = ville.id WHERE usser.id = :id');
     $user->execute(array(':id' => $_GET['id']));
 
-    if ($user = $user->fetch()) {
-        
-    }else {
+    if ($user = $user->fetch()) {}else {
         $_SESSION['error'][] = 'Cette utilisateur n\'existe pas.';
         $_SESSION['error'][] = 'Cette utilisateur n\'existe pas.';
         switch ($_SESSION['user']->get('role')) {
@@ -37,7 +35,11 @@
         }
     }
 
-    var_dump($user);
+    if ($user['img'] == '') {
+        $user['img'] = 'default.jpg';
+    }elseif (file_exists('./src/profil/' . $user['img']) == false) {
+        $user['img'] = 'default.jpg';
+    }
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
@@ -46,11 +48,17 @@
         <?php include './content/header_base.html' ?>
         <title>Profil</title>
     </head>
-    <body id="dev">
+    <body id="profil">
     <?php echo notif_error($errors); ?>
         <!-- nav --> 
             <?php include './content/nav.php' ?>
         <!-- nav -->
+
+        <article class="identite">
+            <section class="photo">
+                <img src="./src/profil/<?php echo $user['img']; ?>" alt="Photo de <?php echo $user['nom'] . ' ' . $user['prenom']; ?>">
+            </section>
+        </article>
         
         <!-- FOOTER -->
         <?php include './content/footer.html' ?>
