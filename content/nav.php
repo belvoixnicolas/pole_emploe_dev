@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="profil">
+                    <a href="./profil.php?id=<?php echo $_SESSION['user']->get('id') ?>" class="profil">
                         <i class="fas fa-user-alt"></i>
                         <span>
                             Profil
@@ -72,3 +72,4 @@
 <?php } ?>
 
 <script src="./js/nav.js"></script>
+<script src="./js/error.js"></script>

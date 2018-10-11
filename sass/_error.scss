@@ -1,0 +1,45 @@
+#error {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    left: 0px;
+    width: 100vw;
+
+    section {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: #fd7373;
+
+        span {
+            padding: 1%;
+
+            &:nth-child(1) {
+                background-color: #ff5353;
+
+                i {
+                    color: #fd7373;
+                }
+            }
+
+            &:nth-child(3) {
+
+                i {
+                    color: #ff5353;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        p {
+            color: #ff5353;
+            font-size: 2em;
+        }
+    }
+}
