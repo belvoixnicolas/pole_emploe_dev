@@ -72,5 +72,7 @@
         <!-- FOOTER -->
             <?php include './content/footer.html' ?>
         <!-- FOOTER -->
+
+        <script src="./js/header.js"></script>
     </body>
 </html>

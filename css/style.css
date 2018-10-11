@@ -470,7 +470,7 @@ i {
   width: 50%;
 }
 #index header article .expli, #index header article .inscription {
-  display: none;
+  display: grid;
   grid-template-columns: auto;
   grid-template-rows: min-content auto;
   height: 100%;
@@ -484,14 +484,25 @@ i {
   align-self: center;
   padding: 20%;
 }
-#index header article .inscription {
-  display: grid;
+#index main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 20vh;
+  border: 1px solid black;
+  margin: 0.5vw 0;
+  padding: 1%;
+}
+#index main h3 {
+  font-size: 3em;
 }
 
 #form_dev {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-rows: 1fr;
   grid-gap: 3%;
   padding: 2%;
 }
@@ -499,6 +510,22 @@ i {
   grid-column: span 2;
 }
 #form_dev input[type=submit] {
+  width: 50%;
+  justify-self: center;
+}
+
+#form_pat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 3%;
+  padding: 2%;
+}
+#form_pat input[name=entreprise], #form_pat input[type=email], #form_pat input[type=password], #form_pat input[type=submit] {
+  grid-column: span 2;
+}
+#form_pat input[type=submit] {
   width: 50%;
   justify-self: center;
 }

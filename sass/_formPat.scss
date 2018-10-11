@@ -1,12 +1,12 @@
-#form_dev {
+#form_pat {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-auto-rows: 1fr;
     grid-gap: 3%;
     padding: 2%;
 
-    input[type=email], input[type=password], input[type=submit] {
+    input[name=entreprise], input[type=email], input[type=password], input[type=submit] {
         grid-column: span 2;
     }
 

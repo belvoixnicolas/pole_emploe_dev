@@ -11,8 +11,7 @@
             width: 50%;
 
             .expli {
-                //display: grid;
-                display: none;
+                display: grid;
                 grid-template-columns: auto;
                 grid-template-rows: min-content auto;
                 height: 100%;
@@ -31,9 +30,22 @@
 
             .inscription {
                 @extend .expli;
-                display: grid;
-
             }
+        }
+    }
+
+    main {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 20vh;
+        border: 1px solid black;
+        margin: .5vw 0;
+        padding: 1%;
+
+        h3 {
+            font-size: 3em;
         }
     }
 }
