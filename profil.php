@@ -82,6 +82,17 @@
             </section>
         </article>
 
+        <article>
+            <?php 
+                $test=$dbh->prepare('SELECT code, img FROM code');
+                $test->execute();
+
+                foreach ($test as $row) {
+                    echo '<p>' . $row['code'] . ' ' . '<img src="./src/langague/' . $row['img'] . '" /> </p>';
+                }
+            ?>
+        </article>
+
         <article class="commentaire">
             <h2>Commentaire</h2>
 
