@@ -5,6 +5,8 @@
     require_once('./php/connect.php');
     require_once('./php/secu_acces.php');
     require_once('./php/notif_error.php');
+    require_once('./php/verif_img.php');
+    require_once('./php/commentaire.php');
 
     autoris_acces();
 
@@ -35,11 +37,23 @@
         }
     }
 
-    if ($user['img'] == '') {
-        $user['img'] = 'default.jpg';
-    }elseif (file_exists('./src/profil/' . $user['img']) == false) {
-        $user['img'] = 'default.jpg';
+    ///// NOTE /////
+    $note = $dbh->prepare('SELECT note FROM note WHERE id_usser = :id');
+    $note->execute(array(':id' => $_GET['id']));
+
+    if ($note=$note->fetchAll()) {
+        $nbnote = count($note);
+
+        $calcul = 0;
+        foreach ($note as $row) {
+            $calcul = $calcul + $row['note'];
+        }
+
+        $note = round($calcul / $nbnote, 1);
+    }else {
+        $note = 'NULL';
     }
+    ///// NOTE /////
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
@@ -56,8 +70,24 @@
 
         <article class="identite">
             <section class="photo">
-                <img src="./src/profil/<?php echo $user['img']; ?>" alt="Photo de <?php echo $user['nom'] . ' ' . $user['prenom']; ?>">
+                <img src="./src/profil/<?php echo verif_img($user['img']); ?>" alt="Photo de <?php echo $user['nom'] . ' ' . $user['prenom']; ?>">
+                <p class="note">
+                    <span><?php echo $note; ?></span>/5
+                </p>
             </section>
+            <section class="nom">
+                <p>
+                    <?php echo $user['nom'] . ' ' . $user['prenom']; ?>
+                </p>
+            </section>
+        </article>
+
+        <article class="commentaire">
+            <h2>Commentaire</h2>
+
+            <ul>
+                <?php echo commentaire($_GET['id']); ?>
+            </ul>
         </article>
         
         <!-- FOOTER -->
