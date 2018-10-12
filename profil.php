@@ -7,6 +7,7 @@
     require_once('./php/notif_error.php');
     require_once('./php/verif_img.php');
     require_once('./php/commentaire.php');
+    require_once('./php/liste_code.php');
 
     autoris_acces();
 
@@ -54,6 +55,10 @@
         $note = 'NULL';
     }
     ///// NOTE /////
+
+    $date = explode(' ',$user['derniere_connexion']);
+    $date = explode('-', $date[0]);
+    $date = $date[2] . ' / ' . $date[1] . ' / ' . $date[0];
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
@@ -68,6 +73,7 @@
             <?php include './content/nav.php' ?>
         <!-- nav -->
 
+        <!-- IDENT -->
         <article class="identite">
             <section class="photo">
                 <img src="./src/profil/<?php echo verif_img($user['img']); ?>" alt="Photo de <?php echo $user['nom'] . ' ' . $user['prenom']; ?>">
@@ -81,18 +87,30 @@
                 </p>
             </section>
         </article>
+        <!-- IDENT -->
 
-        <article>
+        <!-- ENTREPRISE SI PAT -->
             <?php 
-                $test=$dbh->prepare('SELECT code, img FROM code');
-                $test->execute();
+                if ($user['role'] == 2) {
+                    $entreprise = $dbh->prepare('SELECT nom, description, img, ville FROM entreprise INNER JOIN ville ON entreprise.id_ville = ville.id WHERE id_usser = :id');
+                    $entreprise->execute(array(':id' => $_GET['id']));
 
-                foreach ($test as $row) {
-                    echo '<p>' . $row['code'] . ' ' . '<img src="./src/langague/' . $row['img'] . '" /> </p>';
+                    if ($entreprise=$entreprise->fetch()) { ?>
+                        <article class="entreprise">
+                            
+                        </article>
+                    <?php }else { ?>
+                        <article class="entreprise">
+                            <p>
+                                Une erreur empéche d'afficher cette partie
+                            </p>
+                        </article>
+                    <?php }
                 }
             ?>
-        </article>
+        <!-- ENTREPRISE SI PAT -->
 
+        <!-- COMMENTAIRE -->
         <article class="commentaire">
             <h2>Commentaire</h2>
 
@@ -100,9 +118,25 @@
                 <?php echo commentaire($_GET['id']); ?>
             </ul>
         </article>
+        <!-- COMMENTAIRE -->
+
+        <!-- CODE CONNUE SI DEV -->
+        <?php if ($user['role'] == 1) { ?>
+        <article class="code">
+            <h2>Compétence</h2>
+            <ul>
+                <?php echo liste_code($_GET['id']); ?>
+            </ul>
+        </article>
+        <?php } ?>
+        <!-- CODE CONNUE SI DEV -->
         
         <!-- FOOTER -->
         <?php include './content/footer.html' ?>
         <!-- FOOTER -->
+
+        <div id="dernco">
+            <span>Derniére connexion : <?php echo $date; ?></span>
+        </div>
     </body>
   </html>
