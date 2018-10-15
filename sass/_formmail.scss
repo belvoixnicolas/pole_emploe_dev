@@ -1,0 +1,47 @@
+#form_mail {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid black;
+
+    h3 {
+        font-size: 2em;
+    }
+
+    #join {
+        display: none;
+    }
+
+    input[name=sujet], textarea, label {
+        width: 80%;
+        height: 10%;
+    }
+
+    textarea {
+        height: 40%;
+    }
+
+    label {
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-columns: auto;
+        grid-template-rows: 1fr;
+        
+        .add {
+            display: inline-flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-self: end;
+            align-self: center;
+            cursor: pointer;
+        }
+    }
+
+    input[type=submit] {
+        width: 20%;
+        height: 5%;
+    }
+}

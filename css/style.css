@@ -567,4 +567,67 @@ i {
   font-size: 2em;
 }
 
+#profil #dernco {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border: 1px solid black;
+  padding: 1%;
+}
+#profil #mail {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(2, auto);
+  position: fixed;
+  bottom: 0px;
+  right: 1vw;
+}
+#profil #mail span:nth-child(1) {
+  justify-self: end;
+  padding: 0.5vw;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#form_mail {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 50vw;
+  height: 50vh;
+  border: 1px solid black;
+}
+#form_mail h3 {
+  font-size: 2em;
+}
+#form_mail #join {
+  display: none;
+}
+#form_mail input[name=sujet], #form_mail textarea, #form_mail label {
+  width: 80%;
+  height: 10%;
+}
+#form_mail textarea {
+  height: 40%;
+}
+#form_mail label {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-columns: auto;
+  grid-template-rows: 1fr;
+}
+#form_mail label .add {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-self: end;
+  align-self: center;
+  cursor: pointer;
+}
+#form_mail input[type=submit] {
+  width: 20%;
+  height: 5%;
+}
+
 /*# sourceMappingURL=style.css.map */

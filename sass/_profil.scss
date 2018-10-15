@@ -1,0 +1,27 @@
+#profil {
+
+
+    #dernco {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border: 1px solid black;
+        padding: 1%;
+    }
+
+    #mail {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, auto);
+        position: fixed;
+        bottom: 0px;
+        right: 1vw;
+
+        span:nth-child(1) {
+            justify-self: end;
+            padding: .5vw;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    }
+}
