@@ -75,6 +75,15 @@
 
         <!-- IDENT -->
         <article class="identite">
+            <?php if ($user['verif'] == 1) { ?>
+                <span id="verif">
+                    <i class="fas fa-award"></i>
+                    <span>
+                        utilisateur verifier
+                    </span>
+                </span>
+            <?php } ?>
+
             <section class="photo">
                 <img src="./src/profil/<?php echo verif_img($user['img']); ?>" alt="Photo de <?php echo $user['nom'] . ' ' . $user['prenom']; ?>">
                 <p class="note">
@@ -97,7 +106,27 @@
 
                     if ($entreprise=$entreprise->fetch()) { ?>
                         <article class="entreprise">
-                            
+                            <h2>entreprise</h2>
+
+                            <section class="ident_entreprise">
+                                <p>
+                                    <?php echo $entreprise['nom']; ?>
+                                </p>
+
+                                <p>
+                                    <?php echo $entreprise['description'] ; ?>
+                                </p>
+                            </section>
+
+                            <section class="ville_img">
+                                <p>
+                                    <?php echo $entreprise['ville']; ?>
+                                </p>
+
+                                <?php if ($entreprise['img'] != '') { ?>
+                                    <img src="./src/entreprise/<?php echo $entreprise['img'] ?>" alt="Photo de l'entreprise" />
+                                <?php } ?>
+                            </section>
                         </article>
                     <?php }else { ?>
                         <article class="entreprise">
