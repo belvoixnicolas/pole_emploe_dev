@@ -372,7 +372,8 @@ html {
 
 nav {
   position: fixed;
-  top: 0.5vh;
+  top: 2vh;
+  width: 100%;
 }
 nav .main_nav {
   display: grid;
@@ -380,8 +381,9 @@ nav .main_nav {
   grid-template-rows: 1fr;
   background: white;
   height: 10vh;
-  width: 99vw;
+  width: 96vw;
   padding: 0 1%;
+  margin: 0 auto;
   border: 1px solid grey;
 }
 nav .main_nav img {
@@ -430,7 +432,7 @@ nav form {
   display: flex;
   flex-flow: column nowrap;
   width: 20vw;
-  margin: 0.5vw;
+  margin: 0.5vh 2vw;
   padding: 1%;
   float: right;
   border: 1px solid black;
@@ -448,10 +450,12 @@ nav form input[type=submit] {
 }
 
 body {
-  padding-left: 0.5vw;
-  padding-right: 0.5vw;
-  padding-bottom: 0.5vw;
-  padding-top: 11vh;
+  padding-top: 14vh;
+}
+
+main, header {
+  width: 96vw;
+  margin: 0 auto;
 }
 
 i {
@@ -485,16 +489,18 @@ i {
   padding: 20%;
 }
 #index main {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+#index main article {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
   min-height: 20vh;
   border: 1px solid black;
-  margin: 0.5vw 0;
-  padding: 1%;
 }
-#index main h3 {
+#index main article h3 {
   font-size: 3em;
 }
 
@@ -567,6 +573,16 @@ i {
   font-size: 2em;
 }
 
+#profil main {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, minmax(10vh, auto));
+  grid-auto-rows: minmax(10vh, auto);
+  grid-gap: 2vh;
+}
+#profil main article {
+  border: 1px solid black;
+}
 #profil #dernco {
   position: fixed;
   bottom: 0;

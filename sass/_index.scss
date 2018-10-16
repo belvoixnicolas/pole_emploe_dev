@@ -35,17 +35,22 @@
     }
 
     main {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-around;
-        align-items: center;
-        min-height: 20vh;
-        border: 1px solid black;
-        margin: .5vw 0;
-        padding: 1%;
+        margin: {
+            top: 2vh;
+            bottom: 2vh;
+        }
 
-        h3 {
-            font-size: 3em;
+        article {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 20vh;
+            border: 1px solid black;
+
+            h3 {
+                font-size: 3em;
+            }
         }
     }
 }

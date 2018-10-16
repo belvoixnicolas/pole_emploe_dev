@@ -2,7 +2,8 @@ $hauteur: 10vh;
 
 nav {
     position: fixed;
-    top: .5vh;
+    top: 2vh;
+    width: 100%;
 
     .main_nav {
         display: grid;
@@ -10,8 +11,9 @@ nav {
         grid-template-rows: 1fr;
         background: white;
         height: $hauteur;
-        width: 99vw;
+        width: 96vw;
         padding: 0 1%;
+        margin: 0 auto;
         border: 1px solid grey;
 
         img {
@@ -70,7 +72,7 @@ nav {
         display: flex;
         flex-flow: column nowrap;
         width: 20vw;
-        margin: .5vw;
+        margin: .5vh 2vw;
         padding: 1%;
         float: right;
         border: 1px solid black;
@@ -93,11 +95,13 @@ nav {
 
 body {
     padding: {
-        left: .5vw;
-        right: .5vw;
-        bottom: .5vw;
-        top: $hauteur + 1vh;
+        top: $hauteur + 4vh;
     }
+}
+
+main, header {
+    width: 96vw;
+    margin: 0 auto;
 }
 
 i {

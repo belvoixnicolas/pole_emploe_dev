@@ -62,11 +62,13 @@
         </header>
 
         <main>
-            <h3>Explication</h3>
+            <article>
+                <h3>Explication</h3>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatem amet at molestias delectus exercitationem quo sit voluptas, provident maiores quaerat cum error consequuntur voluptatum quae soluta illum possimus aliquid.
-            </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatem amet at molestias delectus exercitationem quo sit voluptas, provident maiores quaerat cum error consequuntur voluptatum quae soluta illum possimus aliquid.
+                </p>
+            </article>
         </main>
 
         <!-- FOOTER -->

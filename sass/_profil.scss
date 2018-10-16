@@ -1,5 +1,17 @@
 #profil {
 
+    main {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, minmax(10vh, auto));
+        grid-auto-rows: minmax(10vh, auto);
+        grid-gap: 2vh;
+
+        article {
+            border: 1px solid black;
+        }
+    }
+
 
     #dernco {
         position: fixed;
