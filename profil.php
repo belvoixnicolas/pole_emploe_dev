@@ -85,7 +85,7 @@
                     <span id="verif">
                         <i class="fas fa-award"></i>
                         <span>
-                            utilisateur verifier
+                            v
                         </span>
                     </span>
                 <?php } ?>
