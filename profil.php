@@ -114,23 +114,23 @@
                             <article class="entreprise">
                                 <h2>entreprise</h2>
 
-                                <section class="ident_entreprise">
-                                    <p>
+                                <section>
+                                    <p class="nom_ent">
                                         <?php echo $entreprise['nom']; ?>
                                     </p>
 
-                                    <p>
+                                    <p class="descript">
                                         <?php echo $entreprise['description'] ; ?>
                                     </p>
-                                </section>
-
-                                <section class="ville_img">
-                                    <p>
+                                
+                                    <p class="ville_ent">
                                         <?php echo $entreprise['ville']; ?>
                                     </p>
 
                                     <?php if ($entreprise['img'] != '') { ?>
-                                        <img src="./src/entreprise/<?php echo $entreprise['img'] ?>" alt="Photo de l'entreprise" />
+                                        <div class="img" style="background-image: url('./src/entreprise/<?php echo $entreprise['img'] ?>');"></div>
+                                    <?php }else { ?>
+                                        <div class="img"></div>
                                     <?php } ?>
                                 </section>
                             </article>

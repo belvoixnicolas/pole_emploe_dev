@@ -374,6 +374,7 @@ nav {
   position: fixed;
   top: 2vh;
   width: 100%;
+  z-index: 1;
 }
 nav .main_nav {
   display: grid;
@@ -584,6 +585,11 @@ i {
   border: 1px solid black;
   padding: 1%;
 }
+#profil main article h2 {
+  text-align: left !important;
+  font-size: 2em;
+  margin-bottom: 3vh;
+}
 #profil main .identite {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -638,6 +644,122 @@ i {
 #profil main .identite .nom p {
   text-align: center;
   font-size: 3em;
+}
+#profil main .commentaire ul {
+  max-height: 60vh;
+  overflow: auto;
+}
+#profil main .commentaire ul li {
+  display: grid;
+  grid-template-columns: min-content auto 26%;
+  grid-template-rows: repeat(2, auto);
+  row-gap: 1vh;
+  min-height: 5vh;
+  margin: 1vh 0;
+  padding: 0 1vw 1vh;
+  border-bottom: 1px solid black;
+}
+#profil main .commentaire ul li:last-child {
+  border: none;
+}
+#profil main .commentaire ul li img {
+  height: 10vh;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: 0px 0px 6px 1px black;
+  margin: 6px 6px 0;
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+#profil main .commentaire ul li .nom {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  align-self: center;
+  font-size: 1.5em;
+  margin-left: 1%;
+}
+#profil main .commentaire ul li .date {
+  grid-column: 3/span 1;
+  grid-row: 1/span 1;
+  justify-self: end;
+  font-size: 1.1em;
+}
+#profil main .commentaire ul li .note {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  align-self: flex-end;
+  margin-bottom: 2%;
+  white-space: nowrap;
+}
+#profil main .commentaire ul li .note i {
+  font-size: 2em;
+}
+#profil main .commentaire ul li .com {
+  grid-column: 1/span 3;
+  grid-row: 2/span 1;
+  font-size: 1.5em;
+  min-height: 1vh;
+}
+#profil main .commentaire ul .nocomment {
+  display: inherit;
+  text-align: center;
+  margin: inherit;
+  padding: inherit;
+  min-height: inherit;
+  font-size: 1.5em;
+}
+#profil main .code {
+  text-align: center;
+}
+#profil main .code ul {
+  display: inline-grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  row-gap: 2vh;
+}
+#profil main .code ul li {
+  justify-self: center;
+  margin: 0 3vw;
+}
+#profil main .code ul li img {
+  height: 10vh;
+  width: 10vh;
+}
+#profil main .code ul li div span {
+  display: block;
+  margin: 0.5vh 0;
+  font-size: 1.5em;
+}
+#profil main .code ul li span {
+  font-size: 1.2em;
+}
+#profil main .entreprise section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+#profil main .entreprise section .nom_ent {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+  font-size: 1.5em;
+}
+#profil main .entreprise section .descript {
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+  font-size: 1.5em;
+}
+#profil main .entreprise section .ville_ent {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  justify-self: center;
+  font-size: 1.5em;
+}
+#profil main .entreprise section .img {
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
+  min-height: 10vh;
+  background-image: url("src/entreprise/");
 }
 #profil #dernco {
   position: fixed;

@@ -4,7 +4,7 @@ require_once('./php/connect.php');
 function liste_code($id) {
     $dbh = connect();
 
-    $codes = $dbh->prepare('SELECT code, img, note FROM savoir INNER JOIN code ON savoir.id = code.id WHERE id_usser = :id');
+    $codes = $dbh->prepare('SELECT code, img, note FROM savoir INNER JOIN code ON savoir.id = code.id WHERE id_usser = :id ORDER BY note DESC, code');
     $codes->execute(array(':id' => $id));
 
     if ($codes=$codes->fetchAll()) {

@@ -11,7 +11,7 @@ require_once('./php/connect.php');
                     $comment = '';
                 }
 
-                $date = date('Y-m-d H:i:s');
+                $date = date('d-m-Y');
 
                 $noter->execute(array(
                     ':note' => $note,
