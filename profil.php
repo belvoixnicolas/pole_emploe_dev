@@ -97,9 +97,9 @@
                     </p>
                 </section>
                 <section class="nom">
-                    <p>
+                    <h1>
                         <?php echo $user['nom'] . ' ' . $user['prenom']; ?>
-                    </p>
+                    </h1>
                 </section>
             </article>
             <!-- IDENT -->
@@ -112,7 +112,7 @@
 
                         if ($entreprise=$entreprise->fetch()) { ?>
                             <article class="entreprise">
-                                <h2>entreprise</h2>
+                                <h3>entreprise</h3>
 
                                 <section>
                                     <p class="nom_ent">
@@ -147,7 +147,7 @@
 
             <!-- COMMENTAIRE -->
             <article class="commentaire">
-                <h2>Commentaire</h2>
+                <h3>Commentaire</h3>
 
                 <ul>
                     <?php echo commentaire($_GET['id']); ?>
@@ -158,7 +158,7 @@
             <!-- CODE CONNUE SI DEV -->
             <?php if ($user['role'] == 1) { ?>
             <article class="code">
-                <h2>Compétence</h2>
+                <h3>Compétence</h3>
                 <ul>
                     <?php echo liste_code($_GET['id']); ?>
                 </ul>

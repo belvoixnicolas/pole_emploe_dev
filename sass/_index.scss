@@ -16,7 +16,7 @@
                 grid-template-rows: min-content auto;
                 height: 100%;
 
-                h4 {
+                h2, h3 {
                     padding: 1%;
                     text-align: center;
                 }
@@ -46,6 +46,10 @@
             align-items: center;
             min-height: 20vh;
             border: 1px solid black;
+
+            p {
+                padding: 0 1vw;
+            }
         }
     }
 }

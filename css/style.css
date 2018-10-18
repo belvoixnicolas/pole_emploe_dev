@@ -370,16 +370,24 @@ html {
   font-size: 62.5%;
 }
 
-p, span {
-  font-size: 1.5em;
+p, span, li {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 2rem;
+}
+
+i {
+  font-size: 3rem;
 }
 
 nav {
@@ -426,6 +434,7 @@ nav .main_nav ul li a i {
 nav .main_nav ul li a span {
   width: fit-content;
   white-space: nowrap;
+  font-size: 2rem;
 }
 nav .main_nav button {
   display: flex;
@@ -437,6 +446,9 @@ nav .main_nav button {
 nav .main_nav button i {
   margin-right: 8%;
 }
+nav .main_nav button span {
+  font-size: 2rem;
+}
 nav form {
   display: flex;
   flex-flow: column nowrap;
@@ -446,7 +458,7 @@ nav form {
   float: right;
   border: 1px solid black;
 }
-nav form h4 {
+nav form h3 {
   margin: 0 auto 5%;
 }
 nav form input {
@@ -483,7 +495,7 @@ main, header {
   grid-template-rows: min-content auto;
   height: 100%;
 }
-#index header article .expli h4, #index header article .inscription h4 {
+#index header article .expli h2, #index header article .inscription h2, #index header article .expli h3, #index header article .inscription h3 {
   padding: 1%;
   text-align: center;
 }
@@ -502,6 +514,9 @@ main, header {
   align-items: center;
   min-height: 20vh;
   border: 1px solid black;
+}
+#index main article p {
+  padding: 0 1vw;
 }
 
 #form_dev {
@@ -583,7 +598,7 @@ main, header {
   border: 1px solid black;
   padding: 1%;
 }
-#profil main article h2 {
+#profil main article h3 {
   text-align: left !important;
   margin-bottom: 3vh;
 }
@@ -628,6 +643,10 @@ main, header {
   top: 29px;
   right: -27px;
   transform: rotate(48deg);
+  font-size: 2rem;
+}
+#profil main .identite .photo .note span {
+  font-size: inherit;
 }
 #profil main .identite .nom {
   grid-column: 1/span 2;
@@ -635,7 +654,7 @@ main, header {
   margin: 0 auto;
   min-width: 20%;
 }
-#profil main .identite .nom p {
+#profil main .identite .nom h1 {
   text-align: center;
 }
 #profil main .commentaire ul {
@@ -681,6 +700,10 @@ main, header {
   align-self: flex-end;
   margin-bottom: 2%;
   white-space: nowrap;
+  font-size: 2rem;
+}
+#profil main .commentaire ul li .note i {
+  font-size: inherit;
 }
 #profil main .commentaire ul li .com {
   grid-column: 1/span 3;
@@ -715,6 +738,7 @@ main, header {
 #profil main .code ul li div span {
   display: block;
   margin: 0.5vh 0;
+  font-weight: bold;
 }
 #profil main .entreprise section {
   display: grid;
@@ -725,6 +749,7 @@ main, header {
 #profil main .entreprise section .nom_ent {
   grid-column: 1/span 1;
   grid-row: 1/span 1;
+  font-weight: bold;
 }
 #profil main .entreprise section .descript {
   grid-column: 1/span 1;

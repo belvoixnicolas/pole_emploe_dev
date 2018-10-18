@@ -58,7 +58,7 @@
     </div>
     <?php if (isset($_SESSION['user']) == false) { ?>
         <form action="<?php echo $_SERVER['PHP_SELF']?>?form=ident" method="post">
-            <h4>Connexion</h4>
+            <h3>Connexion</h3>
             <input type="text" name="mail" placeholder='Email'>
             <input type="password" name="mdp" placeholder="Mot de passe">
             <input type="submit" value="Connecter">

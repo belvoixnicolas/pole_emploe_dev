@@ -28,14 +28,14 @@
         <header>
             <article id="connex_dev">
                 <section class="expli">
-                    <h4>Développeur</h4>
+                    <h2>Développeur</h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem amet quae dolore, esse molestias aliquid alias laborum voluptate neque id doloribus consectetur cum earum! Molestias dolorum quibusdam suscipit quidem eius.
                     </p>
                 </section>
 
                 <section class="inscription">
-                    <h4>Inscription</h4>
+                    <h3>Inscription</h3>
 
                     <!-- FORM DEV -->
                         <?php include './content/form_dev.php' ?>
@@ -45,14 +45,14 @@
 
             <article id="connex_pat">
                 <section class="expli">
-                    <h4>Employeur ou Particulier</h4>
+                    <h2>Employeur ou Particulier</h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem amet quae dolore, esse molestias aliquid alias laborum voluptate neque id doloribus consectetur cum earum! Molestias dolorum quibusdam suscipit quidem eius.
                     </p>
                 </section>
 
                 <section class="inscription">
-                    <h4>Inscription</h4>
+                    <h3>Inscription</h3>
 
                     <!-- FORM PAT -->
                         <?php include './content/form_pat.php' ?>
@@ -63,7 +63,7 @@
 
         <main>
             <article>
-                <h3>Explication</h3>
+                <h2>Explication</h2>
 
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatem amet at molestias delectus exercitationem quo sit voluptas, provident maiores quaerat cum error consequuntur voluptatum quae soluta illum possimus aliquid.
