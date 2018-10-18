@@ -44,7 +44,6 @@ nav {
                     }
 
                     span {
-                        font-size: 2em;
                         width: fit-content;
                         white-space: nowrap;
                     }
@@ -62,10 +61,6 @@ nav {
             i {
                 margin-right: 8%;
             }
-        
-            span {
-                font-size: 2em;
-            }
         }
     }
 
@@ -79,7 +74,6 @@ nav {
         border: 1px solid black;
 
         h4 {
-            font-size: 2em;
             margin: 0 auto 5%;
         }
 
@@ -103,8 +97,4 @@ body {
 main, header {
     width: 96vw;
     margin: 0 auto;
-}
-
-i {
-    font-size: 3em;
 }
