@@ -370,7 +370,7 @@ html {
   font-size: 62.5%;
 }
 
-p, span, li {
+p, span, li, a {
   font-size: 1.5rem;
 }
 
@@ -601,6 +601,7 @@ main, header {
 #profil main article h3 {
   text-align: left !important;
   margin-bottom: 3vh;
+  text-transform: capitalize;
 }
 #profil main .identite {
   display: grid;
@@ -617,12 +618,14 @@ main, header {
 }
 #profil main .identite #verif i {
   transform: rotate(-12deg);
+  font-size: 5rem;
 }
 #profil main .identite #verif span {
   position: absolute;
   top: 3px;
   left: 11px;
   transform: rotate(-12deg);
+  font-size: 2.5rem;
 }
 #profil main .identite .photo {
   grid-column: 1/span 2;
@@ -656,6 +659,20 @@ main, header {
 }
 #profil main .identite .nom h1 {
   text-align: center;
+  text-transform: capitalize;
+}
+#profil main .identite .signaler, #profil main .identite .modif {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+  justify-self: start;
+  align-self: flex-start;
+}
+#profil main .identite .signaler p, #profil main .identite .modif p {
+  text-align: center;
+  cursor: pointer;
+}
+#profil main .identite .signaler p span, #profil main .identite .modif p span {
+  display: block;
 }
 #profil main .commentaire ul {
   max-height: 60vh;
@@ -688,6 +705,7 @@ main, header {
   grid-row: 1/span 1;
   align-self: center;
   margin-left: 1%;
+  text-transform: capitalize;
 }
 #profil main .commentaire ul li .date {
   grid-column: 3/span 1;
@@ -718,6 +736,7 @@ main, header {
   min-height: inherit;
 }
 #profil main .code {
+  position: relative;
   text-align: center;
 }
 #profil main .code ul {
@@ -731,14 +750,25 @@ main, header {
   justify-self: center;
   margin: 0 3vw;
 }
-#profil main .code ul li img {
+#profil main .code ul li img, #profil main .code ul li i {
   height: 10vh;
   width: 10vh;
 }
-#profil main .code ul li div span {
+#profil main .code ul li div span, #profil main .code ul li span {
   display: block;
   margin: 0.5vh 0;
   font-weight: bold;
+}
+#profil main .code ul .add {
+  cursor: pointer;
+}
+#profil main .code ul .add i {
+  font-size: 8rem;
+}
+#profil main .code ul .add span {
+  margin: auto;
+  font-size: 2rem;
+  font-weight: inherit;
 }
 #profil main .entreprise section {
   display: grid;
@@ -750,6 +780,7 @@ main, header {
   grid-column: 1/span 1;
   grid-row: 1/span 1;
   font-weight: bold;
+  text-transform: capitalize;
 }
 #profil main .entreprise section .descript {
   grid-column: 1/span 1;
@@ -761,6 +792,13 @@ main, header {
   grid-column: 2/span 1;
   grid-row: 1/span 1;
   justify-self: center;
+  text-transform: capitalize;
+}
+#profil main .entreprise section .ville_ent a {
+  text-decoration: none;
+}
+#profil main .entreprise section .ville_ent a:hover {
+  text-decoration: underline;
 }
 #profil main .entreprise section .img {
   grid-column: 2/span 1;
@@ -784,13 +822,24 @@ main, header {
   grid-template-rows: repeat(2, auto);
   position: fixed;
   bottom: 0px;
-  right: 1vw;
+  right: 1.4vw;
 }
 #profil #mail span:nth-child(1) {
   justify-self: end;
   padding: 0.5vw;
   border: 1px solid black;
   cursor: pointer;
+}
+#profil #formcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #form_mail {

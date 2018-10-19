@@ -101,6 +101,25 @@
                         <?php echo $user['nom'] . ' ' . $user['prenom']; ?>
                     </h1>
                 </section>
+
+                <!-- SI AUTRE UTILISATEUR QUE CONECTER -->
+                    <?php if ($_GET['id'] == $_SESSION['user']->get('id')) { ?>
+                        <section class="signaler">
+                            <p>
+                                <i class="fas fa-user-cog"></i>
+                                <span>Modifier le profil</span>
+                            </p>
+                        </section>
+                    <?php }else { ?>
+                        <section class="modif">
+                            <p>
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Signaler</span>
+                                
+                            </p>
+                        </section>
+                    <?php } ?>
+                <!-- SI AUTRE UTILISATEUR QUE CONECTER -->
             </article>
             <!-- IDENT -->
 
@@ -124,7 +143,9 @@
                                     </p>
                                 
                                     <p class="ville_ent">
-                                        <?php echo $entreprise['ville']; ?>
+                                        <a href="https://www.google.com/maps/place/08000+<?php echo mb_strtolower($entreprise['ville']); ?>" target="_blank">
+                                            <?php echo mb_strtolower($entreprise['ville']); ?>
+                                        </a>
                                     </p>
 
                                     <?php if ($entreprise['img'] != '') { ?>
@@ -161,6 +182,15 @@
                 <h3>Compétence</h3>
                 <ul>
                     <?php echo liste_code($_GET['id']); ?>
+
+                    <!-- SI ID = CONNECT -->
+                        <?php if ($_GET['id'] == $_SESSION['user']->get('id')) { ?>
+                            <li class="add">
+                                <i class="fas fa-plus"></i>
+                                <span>ajouter</span>
+                            </li>
+                        <?php } ?>
+                    <!-- SI ID = CONNECT -->
                 </ul>
             </article>
             <?php } ?>
@@ -188,4 +218,5 @@
     </body>
     
     <script src="./js/mailprofil.js"></script>
+    <script src="./js/ajax/form_code.js"></script>
   </html>
