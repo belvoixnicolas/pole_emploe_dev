@@ -181,7 +181,7 @@
             <article class="code">
                 <h3>Compétence</h3>
                 <ul>
-                    <?php echo liste_code($_GET['id']); ?>
+                    <?php echo liste_code($_GET['id'], $_SESSION['user']->get('id')); ?>
 
                     <!-- SI ID = CONNECT -->
                         <?php if ($_GET['id'] == $_SESSION['user']->get('id')) { ?>
@@ -218,5 +218,8 @@
     </body>
     
     <script src="./js/mailprofil.js"></script>
-    <script src="./js/ajax/form_code.js"></script>
+
+    <?php if ($_GET['id'] == $_SESSION['user']->get('id')) { ?>
+        <script src="./js/ajax/form_code.js"></script>
+    <?php } ?>
   </html>

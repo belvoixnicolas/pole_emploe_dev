@@ -17,7 +17,7 @@
                             <option value="9">9</option>
                             <option value="10">10</option>
                         </select>
-                        <input type="submit" value="Envoyer">
+                        <input type="button" value="Envoyer">
                     </form>
                 </div>';
     }
