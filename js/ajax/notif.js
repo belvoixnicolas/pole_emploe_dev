@@ -17,8 +17,10 @@ jQuery(document).ready(function(){
                 if (data[1] > 0) {
 
                     $('nav .mail i').css('color', 'red').addClass('animated infinite pulse');
+                    $('nav .mail').attr('href', './boite_mail.php?section=reception');
                 }else {
                     $('nav .mail i').removeClass('animated infinite pulse').removeAttr('style');
+                    $('nav .mail').attr('href', './boite_mail.php');
                 }
             }
         );
