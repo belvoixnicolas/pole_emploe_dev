@@ -208,7 +208,7 @@
 
         <?php if ($_GET['id'] != $_SESSION['user']->get('id')) { ?>
             <div id="mail">
-                <span>
+                <span class="<?php echo $_SESSION['user']->get('id'); ?>">
                     <i class="fas fa-envelope-open"></i>
                 </span>
 
@@ -218,6 +218,7 @@
     </body>
     
     <script src="./js/mailprofil.js"></script>
+    <script src="./js/ajax/evoie_mail.js"></script>
 
     <?php if ($_GET['id'] == $_SESSION['user']->get('id')) { ?>
         <script src="./js/ajax/form_code.js"></script>
