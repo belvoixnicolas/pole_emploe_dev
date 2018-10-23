@@ -761,6 +761,7 @@ main, header {
   font-weight: bold;
 }
 #profil main .code ul li #supCode {
+  display: none;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -769,6 +770,10 @@ main, header {
 }
 #profil main .code ul li #supCode i {
   font-size: 2rem;
+  cursor: pointer;
+}
+#profil main .code ul li:hover #supCode {
+  display: inline;
 }
 #profil main .code ul .add {
   cursor: pointer;

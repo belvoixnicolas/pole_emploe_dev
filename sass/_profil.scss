@@ -207,6 +207,7 @@
                     }
 
                     #supCode {
+                        display: none;
                         position: absolute;
                         top: 0px;
                         right: 0px;
@@ -215,7 +216,12 @@
 
                         i {
                             font-size: 2rem;
+                            cursor: pointer;
                         }
+                    }
+
+                    &:hover #supCode {
+                        display: inline;
                     }
                 }
 
