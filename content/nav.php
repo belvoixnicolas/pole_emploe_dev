@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="mail">
+                    <a href="./boite_mail.php" class="mail">
                         <i class="fas fa-envelope"></i>
 
                         <span>
