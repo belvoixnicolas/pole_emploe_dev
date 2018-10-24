@@ -1,24 +1,22 @@
 <?php
     require_once('./php/connect.php');
+    require_once('./php/liste_mail.php');
 
     $dbh = connect();
-
-    $listeMail = $dbh->prepare('SELECT mail.id, sujet, mail.date, mail.id_usser, lu.date FROM mail LEFT JOIN lu ON mail.id = lu.id WHERE id_usser_recoi = :id');
-
-    $listeMail->execute(array(':id' => $_SESSION['user']->get('id')));
-
-    if ($listeMail=$listeMail->fetchAll()) {
-        $listeMailHtml = '';
-
-        foreach ($listeMail as $row => $mail) {
-            $listeMailHtml .= '<li>' . $row . ' | ' . $mail['date'] . '</li>';
-        }
-    }
+    $vuemail = $dbh->prepare('UPDATE notification SET vu = 1 WHERE type = "mail" AND id_usser = :id');
+    $vuemail->execute(array(':id' => $_SESSION['user']->get('id')));
 ?>
 <main id="reception">
     <h1>Boite de reception</h1>
 
     <ul class="listeMail">
-        <?php echo $listeMailHtml; ?>
+        <?php 
+            if ($mails=liste_mail($_SESSION['user']->get('id'))) {
+                echo $mails;
+            }else {
+                echo '<li class="error">Une erreur c\'est produit</li>';
+            } 
+        ?>
     </ul>
 </main>
+<script src="./js/ajax/sup_mail.js"></script>

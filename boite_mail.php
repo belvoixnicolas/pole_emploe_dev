@@ -7,6 +7,8 @@
     require_once('./php/notif_error.php');
 
     autoris_acces(0);
+
+    $_SESSION['id'] = $_SESSION['user']->get('id');
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
