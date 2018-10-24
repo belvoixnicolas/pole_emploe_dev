@@ -7,16 +7,18 @@
     $vuemail->execute(array(':id' => $_SESSION['user']->get('id')));
 ?>
 <main id="reception">
-    <h1>Boite de reception</h1>
+    <section>
+        <h1>Boite de reception</h1>
 
-    <ul class="listeMail">
-        <?php 
-            if ($mails=liste_mail($_SESSION['user']->get('id'))) {
-                echo $mails;
-            }else {
-                echo '<li class="error">Une erreur c\'est produit</li>';
-            } 
-        ?>
-    </ul>
+        <ul class="listeMail">
+            <?php 
+                if ($mails=liste_mail($_SESSION['user']->get('id'))) {
+                    echo $mails;
+                }else {
+                    echo '<li class="error">Une erreur c\'est produit</li>';
+                } 
+            ?>
+        </ul>
+    </section>
 </main>
 <script src="./js/ajax/sup_mail.js"></script>

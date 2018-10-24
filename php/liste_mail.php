@@ -6,7 +6,7 @@
         if ($id != null) {
             $dbh = connect();
 
-            $listeMail = $dbh->prepare('SELECT suprimer.date AS test, nom, prenom, img, mail.id, sujet, mail.date AS mailDate, mail.id_usser, lu.date AS luDate FROM mail LEFT JOIN lu ON mail.id = lu.id INNER JOIN usser ON mail.id_usser = usser.id LEFT JOIN suprimer ON mail.id = suprimer.id WHERE id_usser_recoi = :id AND suprimer.date IS NULL ORDER BY mail.date DESC');
+            $listeMail = $dbh->prepare('SELECT suprimer.date AS test, usser.id AS userId, nom, prenom, img, mail.id, sujet, mail.date AS mailDate, mail.id_usser, lu.date AS luDate FROM mail LEFT JOIN lu ON mail.id = lu.id INNER JOIN usser ON mail.id_usser = usser.id LEFT JOIN suprimer ON mail.id = suprimer.id WHERE id_usser_recoi = :id AND suprimer.date IS NULL ORDER BY mail.date DESC');
 
             $listeMail->execute(array(':id' => $id));
 
@@ -27,10 +27,12 @@
                     $listeMailHtml .= "
                         <li {$class}>
                             <div class=\"ident\">
-                                <img src=\"./src/profil/{$img}\" alt=\"Photo de {$mail['nom']} {$mail['prenom']}\" />
-                                <span class=\"nom\">
-                                    {$mail['nom']} {$mail['prenom']}
-                                </span>
+                                <a href=\"./profil.php?id={$mail['userId']}\">
+                                    <img src=\"./src/profil/{$img}\" alt=\"Photo de {$mail['nom']} {$mail['prenom']}\" />
+                                    <span class=\"nom\">
+                                        {$mail['nom']} {$mail['prenom']}
+                                    </span>
+                                </a>
                             </div>
                             <div class=\"sujet\">
                                 <a href=\"./boite_mail.php?section=reception&id={$mail['id']}\">

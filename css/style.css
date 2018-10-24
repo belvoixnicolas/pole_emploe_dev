@@ -5,7 +5,8 @@
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+a,
+#reception section ul li .sujet span, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -128,15 +129,16 @@ html {
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-a:focus {
+a:focus, #reception section ul li .sujet span:focus {
   outline: thin dotted;
 }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-a:active,
-a:hover {
+a:active, #reception section ul li .sujet span:active,
+a:hover,
+#reception section ul li .sujet span:hover {
   outline: 0;
 }
 
@@ -370,8 +372,9 @@ html {
   font-size: 62.5%;
 }
 
-p, span, li, a {
+p, span, li, a, #reception section ul li .sujet span {
   font-size: 1.5rem;
+  color: #000;
 }
 
 h1 {
@@ -422,16 +425,16 @@ nav .main_nav ul {
 nav .main_nav ul li {
   margin: 2%;
 }
-nav .main_nav ul li a {
+nav .main_nav ul li a, nav .main_nav #reception section ul li .sujet span, #reception section nav .main_nav ul li .sujet span {
   color: black;
   text-decoration: none;
   display: flex;
   align-items: center;
 }
-nav .main_nav ul li a i {
+nav .main_nav ul li a i, nav .main_nav #reception section ul li .sujet span i, #reception section nav .main_nav ul li .sujet span i {
   margin-right: 8%;
 }
-nav .main_nav ul li a span {
+nav .main_nav ul li a span, nav .main_nav #reception section ul li .sujet span span, #reception section nav .main_nav ul li .sujet span span {
   width: fit-content;
   white-space: nowrap;
   font-size: 2rem;
@@ -810,10 +813,10 @@ main, header {
   justify-self: center;
   text-transform: capitalize;
 }
-#profil main .entreprise section .ville_ent a {
+#profil main .entreprise section .ville_ent a, #profil main .entreprise #reception section .ville_ent ul li .sujet span, #reception #profil main .entreprise section .ville_ent ul li .sujet span, #profil main .entreprise #reception section ul li .sujet .ville_ent span, #reception #profil main .entreprise section ul li .sujet .ville_ent span {
   text-decoration: none;
 }
-#profil main .entreprise section .ville_ent a:hover {
+#profil main .entreprise section .ville_ent a:hover, #profil main .entreprise #reception section .ville_ent ul li .sujet span:hover, #reception #profil main .entreprise section .ville_ent ul li .sujet span:hover, #profil main .entreprise #reception section ul li .sujet .ville_ent span:hover, #reception #profil main .entreprise section ul li .sujet .ville_ent span:hover {
   text-decoration: underline;
 }
 #profil main .entreprise section .img {
@@ -914,6 +917,59 @@ main, header {
 #form_mail input[type=submit] {
   width: 20%;
   height: 5%;
+}
+
+#reception section {
+  max-height: 80vh;
+  border: 1px solid black;
+  padding: 1%;
+}
+#reception section h1 {
+  text-align: left !important;
+  margin-bottom: 3vh;
+  text-transform: capitalize;
+}
+#reception section ul {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: auto;
+  max-height: 70vh;
+}
+#reception section ul li {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  padding: 1vh 1vw;
+  border-bottom: 1px solid black;
+}
+#reception section ul li:last-child {
+  border: none;
+}
+#reception section ul li .ident a, #reception section ul li .ident .sujet span, #reception section ul li .sujet .ident span {
+  display: flex;
+  flex-flow: column nowrap;
+  text-decoration: none;
+}
+#reception section ul li .ident a:hover, #reception section ul li .ident .sujet span:hover, #reception section ul li .sujet .ident span:hover {
+  text-decoration: underline;
+}
+#reception section ul li .ident a img, #reception section ul li .ident .sujet span img, #reception section ul li .sujet .ident span img {
+  height: 10vh;
+  margin-bottom: 1vh;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+#reception section ul li .sujet {
+  justify-self: center;
+  align-self: center;
+}
+#reception section ul li .sujet a, #reception section ul li .sujet span {
+  font-size: 2rem;
+}
+#reception section ul li .date_sup {
+  /* a faire */
+}
+#reception section ul .new .sujet {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */
