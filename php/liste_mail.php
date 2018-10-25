@@ -54,7 +54,7 @@
 
                 return $listeMailHtml;
             }else {
-                return false;
+                return '<li class="error">Il n\'y a pas de message</li>';
             }
         }else {
             return false;

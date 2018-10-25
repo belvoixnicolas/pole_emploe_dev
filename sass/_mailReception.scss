@@ -13,7 +13,14 @@
         display: flex;
         flex-flow: column nowrap;
         overflow: auto;
-        max-height: 70vh;
+        height: 70vh;
+
+        .error {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
 
         li {
             display: grid;
@@ -25,10 +32,15 @@
                 border: none;
             }
 
+            &:hover .date_sup .poubelle {
+                opacity: 1;
+            }
+
             .ident {
                 a {
                     display: flex;
                     flex-flow: column nowrap;
+                    align-items: center;
                     text-decoration: none;
 
                     &:hover {
@@ -45,20 +57,36 @@
             }
 
             .sujet {
-                justify-self: center;
-                align-self: center;
+                
+                &:hover a {
+                    text-decoration: underline;
+                }
                 
                 a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     font-size: 2rem;
-                }
+                    height: 100%;
+                    text-decoration: none;
 
-                span {
-                    @extend a;
+                    span {
+                        font-size: inherit;
+                    }
                 }
             }
 
             .date_sup {
-                /* a faire */
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-around;
+                align-items: center;
+
+                .poubelle {
+                    cursor: pointer;
+                    opacity: 0;
+                    transition: .5s;
+                }
             }
         }
 
