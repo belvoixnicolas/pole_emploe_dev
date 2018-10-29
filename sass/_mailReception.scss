@@ -24,7 +24,7 @@
 
         li {
             display: grid;
-            grid-template-columns: max-content 1fr max-content;
+            grid-template-columns: max-content minmax(10%,1fr) max-content;
             padding: 1vh 1vw;
             border-bottom: 1px solid black;
 
@@ -71,7 +71,11 @@
                     text-decoration: none;
 
                     span {
+                        display: block;
                         font-size: inherit;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
                 }
             }

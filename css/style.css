@@ -941,7 +941,7 @@ main, header {
 }
 #reception section ul li {
   display: grid;
-  grid-template-columns: max-content 1fr max-content;
+  grid-template-columns: max-content minmax(10%, 1fr) max-content;
   padding: 1vh 1vw;
   border-bottom: 1px solid black;
 }
@@ -978,7 +978,11 @@ main, header {
   text-decoration: none;
 }
 #reception section ul li .sujet a span {
+  display: block;
   font-size: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #reception section ul li .date_sup {
   display: flex;
@@ -993,6 +997,96 @@ main, header {
 }
 #reception section ul .new .sujet {
   font-weight: bold;
+}
+
+#viewmail main {
+  border: 1px solid black;
+}
+#viewmail main section {
+  padding: 1vh 1vw;
+}
+#viewmail main .info {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#viewmail main .info .ident img {
+  height: 10vh;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+#viewmail main .info .ident span {
+  font-size: 2rem;
+}
+#viewmail main .info .date {
+  text-decoration: underline;
+}
+#viewmail main .corp {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  row-gap: 1vh;
+  min-height: 50vh;
+}
+#viewmail main .corp .sujet h2 {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#viewmail main .corp .text p {
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
+  line-height: 1.6rem;
+}
+#viewmail main .corp .piecejoin ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  column-gap: 3vw;
+  overflow: auto;
+  padding: 2vh 0;
+}
+#viewmail main .corp .piecejoin ul li a {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: end;
+  height: 15vh;
+  width: 15vw;
+  border: 1px solid black;
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+#viewmail main .corp .piecejoin ul li a:hover {
+  box-shadow: 4px 5px 12px 0px black;
+}
+#viewmail main .corp .piecejoin ul li a span {
+  border-top: 1px solid black;
+  padding: 1vh 1vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#viewmail main .boutton {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  align-items: center;
+}
+#viewmail main .boutton button {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 1vh 1vw;
+}
+#viewmail main .boutton button i {
+  margin-right: 1vw;
 }
 
 /*# sourceMappingURL=style.css.map */
