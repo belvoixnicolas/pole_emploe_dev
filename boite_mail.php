@@ -30,6 +30,10 @@
                         case 'reception':
                             include './content/mail_reception.php';
                             break;
+
+                        case 'envoie':
+                            include './content/mail_envoier.php';
+                            break;
                         
                         default:
                             include './content/mail_reception.php';
