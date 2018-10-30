@@ -13,15 +13,23 @@
             align-items: center;
 
             .ident {
-                img {
-                    height: 10vh;
-                    border-radius: 50%;
-                    border: 1px solid black;
-                    margin-right: 10px;
-                }
+                a {
+                    text-decoration: none;
 
-                span {
-                    font-size: 2rem;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                
+                    img {
+                        height: 10vh;
+                        border-radius: 50%;
+                        border: 1px solid black;
+                        margin-right: 10px;
+                    }
+
+                    span {
+                        font-size: 2rem;
+                    }
                 }
             }
 

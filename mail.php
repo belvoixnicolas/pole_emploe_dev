@@ -12,15 +12,19 @@
     if (isset($_SESSION['idMail']) && $_SESSION['idMail']) {
         $dbh = connect();
 
-        $mail = $dbh->prepare('SELECT lu.date AS luDate, mail.id AS idMail, sujet, text, mail.date AS mailDate, id_usser_recoi AS idRecoi, suprimer.date AS supDate, usser.nom, usser.prenom, usser.img FROM mail INNER JOIN usser ON usser.id = mail.id_usser LEFT JOIN suprimer ON mail.id = suprimer.id LEFT JOIN lu ON mail.id = lu.id  WHERE mail.id = :idmail');
+        $mail = $dbh->prepare('SELECT lu.date AS luDate, mail.id AS idMail, sujet, text, mail.date AS mailDate, id_usser_recoi AS idRecoi, suprimer.date AS supDate, usser.id AS usserId, usser.nom, usser.prenom, usser.img FROM mail INNER JOIN usser ON usser.id = mail.id_usser LEFT JOIN suprimer ON mail.id = suprimer.id LEFT JOIN lu ON mail.id = lu.id  WHERE mail.id = :idmail');
 
         $mail->execute(array(':idmail' => $_SESSION['idMail']));
 
         if ($mail=$mail->fetch()) {
+            unset($_SESSION['idMail']);
             if ($mail['supDate'] != NULL) {
                 $_SESSION['error'][] = 'Le mail a étais suprimer';
                 header('Location: ./boite_mail.php');
             }else {
+                $_SESSION['id'] = $_SESSION['user']->get('id');
+                $_SESSION['mailid'] = $mail['idMail'];
+
                 if ($mail['luDate'] == NULL) {
                     $lu = $dbh->prepare('INSERT INTO lu (id, id_usser, date) VALUES (:idmail, :iduser, :date)');
 
@@ -63,8 +67,10 @@
                 </section>
 
                 <section class="ident">
-                    <img src="./src/profil/<?php echo verif_img($mail['img']); ?>" alt="photo de <?php echo $mail['nom'] . ' ' . $mail['prenom']; ?>">
-                    <span class="nom"><?php echo $mail['nom'] . ' ' . $mail['prenom']; ?></span>
+                    <a href="./profil.php?id=<?php echo $mail['usserId']; ?>">
+                        <img src="./src/profil/<?php echo verif_img($mail['img']); ?>" alt="photo de <?php echo $mail['nom'] . ' ' . $mail['prenom']; ?>">
+                        <span class="nom"><?php echo $mail['nom'] . ' ' . $mail['prenom']; ?></span>
+                    </a>
                 </section>
 
                 <section class="date">
@@ -137,5 +143,10 @@
                 </section>
             </article>
         </main>
+        <!-- FOOTER -->
+            <?php include './content/footer.html' ?>
+        <!-- FOOTER -->
     </body>
+    <script src="./js/lien.js"></script>
+    <script src="./js/ajax/sup_mail_view_mail.js"></script>
   </html>

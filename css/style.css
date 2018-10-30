@@ -1011,13 +1011,19 @@ main, header {
   justify-content: space-between;
   align-items: center;
 }
-#viewmail main .info .ident img {
+#viewmail main .info .ident a {
+  text-decoration: none;
+}
+#viewmail main .info .ident a:hover {
+  text-decoration: underline;
+}
+#viewmail main .info .ident a img {
   height: 10vh;
   border-radius: 50%;
   border: 1px solid black;
   margin-right: 10px;
 }
-#viewmail main .info .ident span {
+#viewmail main .info .ident a span {
   font-size: 2rem;
 }
 #viewmail main .info .date {

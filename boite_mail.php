@@ -32,7 +32,7 @@
                             break;
                         
                         default:
-                            # code...
+                            include './content/mail_reception.php';
                             break;
                     }
                 }else {
