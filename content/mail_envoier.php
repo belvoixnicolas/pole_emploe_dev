@@ -10,7 +10,7 @@
                     <div>
                         <h3>Developpeur</h3>
 
-                        <ul clas="dev">
+                        <ul class="dev">
 
                         </ul>
                     </div>
@@ -18,7 +18,7 @@
                     <div>
                         <h3>Particulier</h3>
 
-                        <ul clas="pat">
+                        <ul class="pat">
 
                         </ul>
                     </div>
@@ -26,7 +26,7 @@
                     <div>
                         <h3>Entreprise</h3>
 
-                        <ul clas="entre">
+                        <ul class="entre">
 
                         </ul>
                     </div>

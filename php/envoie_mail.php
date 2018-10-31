@@ -7,7 +7,7 @@
             $dbh = connect();
             $envoie = $dbh->prepare('INSERT INTO `mail` (`id`, `sujet`, `text`, `date`, `id_usser`, `id_usser_recoi`) VALUES (NULL, :sujet, :text, :date, :idenvoie, :idrecoi)');
             
-            if ($envoie->execute(array(':sujet' => $sujet, ':text' => $text, ':date' => date('Y-m-d H:i:s'), ':idenvoie' => $_SESSION['user']->get('id'), ':idrecoi' => $idrecois))) {
+            if ($envoie->execute(array(':sujet' => $sujet, ':text' => nl2br(htmlspecialchars($text)), ':date' => date('Y-m-d H:i:s'), ':idenvoie' => $_SESSION['user']->get('id'), ':idrecoi' => $idrecois))) {
                 $notif = $dbh->prepare("INSERT INTO `notification` (`id`, `type`, `date`, `id_usser`) VALUES (NULL, 'mail', :date, :id)");
                 $notif->execute(array(':date' => date('Y-m-d H:i:s'), ':id' => $idrecois));
 
