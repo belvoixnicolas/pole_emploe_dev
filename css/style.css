@@ -1156,6 +1156,7 @@ main, header {
   grid-column: 2/span 1;
   grid-row: 1/span 1;
   justify-self: end;
+  text-align: right;
 }
 #mail main .recherche .resultat div .dev li a div .ville::first-letter {
   text-transform: uppercase;
