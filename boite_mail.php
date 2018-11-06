@@ -5,6 +5,7 @@
     require_once('./php/connect.php');
     require_once('./php/secu_acces.php');
     require_once('./php/notif_error.php');
+    require_once('./php/envoie_mail.php');
 
     autoris_acces(0);
 

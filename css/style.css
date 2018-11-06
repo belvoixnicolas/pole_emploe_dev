@@ -1062,7 +1062,7 @@ main, header {
 #viewmail main .corp .piecejoin ul li a {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: end;
+  justify-content: flex-end;
   height: 15vh;
   width: 15vw;
   border: 1px solid black;
@@ -1125,6 +1125,13 @@ main, header {
 #mail main .recherche .resultat div h3 {
   margin: 2vh 0;
 }
+#mail main .recherche .resultat div ul .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  font-size: 2rem;
+}
 #mail main .recherche .resultat div ul li {
   border-bottom: 1px solid black;
 }
@@ -1134,17 +1141,17 @@ main, header {
 #mail main .recherche .resultat div ul li a {
   text-decoration: none;
 }
-#mail main .recherche .resultat div .dev li a:hover span {
+#mail main .recherche .resultat div .dev li a:hover span, #mail main .recherche .resultat div .pat li a:hover span {
   text-decoration: underline;
 }
-#mail main .recherche .resultat div .dev li a div {
+#mail main .recherche .resultat div .dev li a div, #mail main .recherche .resultat div .pat li a div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr max-content;
   row-gap: 1vh;
   padding: 2vh 0;
 }
-#mail main .recherche .resultat div .dev li a div img {
+#mail main .recherche .resultat div .dev li a div img, #mail main .recherche .resultat div .pat li a div img {
   grid-column: 1/span 2;
   grid-row: 1/span 1;
   justify-self: center;
@@ -1152,19 +1159,66 @@ main, header {
   border-radius: 50%;
   border: 1px solid black;
 }
-#mail main .recherche .resultat div .dev li a div .ville {
+#mail main .recherche .resultat div .dev li a div .ville, #mail main .recherche .resultat div .pat li a div .ville {
   grid-column: 2/span 1;
   grid-row: 1/span 1;
   justify-self: end;
   text-align: right;
 }
-#mail main .recherche .resultat div .dev li a div .ville::first-letter {
+#mail main .recherche .resultat div .dev li a div .ville::first-letter, #mail main .recherche .resultat div .pat li a div .ville::first-letter {
   text-transform: uppercase;
 }
-#mail main .recherche .resultat div .dev li a div .nom {
+#mail main .recherche .resultat div .dev li a div .nom, #mail main .recherche .resultat div .pat li a div .nom {
   grid-row: 2/span 1;
   grid-column: 1/span 2;
   justify-self: center;
+}
+#mail main .recherche .resultat div .pat .entreprise {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+#mail main .recherche .resultat div .entre li a {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 10vh);
+  border-bottom: 1px solid black;
+  padding: 2vh 0;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+}
+#mail main .recherche .resultat div .entre li a .entreprise {
+  grid-row: 1/span 1;
+  grid-column: 1/span 2;
+  justify-self: center;
+  align-self: flex-end;
+  z-index: 1;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: 0.5s;
+}
+#mail main .recherche .resultat div .entre li a .ville {
+  grid-column: 1/span 2;
+  grid-row: 2/span 1;
+  justify-self: center;
+  align-self: flex-start;
+  z-index: 1;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: 0.5s;
+}
+#mail main .recherche .resultat div .entre li a:last-child {
+  border: none;
+}
+#mail main .recherche .resultat div .entre li a:hover span {
+  letter-spacing: 4vw;
+  font-weight: normal;
+}
+#mail main .recherche .resultat div .entre li a:hover img {
+  filter: blur(5px);
+}
+#mail main #form_mail {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -8,8 +8,8 @@
         $dbh = connect();
         switch ($type) {
             case 'mail':
-                $maxsize = 26214400;
-                $extensions = array('pdf');
+                $maxsize = 50000000;
+                $extensions = array('pdf', 'PDF', 'jpg', 'jpeg', 'JPG', 'JPEG', 'gif', 'GIF', 'png', 'PNG');
                 $chemin = 'src/mail/';
                 $evoi_nom_img = $dbh->prepare("INSERT INTO `resource` (`id`, `lien`, `id_mail`) VALUES (NULL, :nom, :id)");
                 if ($id == false) {
@@ -31,8 +31,18 @@
             
             $result = move_uploaded_file($file['tmp_name'],$chemin);
             if ($result) {
-                if ($evoi_nom_img->execute(array(':nom' => $nom, ':id' => $id))) {
-                    return true;
+                switch ($type) {
+                    case 'mail':
+                        if ($evoi_nom_img->execute(array(':nom' => $nom, ':id' => $id))) {
+                            return true;
+                        }else {
+                            return false;
+                        }
+                        break;
+                    
+                    default:
+                        return false;
+                        break;
                 }
             }else {
                 return false;

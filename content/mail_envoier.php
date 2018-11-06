@@ -1,3 +1,8 @@
+<?php
+    if (isset($_POST['sujet']) && isset($_POST['text']) && isset($_GET['id'])) {
+        envoie_mail($_POST['sujet'], $_POST['text'], $_GET['id']);
+    }
+?>
 <main id="envoier">
     <?php
         if (isset($_GET['id']) == false) { ?>
