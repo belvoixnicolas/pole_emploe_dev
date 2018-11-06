@@ -1219,6 +1219,7 @@ main, header {
 }
 #mail main #form_mail {
   width: 100%;
+  height: 75vh;
 }
 
 /*# sourceMappingURL=style.css.map */

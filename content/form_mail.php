@@ -14,3 +14,4 @@
 
     <input type="submit" value="Evoyer">
 </form>
+<script src="./js/file_mail.js"></script>
