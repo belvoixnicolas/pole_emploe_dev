@@ -16,13 +16,17 @@
     <head>
         <meta name="theme-color" content="white">
         <?php include './content/header_base.html' ?>
-        <title>dev</title>
+        <title>Mail</title>
     </head>
     <body id="mail">
     <?php echo notif_error($errors); ?>
         <!-- nav --> 
             <?php include './content/nav.php' ?>
         <!-- nav -->
+
+        <!-- SOUS-NAV -->
+            <?php include './content/sous_nav_mail.php' ?>
+        <!-- SOUS-NAV -->
 
         <!-- MAIN -->
             <?php 

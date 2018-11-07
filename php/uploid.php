@@ -11,7 +11,7 @@
                 $maxsize = 50000000;
                 $extensions = array('pdf', 'PDF', 'jpg', 'jpeg', 'JPG', 'JPEG', 'gif', 'GIF', 'png', 'PNG');
                 $chemin = 'src/mail/';
-                $evoi_nom_img = $dbh->prepare("INSERT INTO `resource` (`id`, `lien`, `id_mail`) VALUES (NULL, :nom, :id)");
+                $evoi_nom_img = $dbh->prepare("INSERT INTO `resource` (`id`, `original`, `lien`, `id_mail`) VALUES (NULL, :original, :nom, :id)");
                 if ($id == false) {
                     return false;
                 }
@@ -33,7 +33,8 @@
             if ($result) {
                 switch ($type) {
                     case 'mail':
-                        if ($evoi_nom_img->execute(array(':nom' => $nom, ':id' => $id))) {
+                        $nomoriginal = explode('.', $file['name'])[0];
+                        if ($evoi_nom_img->execute(array(':nom' => $nom, ':original' => $nomoriginal, ':id' => $id))) {
                             return true;
                         }else {
                             return false;

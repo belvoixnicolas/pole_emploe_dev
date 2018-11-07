@@ -79,6 +79,7 @@
                     border: 1px solid black;
                     border-radius: 1rem;
                     transition: .5s;
+                    text-decoration: none;
 
                     &:hover {
                         box-shadow: 4px 5px 12px 0px black;
@@ -90,6 +91,7 @@
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+                        text-align: center;
                     }
                 }
             }

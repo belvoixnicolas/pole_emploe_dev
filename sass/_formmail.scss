@@ -22,11 +22,44 @@
 
     label {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: minmax(1fr, max-content) min-content;
+        grid-template-rows: min-content;
         grid-auto-columns: auto;
         grid-template-rows: 1fr;
+        overflow: auto;
+        min-height: 18vh;
+
+        .listefichier {
+            grid-column: 1 / span 1;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: start;
+            align-items: center;
+            cursor: pointer;
+
+            li {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-end;
+                height: 15vh;
+                width: 15vw;
+                border: 1px solid black;
+                border-radius: 1rem;
+                margin: 0 1vw;
+                transition: .5s;
+
+                span {
+                    border-top: 1px solid black;
+                    padding: 1vh 1vw;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
         
         .add {
+            grid-column: 2 / span 1;
             display: inline-flex;
             flex-flow: column nowrap;
             align-items: center;

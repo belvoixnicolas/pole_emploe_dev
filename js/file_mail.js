@@ -9,6 +9,7 @@ jQuery(document).ready(function(){
         
         if (names.length != 0 && existe == 0) {
             $('.add').before('<ul class="listefichier"></ul>');
+            $('.add').css('display', 'none');
 
             var temp = 1000;
 
@@ -25,7 +26,7 @@ jQuery(document).ready(function(){
             }
         }else if (names.length != 0 && existe > 0) {
             $('.listefichier li').animate({opacity: '0'}, 'slow', function () {
-                $(this).remove();
+                $('.listefichier li').remove();
 
                 var temp = 1000;
 
@@ -43,7 +44,7 @@ jQuery(document).ready(function(){
             });
         }else {
             $('.listefichier').animate({opacity: '0'}, 'slow', function () {
-                $(this).remove();
+                $('.listefichier').remove();
             });
         }
     });

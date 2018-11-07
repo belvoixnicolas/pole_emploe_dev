@@ -98,7 +98,7 @@
                 </section>
 
                 <?php 
-                    $resources = $dbh->prepare('SELECT lien FROM resource WHERE id_mail = :idmail');
+                    $resources = $dbh->prepare('SELECT original, lien FROM resource WHERE id_mail = :idmail');
                     $resources->execute(array(
                         ':idmail' => $mail['idMail']
                     ));
@@ -107,13 +107,24 @@
                         <section class="piecejoin">
                             <ul>
                                 <?php
+
                                     $li = '';
                                     foreach ($resources as $row => $resource) {
+                                        $nomcript = explode('.', $resource['lien']);
+                                        $dernier = count($nomcript);
+                                        $extension = strtoupper($nomcript[--$dernier]);
+
+                                        if(preg_match('#iPhone#i', $_SERVER['HTTP_USER_AGENT']) || preg_match('#iPad#i', $_SERVER['HTTP_USER_AGENT'])){
+                                            $compatibiliter = "target=\"_blank\"";
+                                        }else {
+                                            $compatibiliter = "download=\"{$resource['original']}.{$extension}\"";
+                                        }
+
                                         $li .= "
                                             <li>
-                                                <a href=\"./src/mail/{$resource['lien']}\" target=\"_blank\">
+                                                <a class=\"{$extension}\" href=\"./src/mail/{$resource['lien']}\" {$compatibiliter}>
                                                     <span>
-                                                        {$resource['lien']}
+                                                        {$resource['original']}
                                                     </span>
                                                 </a>
                                             </li>

@@ -2,8 +2,8 @@
     require_once('./php/connect.php');
     require_once('./php/uploid.php');
 
-    function envoie_mail($sujet, $text, $idrecois) {
-        if ($sujet != '' && $text != '') {
+    function envoie_mail($sujet, $text='', $idrecois) {
+        if ($sujet != '' && $idrecois != '') {
             $dbh = connect();
             $envoie = $dbh->prepare('INSERT INTO `mail` (`id`, `sujet`, `text`, `date`, `id_usser`, `id_usser_recoi`) VALUES (NULL, :sujet, :text, :date, :idenvoie, :idrecoi)');
             
@@ -36,20 +36,20 @@
                         if ($er == 0) {
                             return true;
                         } else {
-                            return 'Un ou plusieur fichier n\'a pas étais envoyer';
+                            return false;
                         }
                         
                     }else {
-                        return 'Le mail n\'a pas étais envoyer';
+                        return false;
                     }
                 }else {
                     return true;
                 }
             }else {
-                return 'Le mail n\'a pas étais envoyer';
+                return false;
             }
         }else {
-            return 'Un champ n\'est pas reseigner';
+            return false;
         }
     }
 ?>
