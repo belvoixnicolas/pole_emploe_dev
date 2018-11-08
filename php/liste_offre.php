@@ -40,7 +40,7 @@
                                     {$offre['nom']}
                                 </a>
                             </p>
-                            <a href=\"https://www.google.com/maps/place/08000+{$ville}\" target=\"_blank\">
+                            <a href=\"https://www.google.com/maps/place/08000+{$ville}\" class=\"ville\" target=\"_blank\">
                                 {$ville}
                             </a>
                             <p class=\"description\">
@@ -59,12 +59,12 @@
             }
 
             if ($listeoffrehtml == '') {
-                return '<li class="error">Il n\'y a aucune offre</li>';
+                return '<li class="error"><spans>Il n\'y a aucune offre</span></li>';
             }else {
                 return $listeoffrehtml;
             }
         }else {
-            return '<li class="error">Il n\'y a aucune offre</li>';
+            return '<li class="error"><span>Il n\'y a aucune offre</span></li>';
         }
     }
 ?>

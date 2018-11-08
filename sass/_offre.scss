@@ -1,0 +1,120 @@
+#offre {
+    main {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-rows: max-content auto;
+        border: 1px solid black;
+        min-height: 70vh;
+
+        .recherche select {
+            display: block;
+            height: 5vh;
+            width: 90%;
+            margin: 2vh auto;
+            font-size: 2.5rem;
+        }
+
+        .resultat {
+            padding: 1%;
+
+            h2 {
+                margin-bottom: 3vh;
+                text-transform: capitalize;
+            }
+
+            ul {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: max-content;
+                grid-auto-rows: max-content;
+
+                li {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: repeat(4, max-content);
+                    row-gap: 1vh;
+                    column-gap: 1vw;
+                    padding: 2vh 0;
+                    border-bottom: 1px solid black; 
+
+                    &:last-child {
+                        border: none;
+                    }
+
+                    &:hover a {
+                        text-decoration: underline;
+                    }
+
+                    a {
+                        text-decoration: none;
+                    }
+
+                    h3 {
+                        grid-column: 1 / span 1;
+                        grid-row: 1 / span 1;
+                        justify-self: left;
+                        align-self: baseline;
+                    }
+
+                    .date {
+                        grid-column: 2 / span 1;
+                        grid-row: 1 / span 1;
+                        justify-self: right;
+                        align-self: flex-start;
+                        text-decoration: underline;
+                    }
+
+                    .entreprise {
+                        grid-column: 1 / span 1;
+                        grid-row: 2 / span 1;
+                        justify-self: left;
+                        align-self: baseline;
+                    }
+
+                    .ville {
+                        grid-column: 2 / span 1;
+                        grid-row: 2 / span 1;
+                        justify-self: center;
+                        align-self: baseline;
+                    }
+
+                    .description {
+                        grid-column: 1 / span 2;
+                        grid-row: 3 / span 1;
+                        justify-self: left;
+                        align-self: baseline;
+                    }
+
+                    .periode {
+                        grid-column: 1/ span 1;
+                        grid-row: 4 / span 1;
+                        justify-self: left;
+                        align-self: baseline;
+                    }
+
+                    button {
+                        grid-column: 2 / span 1;
+                        grid-row: 4 / span 1;
+                        justify-self: right;
+                        height: 5rem;
+                        width: 50%;
+                    }
+                }
+
+                .error {
+                    height: 52vh;
+
+                    span {
+                        display: block;
+                        grid-column: 1 / span 2;
+                        grid-row: 1 / -1;
+                        justify-self: center;
+                        align-self: stretch;
+                        font-size: 3rem;
+                        line-height: 48vh;
+                    }
+                }
+            }
+        }
+    }
+}
