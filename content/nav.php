@@ -5,24 +5,25 @@
         <ul>
             <?php if (isset($_SESSION['user']) && $_SESSION['user'] != NULL) { ?>
                 <li>
-                    <a href="#" class="job">
-                        <?php 
-                            if ($_SESSION['user']->get('role') == 1) { ?>
+                    <?php 
+                        if ($_SESSION['user']->get('role') == 1) { ?>
+                            <a href="./offre.php" class="job">
                                 <i class="fas fa-terminal"></i>
                                 <span>
                                     Chercher offre
                                 </span>
-                            <?php } elseif ($_SESSION['user']->get('role') == 2) { ?>
+                            </a>
+                        <?php } elseif ($_SESSION['user']->get('role') == 2) { ?>
+                            <a href="./emploie.php" class="job">
                                 <i class="fas fa-handshake"></i>
                                 <span>
                                     Chercher un développeur
                                 </span>
-                            <?php }else {
-                                echo 'erro';
-                            }
-                        ?>
-                        </span>
-                    </a>
+                            </a>
+                        <?php }else {
+                            echo 'erro';
+                        }
+                    ?>
                 </li>
                 <li>
                     <a href="./boite_mail.php" class="mail">

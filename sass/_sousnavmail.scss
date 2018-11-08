@@ -36,5 +36,11 @@
                 transition: .5s;
             }
         }
+
+        .focus {
+            i, span {
+                color: blue;
+            }
+        }
     }
 }

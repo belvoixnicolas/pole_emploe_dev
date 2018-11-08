@@ -1163,6 +1163,9 @@ main, header {
   height: 0;
   transition: 0.5s;
 }
+.sousnavmail ul .focus i, .sousnavmail ul .focus span {
+  color: blue;
+}
 
 #mail main .recherche {
   display: grid;
