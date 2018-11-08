@@ -1,4 +1,4 @@
-.sousnavmail {
+.sousnavmail, .sousnavoffre {
     z-index: inherit;
     position: sticky;
     position: -webkit-sticky;
@@ -40,6 +40,10 @@
         .focus {
             i, span {
                 color: blue;
+            }
+
+            span {
+                height: 2.5rem;
             }
         }
     }

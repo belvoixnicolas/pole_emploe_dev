@@ -1127,7 +1127,7 @@ main, header {
   margin-right: 1vw;
 }
 
-.sousnavmail {
+.sousnavmail, .sousnavoffre {
   z-index: inherit;
   position: sticky;
   position: -webkit-sticky;
@@ -1137,7 +1137,7 @@ main, header {
   margin: 0 auto 2vh;
   border: 1px solid black;
 }
-.sousnavmail ul {
+.sousnavmail ul, .sousnavoffre ul {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -1147,24 +1147,27 @@ main, header {
   margin: 0 auto;
   padding: 2vh 0;
 }
-.sousnavmail ul li a {
+.sousnavmail ul li a, .sousnavoffre ul li a {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
-.sousnavmail ul li a:hover span {
+.sousnavmail ul li a:hover span, .sousnavoffre ul li a:hover span {
   height: 2.5rem;
 }
-.sousnavmail ul li a span {
+.sousnavmail ul li a span, .sousnavoffre ul li a span {
   font-size: 2rem;
   overflow: hidden;
   height: 0;
   transition: 0.5s;
 }
-.sousnavmail ul .focus i, .sousnavmail ul .focus span {
+.sousnavmail ul .focus i, .sousnavmail ul .focus span, .sousnavoffre ul .focus i, .sousnavoffre ul .focus span {
   color: blue;
+}
+.sousnavmail ul .focus span, .sousnavoffre ul .focus span {
+  height: 2.5rem;
 }
 
 #mail main .recherche {

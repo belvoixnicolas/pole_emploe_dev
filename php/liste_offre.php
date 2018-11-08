@@ -58,7 +58,11 @@
                 }
             }
 
-            return $listeoffrehtml;
+            if ($listeoffrehtml == '') {
+                return '<li class="error">Il n\'y a aucune offre</li>';
+            }else {
+                return $listeoffrehtml;
+            }
         }else {
             return '<li class="error">Il n\'y a aucune offre</li>';
         }
