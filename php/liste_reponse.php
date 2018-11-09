@@ -4,7 +4,7 @@
     function liste_reponse ($id, $val=NULL) {
         $dbh = connect();
 
-        $sqlbase = 'SELECT entreprise.id_usser AS id, offre_emploie.date, titre, offre_emploie.description, temp, offre_emploie.id_entreprise, nom, ville, choix from postule INNER JOIN offre_emploie ON postule.id = offre_emploie.id INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id WHERE postule.id_usser = :id';
+        $sqlbase = 'SELECT offre_emploie.noter, entreprise.id_usser AS id, offre_emploie.date, titre, offre_emploie.description, temp, offre_emploie.id_entreprise, nom, ville, choix from postule INNER JOIN offre_emploie ON postule.id = offre_emploie.id INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id WHERE postule.id_usser = :id';
 
         if ($val != NULL) {
             $sql = $sqlbase;
@@ -43,13 +43,12 @@
 
                 if ($i == 0 && $condition != '') {
                     $sql .= ' AND' .$condition;
+                    ++$i;
                 }elseif ($i != 0 && $condition != '') {
                     $sql .= ' OR' . $condition;
                 }else {
                     $sql .= $condition;
                 }
-                
-                ++$i;
             }
 
             $req = $dbh->prepare($sql . ' ORDER BY postule.date DESC');
@@ -73,6 +72,27 @@
 
                 $datetime= explode('-', explode(' ', $reponse['date'])[0]);
                 $date = $datetime[2] . ' / ' . $datetime[1] . ' / ' . $datetime[0];
+                
+                if ($reponse['choix'] == 2) {
+                    if ($reponse['noter']) {
+                        $disable = 'disabled';
+                    } else {
+                        $disable = '';
+                    }
+                    
+
+                    $lien = "
+                        <button id=\"noter\" value=\"{$reponse['id']}\" {$disable}>
+                            Notter
+                        </button
+                    ";
+                }else {
+                    $lien = "
+                        <a class=\"btn\" href=\"./boite_mail.php?section=envoie&id={$reponse['id']}\"   target=\"_blanck\">
+                            Contact
+                        </a>
+                    ";
+                }
 
                 $reponseshtml .= "
                     <li class=\"rep{$reponse['choix']}\">
@@ -98,9 +118,7 @@
                             {$reponse['temp']}
                         </p>
 
-                        <a class=<\"btn\" href=\"./boite_mail.php?section=envoie&id={$reponse['id']}\" target=\"_black\">
-                            Contact
-                        </a>
+                        {$lien}
                     </li>
                 ";
             }
