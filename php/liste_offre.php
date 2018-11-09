@@ -13,7 +13,7 @@
             $sqlville = '';
         }
 
-        $sql = 'SELECT postule.id_usser AS verif, offre_emploie.id AS idoffre, entreprise.id_usser AS id, titre, offre_emploie.description, temp, date, nom, ville FROM offre_emploie INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id LEFT JOIN postule ON offre_emploie.id = postule.id WHERE offre_emploie.id_usser IS NULL' . $sqlville . ' ORDER BY offre_emploie.date DESC';
+        $sql = 'SELECT postule.id_usser AS verif, offre_emploie.id AS idoffre, entreprise.id_usser AS id, titre, offre_emploie.description, temp, offre_emploie.date, nom, ville FROM offre_emploie INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id LEFT JOIN postule ON offre_emploie.id = postule.id WHERE offre_emploie.id_usser IS NULL' . $sqlville . ' ORDER BY offre_emploie.date DESC';
 
         $listeoffre = $dbh->prepare($sql);
 
@@ -23,21 +23,26 @@
             $listeoffrehtml = '';
 
             foreach ($listeoffre as $row => $offre) {
-                $ville = mb_strtolower($offre['ville']);
+                $titre = ucfirst($offre['titre']);
+                $nom = ucfirst($offre['nom']);
+                $ville = ucfirst(mb_strtolower($offre['ville']));
+
+                $datetime= explode('-', explode(' ', $offre['date'])[0]);
+                $date = $datetime[2] . ' / ' . $datetime[1] . ' / ' . $datetime[0];
 
                 if ($id != $offre['verif']) {
                     $listeoffrehtml .= "
                         <li>
                             <h3>
-                                {$offre['titre']}
+                                {$titre}
                             </h3>
                             <p class=\"date\">
-                                {$offre['date']}
+                                {$date}
                             </p>
                             <p class=\"entreprise\">
                                 Entreprise: 
                                 <a href=\"./profil.php?id={$offre['id']}\" target=\"_blank\">
-                                    {$offre['nom']}
+                                    {$nom}
                                 </a>
                             </p>
                             <a href=\"https://www.google.com/maps/place/08000+{$ville}\" class=\"ville\" target=\"_blank\">

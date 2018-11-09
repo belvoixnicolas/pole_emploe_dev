@@ -11,12 +11,8 @@
                 $page = 'recherche';
                 break;
 
-            case 'offre_attente':
-                $page = 'attend';
-                break;
-
-            case 'offre_accepter':
-                $page = 'accepter';
+            case 'offre_reponse':
+                $page = 'reponse';
                 break;
             
             default:
@@ -41,19 +37,11 @@
                 </span>
             </a>
         </li>
-        <li <?php echo section('attend') ?>>
-            <a href="./offre_attente.php">
+        <li <?php echo section('reponse') ?>>
+            <a href="./offre_reponse.php">
                 <i class="far fa-clock"></i>
                 <span>
-                    On attente
-                </span>
-            </a>
-        </li>
-        <li <?php echo section('accepter') ?>>
-            <a href="./offre_accepter.php">
-                <i class="far fa-check-circle"></i>
-                <span>
-                    Accepter
+                    Réponse
                 </span>
             </a>
         </li>
