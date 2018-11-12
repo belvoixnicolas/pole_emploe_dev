@@ -23,7 +23,7 @@
         if ($page == $lien) {
             return 'class="focus"';
         }else {
-            return 'ok';
+            return '';
         } 
     }
 ?>

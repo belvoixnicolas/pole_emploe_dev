@@ -54,6 +54,7 @@
         </main>
 
         <script src="./js/ajax/filtre_offre_rep.js"></script>
+        <script src="./js/ajax/noter.js"></script>
         
         <!-- FOOTER -->
             <?php include './content/footer.html' ?>
