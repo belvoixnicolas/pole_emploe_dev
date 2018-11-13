@@ -1,26 +1,44 @@
-#offre {
+#offreresultat {
     main {
-        display: grid;
-        grid-auto-columns: 1fr;
-        grid-template-rows: max-content auto;
         border: 1px solid black;
         min-height: 70vh;
 
-        .recherche select {
-            display: block;
-            height: 5vh;
-            width: 90%;
-            margin: 2vh auto;
-            font-size: 2.5rem;
+        .optien {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid black;
+            padding: 1%;
+            height: 10vh;
+
+            input {
+                display: none;
+            }
+
+            label {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                padding: 1%;
+                margin: 0 10vw;
+                cursor: pointer;
+
+                &:hover span{
+                    height: 2.5rem;
+                }
+
+                span {
+                    font-size: 2rem;
+                    overflow: hidden;
+                    height: 0;
+                    transition: .5s;
+                }
+            }
         }
 
         .resultat {
             padding: 1%;
-
-            h2 {
-                margin-bottom: 3vh;
-                text-transform: capitalize;
-            }
 
             ul {
                 display: grid;
@@ -35,7 +53,7 @@
                     row-gap: 1vh;
                     column-gap: 1vw;
                     padding: 2vh 0;
-                    border-bottom: 1px solid black; 
+                    border-bottom: 1px solid black;
 
                     &:last-child {
                         border: none;
@@ -93,12 +111,20 @@
                     }
 
                     #noter {
-                        grid-column: 1 / span 2;
+                        grid-column: 2 / span 1;
                         grid-row: 4 / span 1;
                         justify-self: right;
                         height: 5rem;
                         width: 50%;
-                        //hu
+
+                        &[disabled] {
+                            background: blue;
+                        }
+                    }
+
+
+                    .btn {
+                        @extend #noter;
                     }
                 }
 
@@ -115,6 +141,66 @@
                         line-height: 48vh;
                     }
                 }
+            }
+        }
+    }
+
+    #noterform {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: max-content repeat(3, 1fr);
+            row-gap: 2vh;
+            height: 50vh;
+            width: 50vw;
+            border: 1px solid black;
+            padding: 1%;
+            background-color: white;
+
+            #annuler {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 1;
+                justify-self: right;
+                align-self: start;
+            }
+
+            h2 {
+                grid-column: 1 / span 2;
+                grid-row: 1 / span 1;
+                justify-self: left;
+                align-self: center;
+            }
+
+            label {
+                grid-column: 1 / span 2;
+                grid-row: 2 / span 1;
+                justify-self: center;
+                align-self: end;
+            }
+
+            textarea {
+                grid-column: 1 / span 2;
+                grid-row: 3 / span 1;
+                justify-self: center;
+                align-self: start;
+            }
+
+            #envoyer {
+                grid-column: 1 / span 2;
+                grid-row: 4 / span 1;
+                justify-self: center;
+                align-self: end;
             }
         }
     }

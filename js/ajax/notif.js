@@ -39,7 +39,12 @@ jQuery(document).ready(function(){
                     }
                 }else {
                     $('nav .profil i').removeClass('animated infinite pulse').removeAttr('style');
-                    $('nav .mail').attr('href', './profil.php?id=' + int);
+
+                    let model= './profil.php?id=' + int;
+
+                    if($('nav .profil').attr('href') != model) {
+                        $('nav .profil').attr('href', './profil.php?id=' + int);
+                    }
                 }
             }
         );

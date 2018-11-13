@@ -32,16 +32,19 @@
             <section class="optien">
                 <label for="accepter">
                     <i class="far fa-check-circle"></i>
+                    <span>Accepter</span>
                 </label>
                 <input type="checkbox" name="accepter" id="accepter">
 
                 <label for="attente">
                     <i class="far fa-dot-circle"></i>
+                    <span>En attente</span>
                 </label>
                 <input type="checkbox" name="attente" id="attente">
 
                 <label for="refu">
                     <i class="far fa-times-circle"></i>
+                    <span>refuser</span>
                 </label>
                 <input type="checkbox" name="refu" id="refu">
             </section>
