@@ -22,6 +22,25 @@ jQuery(document).ready(function(){
                     $('nav .mail i').removeClass('animated infinite pulse').removeAttr('style');
                     $('nav .mail').attr('href', './boite_mail.php');
                 }
+
+                if (data[2] > 0) {
+                    let url = window.location.pathname;
+                    url = url.split('/');
+                    let i = url.length;
+
+                    let fichier = url[--i];
+
+                    $('nav .profil i').css('color', 'red').addClass('animated infinite pulse');
+
+                    if (fichier == 'profil.php') {
+                        location.reload();
+                    }else {
+                        $('nav .profil').attr('href', './profil.php?id=' + int + '#commentaire');
+                    }
+                }else {
+                    $('nav .profil i').removeClass('animated infinite pulse').removeAttr('style');
+                    $('nav .mail').attr('href', './profil.php?id=' + int);
+                }
             }
         );
     }

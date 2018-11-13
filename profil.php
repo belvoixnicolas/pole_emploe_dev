@@ -18,6 +18,12 @@
 
     $dbh = connect();
 
+    $vuenotif = $dbh->prepare('UPDATE notification SET vu = "1" WHERE type = "profil" AND id_usser = :iduser');
+
+    $vuenotif->execute(array(
+        ':iduser' => $_SESSION['user']->get('id')
+    ));
+
     $user = $dbh->prepare('SELECT nom, prenom, derniere_connexion, img, verif, role, ville FROM usser INNER JOIN ville ON usser.id_ville = ville.id WHERE usser.id = :id');
     $user->execute(array(':id' => $_GET['id']));
 
@@ -167,7 +173,7 @@
             <!-- ENTREPRISE SI PAT -->
 
             <!-- COMMENTAIRE -->
-            <article class="commentaire">
+            <article class="commentaire" id="commentaire">
                 <h3>Commentaire</h3>
 
                 <ul>

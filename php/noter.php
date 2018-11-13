@@ -1,7 +1,7 @@
 <?php
-require_once('./php/connect.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/connect.php');
 
-    function noter($note, $comment=false, $par, $pour) {
+    function noter($note, $par, $pour, $comment=false) {
         if ($note != '' && $par > 0 && $pour >0) {
             $dbh = connect();
             $noter = $dbh->prepare('INSERT INTO `note` (`id`, `note`, `description`, `date`, `noter_par`, `id_usser`) VALUES (NULL, :note, :comment, :date, :par, :pour)');
@@ -15,11 +15,13 @@ require_once('./php/connect.php');
 
                 $noter->execute(array(
                     ':note' => $note,
-                    ':comment' => $comment,
+                    ':comment' => nl2br(htmlspecialchars($comment)),
                     ':date' => $date,
                     ':par' => $par,
                     ':pour' => $pour
                 ));
+
+                return true;
             }else {
                 return false;
             }

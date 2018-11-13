@@ -4,7 +4,7 @@
     function liste_reponse ($id, $val=NULL) {
         $dbh = connect();
 
-        $sqlbase = 'SELECT offre_emploie.noter, entreprise.id_usser AS id, offre_emploie.date, titre, offre_emploie.description, temp, offre_emploie.id_entreprise, nom, ville, choix from postule INNER JOIN offre_emploie ON postule.id = offre_emploie.id INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id WHERE postule.id_usser = :id';
+        $sqlbase = 'SELECT offre_emploie.id AS idoffre, offre_emploie.noter, entreprise.id_usser AS id, offre_emploie.date, titre, offre_emploie.description, temp, offre_emploie.id_entreprise, nom, ville, choix from postule INNER JOIN offre_emploie ON postule.id = offre_emploie.id INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id WHERE postule.id_usser = :id';
 
         if ($val != NULL) {
             $sql = $sqlbase;
@@ -82,7 +82,7 @@
                     
 
                     $lien = "
-                        <button id=\"noter\" value=\"{$reponse['id']}\" {$disable}>
+                        <button id=\"noter\" value=\"{$reponse['idoffre']}\" {$disable}>
                             Notter
                         </button
                     ";
