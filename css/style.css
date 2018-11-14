@@ -1606,4 +1606,19 @@ main, header {
   margin: 2vh 0;
 }
 
+#emploie main {
+  border: 1px solid black;
+}
+#emploie main section {
+  padding: 1%;
+  min-height: 70vh;
+}
+#emploie main section li {
+  padding: 3vh 0;
+  border-bottom: 1px solid black;
+}
+#emploie main section li:last-child {
+  border: none;
+}
+
 /*# sourceMappingURL=style.css.map */

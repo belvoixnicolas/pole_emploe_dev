@@ -1,0 +1,19 @@
+#emploie {
+    main {
+        border: 1px solid black;
+
+        section {
+            padding: 1%; 
+            min-height: 70vh;
+
+            li {
+                padding: 3vh 0;
+                border-bottom: 1px solid black;
+
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
+    }
+}

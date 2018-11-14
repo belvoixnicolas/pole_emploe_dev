@@ -5,6 +5,7 @@
     require_once('./php/connect.php');
     require_once('./php/secu_acces.php');
     require_once('./php/notif_error.php');
+    require_once('./php/liste_emploie.php');
 
     autoris_acces(2);
 
@@ -20,9 +21,9 @@
     <head>
         <meta name="theme-color" content="white">
         <?php include './content/header_base.html' ?>
-        <title>Offre</title>
+        <title>Emploie</title>
     </head>
-    <body id="offre">
+    <body id="emploie">
         <?php echo notif_error($errors); ?>
 
         <!-- nav --> 
@@ -32,5 +33,17 @@
         <!-- SOUS-NAV -->
             <?php include './content/sous_nav_emploie.php' ?>
         <!-- SOUS-NAV -->
+
+        <main>
+            <section>
+                <ul>
+                    <?php echo liste_emploie($_SESSION['user']->get('id')); ?>
+                </ul>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+            <?php include './content/footer.html' ?>
+        <!-- FOOTER -->
     </body>
   </html>
