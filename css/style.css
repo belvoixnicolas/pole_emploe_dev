@@ -1127,7 +1127,7 @@ main, header {
   margin-right: 1vw;
 }
 
-.sousnavmail, .sousnavoffre {
+.sousnavmail, .sousnavoffre, .sousnavemploie {
   z-index: inherit;
   position: sticky;
   position: -webkit-sticky;
@@ -1137,7 +1137,7 @@ main, header {
   margin: 0 auto 2vh;
   border: 1px solid black;
 }
-.sousnavmail ul, .sousnavoffre ul {
+.sousnavmail ul, .sousnavoffre ul, .sousnavemploie ul {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -1147,26 +1147,26 @@ main, header {
   margin: 0 auto;
   padding: 2vh 0;
 }
-.sousnavmail ul li a, .sousnavoffre ul li a {
+.sousnavmail ul li a, .sousnavoffre ul li a, .sousnavemploie ul li a {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
-.sousnavmail ul li a:hover span, .sousnavoffre ul li a:hover span {
+.sousnavmail ul li a:hover span, .sousnavoffre ul li a:hover span, .sousnavemploie ul li a:hover span {
   height: 2.5rem;
 }
-.sousnavmail ul li a span, .sousnavoffre ul li a span {
+.sousnavmail ul li a span, .sousnavoffre ul li a span, .sousnavemploie ul li a span {
   font-size: 2rem;
   overflow: hidden;
   height: 0;
   transition: 0.5s;
 }
-.sousnavmail ul .focus i, .sousnavmail ul .focus span, .sousnavoffre ul .focus i, .sousnavoffre ul .focus span {
+.sousnavmail ul .focus i, .sousnavmail ul .focus span, .sousnavoffre ul .focus i, .sousnavoffre ul .focus span, .sousnavemploie ul .focus i, .sousnavemploie ul .focus span {
   color: blue;
 }
-.sousnavmail ul .focus span, .sousnavoffre ul .focus span {
+.sousnavmail ul .focus span, .sousnavoffre ul .focus span, .sousnavemploie ul .focus span {
   height: 2.5rem;
 }
 
@@ -1379,8 +1379,8 @@ main, header {
   justify-self: left;
   align-self: baseline;
 }
-#offre main .resultat ul li #noter, #offre #offreresultat main .resultat ul li .btn, #offreresultat #offre main .resultat ul li .btn {
-  grid-column: 1/span 2;
+#offre main .resultat ul li button {
+  grid-column: 2/span 1;
   grid-row: 4/span 1;
   justify-self: right;
   height: 5rem;
@@ -1409,6 +1409,18 @@ main, header {
 
 .refu i, .refu span {
   color: #ff5656;
+}
+
+.rep0 {
+  background: blue;
+}
+
+.rep2 {
+  background: green;
+}
+
+.rep1 {
+  background: red;
 }
 
 #offreresultat main {
@@ -1545,7 +1557,7 @@ main, header {
 #offreresultat #noterform div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content repeat(3, 1fr);
+  grid-template-rows: max-content auto 1fr max-content;
   row-gap: 2vh;
   height: 50vh;
   width: 50vw;
@@ -1558,6 +1570,8 @@ main, header {
   grid-row: 1/span 1;
   justify-self: right;
   align-self: start;
+  background: none;
+  border: none;
 }
 #offreresultat #noterform div h2 {
   grid-column: 1/span 2;
@@ -1565,23 +1579,31 @@ main, header {
   justify-self: left;
   align-self: center;
 }
-#offreresultat #noterform div label {
+#offreresultat #noterform div input {
   grid-column: 1/span 2;
   grid-row: 2/span 1;
   justify-self: center;
   align-self: end;
+  height: 3vh;
+  width: 80%;
+  margin-top: 2vh;
 }
 #offreresultat #noterform div textarea {
   grid-column: 1/span 2;
   grid-row: 3/span 1;
   justify-self: center;
   align-self: start;
+  height: 100%;
+  width: 80%;
 }
 #offreresultat #noterform div #envoyer {
   grid-column: 1/span 2;
   grid-row: 4/span 1;
   justify-self: center;
   align-self: end;
+  height: 5vh;
+  width: 50%;
+  margin: 2vh 0;
 }
 
 /*# sourceMappingURL=style.css.map */

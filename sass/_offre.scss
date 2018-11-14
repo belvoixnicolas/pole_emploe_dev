@@ -92,13 +92,12 @@
                         align-self: baseline;
                     }
 
-                    #noter {
-                        grid-column: 1 / span 2;
+                    button {
+                        grid-column: 2 / span 1;
                         grid-row: 4 / span 1;
                         justify-self: right;
                         height: 5rem;
                         width: 50%;
-                        //hu
                     }
                 }
 

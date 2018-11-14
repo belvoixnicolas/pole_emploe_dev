@@ -160,7 +160,7 @@
         div {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: max-content repeat(3, 1fr);
+            grid-template-rows: max-content auto 1fr max-content;
             row-gap: 2vh;
             height: 50vh;
             width: 50vw;
@@ -173,6 +173,8 @@
                 grid-row: 1 / span 1;
                 justify-self: right;
                 align-self: start;
+                background: none;
+                border: none;
             }
 
             h2 {
@@ -182,11 +184,14 @@
                 align-self: center;
             }
 
-            label {
+            input {
                 grid-column: 1 / span 2;
                 grid-row: 2 / span 1;
                 justify-self: center;
                 align-self: end;
+                height: 3vh;
+                width: 80%;
+                margin-top: 2vh;
             }
 
             textarea {
@@ -194,6 +199,8 @@
                 grid-row: 3 / span 1;
                 justify-self: center;
                 align-self: start;
+                height: 100%;
+                width: 80%;
             }
 
             #envoyer {
@@ -201,6 +208,9 @@
                 grid-row: 4 / span 1;
                 justify-self: center;
                 align-self: end;
+                height: 5vh;
+                width: 50%;
+                margin: 2vh 0;
             }
         }
     }
