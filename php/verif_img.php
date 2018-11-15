@@ -4,6 +4,8 @@ function verif_img($img) {
         return 'default.jpg';
     }elseif (file_exists('./src/profil/' . $img) == false) {
         return 'default.jpg';
+    }else {
+        return $img;
     }
 }
 ?>
