@@ -9,6 +9,10 @@
 
     autoris_acces(1);
 
+    $dbh = connect();
+    $vue = $dbh->prepare('UPDATE notification SET vu = 1 WHERE id_usser = :id');
+    $vue->execute(array(':id' => $_SESSION['user']->get('id')));
+
     $_SESSION['iduser'] = $_SESSION['user']->get('id');
 ?>
 <!DOCTYPE HTML>

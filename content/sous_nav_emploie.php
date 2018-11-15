@@ -14,6 +14,10 @@
             case 'emploie_pris':
                 $page = 'pris';
                 break;
+
+            case 'emploie_cree':
+                $page = 'cree';
+                break;
             
             default:
                 $page = '';
@@ -31,7 +35,7 @@
     <ul>
         <li <?php echo section('emploie') ?>>
             <a href="./emploie.php">
-                <i class="fas fa-building"></i>
+                <i class="fas fa-clipboard"></i>
                 <span>
                     Mes offre
                 </span>
@@ -43,6 +47,15 @@
                 <i class="fas fa-user-check"></i>
                 <span>
                     Machin
+                </span>
+            </a>
+        </li>
+
+        <li <?php echo section('cree') ?>>
+            <a href="./emploie_cree.php">
+                <i class="fas fa-plus"></i>
+                <span>
+                    Crée une offre
                 </span>
             </a>
         </li>

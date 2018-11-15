@@ -29,7 +29,7 @@ class offre {
 
             $ajout->execute(array(
                 ':titre' => $titre,
-                ':text' => $descript,
+                ':text' => nl2br(htmlspecialchars($descript)),
                 ':temp' => $temp,
                 ':date' => $date,
                 ':entreprise' => $id_entre[0],

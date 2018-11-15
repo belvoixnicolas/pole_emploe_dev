@@ -41,6 +41,8 @@
                 </ul>
             </section>
         </main>
+        <script src="./js/ajax/sup_offre.js"></script>
+        <script src="./js/ajax/choix_offre.js"></script>
 
         <!-- FOOTER -->
             <?php include './content/footer.html' ?>

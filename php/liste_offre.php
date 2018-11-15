@@ -13,7 +13,7 @@
             $sqlville = '';
         }
 
-        $sql = 'SELECT postule.id_usser AS verif, offre_emploie.id AS idoffre, entreprise.id_usser AS id, titre, offre_emploie.description, temp, offre_emploie.date, nom, ville FROM offre_emploie INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id LEFT JOIN postule ON offre_emploie.id = postule.id WHERE offre_emploie.id_usser IS NULL' . $sqlville . ' ORDER BY offre_emploie.date DESC';
+        $sql = 'SELECT postule.id_usser AS verif, offre_emploie.id AS idoffre, entreprise.id_usser AS id, titre, offre_emploie.description, temp, offre_emploie.date, nom, ville FROM offre_emploie INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id LEFT JOIN postule ON offre_emploie.id = postule.id WHERE offre_emploie.id_usser IS NULL' . $sqlville . ' AND offre_emploie.sup = 0 ORDER BY offre_emploie.date DESC';
 
         $listeoffre = $dbh->prepare($sql);
 
