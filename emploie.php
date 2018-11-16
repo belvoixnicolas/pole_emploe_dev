@@ -14,7 +14,7 @@
     $req = $dbh->prepare("UPDATE notification SET vu = '1' WHERE type = 'job' AND id_usser = :id");
     $req->execute(array(':id' => $_SESSION['user']->get('id')));
 
-    //$_SESSION['iduser'] = $_SESSION['user']->get('id');
+    $_SESSION['iduser'] = $_SESSION['user']->get('id');
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
@@ -35,7 +35,7 @@
         <!-- SOUS-NAV -->
 
         <main>
-            <section>
+            <section class="liste">
                 <ul>
                     <?php echo liste_emploie($_SESSION['user']->get('id')); ?>
                 </ul>

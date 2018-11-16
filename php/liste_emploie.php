@@ -51,7 +51,7 @@
 
                 return $listehtml;
             }else {
-                return '<li class="error">Il n\y a aucune offre on cours</li>';
+                return '<li class="error">Il n\'y a aucune offre on cours</li>';
             }
         }else {
             return '<li class="error">Une erreur c\'est produit</li>';
