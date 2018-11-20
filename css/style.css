@@ -652,13 +652,13 @@ main, header {
 #profil main .identite .photo .note span {
   font-size: inherit;
 }
-#profil main .identite .nom {
+#profil main .identite .nom, #profil #emploie main .identite #choix div ul li .ident .prenom, #emploie #profil main .identite #choix div ul li .ident .prenom, #profil #emploie main #choix div ul li .ident .identite .prenom, #emploie #profil main #choix div ul li .ident .identite .prenom {
   grid-column: 1/span 2;
   grid-row: 2/span 1;
   margin: 0 auto;
   min-width: 20%;
 }
-#profil main .identite .nom h1 {
+#profil main .identite .nom h1, #profil #emploie main .identite #choix div ul li .ident .prenom h1, #emploie #profil main .identite #choix div ul li .ident .prenom h1, #profil #emploie main #choix div ul li .ident .identite .prenom h1, #emploie #profil main #choix div ul li .ident .identite .prenom h1 {
   text-align: center;
   text-transform: capitalize;
 }
@@ -701,7 +701,7 @@ main, header {
   grid-column: 1/span 1;
   grid-row: 1/span 1;
 }
-#profil main .commentaire ul li .nom {
+#profil main .commentaire ul li .nom, #profil #emploie main .commentaire #choix div ul li .ident .prenom, #emploie #profil main .commentaire #choix div ul li .ident .prenom, #profil #emploie main #choix div .commentaire ul li .ident .prenom, #emploie #profil main #choix div .commentaire ul li .ident .prenom {
   grid-column: 2/span 1;
   grid-row: 1/span 1;
   align-self: center;
@@ -1243,7 +1243,7 @@ main, header {
 #mail main .recherche .resultat div .dev li a div .ville::first-letter, #mail main .recherche .resultat div .pat li a div .ville::first-letter {
   text-transform: uppercase;
 }
-#mail main .recherche .resultat div .dev li a div .nom, #mail main .recherche .resultat div .pat li a div .nom {
+#mail main .recherche .resultat div .dev li a div .nom, #mail #emploie main .recherche .resultat #choix div .dev ul li a div .ident .prenom, #emploie #mail main .recherche .resultat #choix div .dev ul li a div .ident .prenom, #mail #emploie main #choix .recherche .resultat div .dev ul li a div .ident .prenom, #emploie #mail main #choix .recherche .resultat div .dev ul li a div .ident .prenom, #mail #emploie main .recherche .resultat #choix div ul .dev li a div .ident .prenom, #emploie #mail main .recherche .resultat #choix div ul .dev li a div .ident .prenom, #mail #emploie main #choix .recherche .resultat div ul .dev li a div .ident .prenom, #emploie #mail main #choix .recherche .resultat div ul .dev li a div .ident .prenom, #mail #emploie main .recherche .resultat #choix div .dev ul li .ident a div .prenom, #emploie #mail main .recherche .resultat #choix div .dev ul li .ident a div .prenom, #mail #emploie main #choix .recherche .resultat div .dev ul li .ident a div .prenom, #emploie #mail main #choix .recherche .resultat div .dev ul li .ident a div .prenom, #mail #emploie main .recherche .resultat #choix div ul .dev li .ident a div .prenom, #emploie #mail main .recherche .resultat #choix div ul .dev li .ident a div .prenom, #mail #emploie main #choix .recherche .resultat div ul .dev li .ident a div .prenom, #emploie #mail main #choix .recherche .resultat div ul .dev li .ident a div .prenom, #mail main .recherche .resultat div .pat li a div .nom, #mail #emploie main .recherche .resultat #choix div .pat ul li a div .ident .prenom, #emploie #mail main .recherche .resultat #choix div .pat ul li a div .ident .prenom, #mail #emploie main #choix .recherche .resultat div .pat ul li a div .ident .prenom, #emploie #mail main #choix .recherche .resultat div .pat ul li a div .ident .prenom, #mail #emploie main .recherche .resultat #choix div ul .pat li a div .ident .prenom, #emploie #mail main .recherche .resultat #choix div ul .pat li a div .ident .prenom, #mail #emploie main #choix .recherche .resultat div ul .pat li a div .ident .prenom, #emploie #mail main #choix .recherche .resultat div ul .pat li a div .ident .prenom, #mail #emploie main .recherche .resultat #choix div .pat ul li .ident a div .prenom, #emploie #mail main .recherche .resultat #choix div .pat ul li .ident a div .prenom, #mail #emploie main #choix .recherche .resultat div .pat ul li .ident a div .prenom, #emploie #mail main #choix .recherche .resultat div .pat ul li .ident a div .prenom, #mail #emploie main .recherche .resultat #choix div ul .pat li .ident a div .prenom, #emploie #mail main .recherche .resultat #choix div ul .pat li .ident a div .prenom, #mail #emploie main #choix .recherche .resultat div ul .pat li .ident a div .prenom, #emploie #mail main #choix .recherche .resultat div ul .pat li .ident a div .prenom {
   grid-row: 2/span 1;
   grid-column: 1/span 2;
   justify-self: center;
@@ -1659,7 +1659,7 @@ main, header {
   justify-self: center;
   align-self: center;
 }
-#emploie main .liste li div .animated {
+#emploie main .liste li div p {
   position: absolute;
   right: -5px;
   top: -5px;
@@ -1667,6 +1667,134 @@ main, header {
   padding: 1ch;
   border-radius: 20px;
   font-size: 1rem;
+}
+#emploie main #choix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background: #00000080;
+}
+#emploie main #choix div {
+  display: grid;
+  grid-auto-columns: rapeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+  row-gap: 2vh;
+  background: white;
+  border: 1px solid black;
+  padding: 1vh 1vw;
+  max-height: 80vh;
+  width: 50vw;
+}
+#emploie main #choix div h3 {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+  align-self: center;
+}
+#emploie main #choix div .annul {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  justify-self: right;
+  align-self: start;
+  background: none;
+  border: none;
+}
+#emploie main #choix div ul {
+  grid-column: 1/span 2;
+  grid-row: 2/span 1;
+  overflow-y: auto;
+}
+#emploie main #choix div ul li {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: max-content auto;
+  row-gap: 2vh;
+  border-bottom: 1px solid black;
+  padding: 1vh 1vw;
+}
+#emploie main #choix div ul li:last-child {
+  border: none;
+}
+#emploie main #choix div ul li:hover .ident {
+  text-decoration: underline;
+}
+#emploie main #choix div ul li .ident {
+  grid-column: 1/span 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: max-content min-content;
+  row-gap: 1vh;
+  column-gap: 0.5vw;
+  text-decoration: none;
+}
+#emploie main #choix div ul li .ident img {
+  grid-column: 1/span 2;
+  justify-self: center;
+  align-self: center;
+  height: 17vh;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+#emploie main #choix div ul li .ident .nom, #emploie main #choix div ul li .ident .prenom {
+  justify-self: right;
+  align-self: center;
+}
+#emploie main #choix div ul li .ident .prenom {
+  justify-self: left;
+}
+#emploie main #choix div ul li .non, #emploie main #choix div ul li .oui, #emploie main #choix #suprimer div ul li .non, #emploie main #suprimer #choix div ul li .non, #emploie main #suprimer #choix div ul li .btn, #emploie main #choix #suprimer div ul li .btn, #emploie main #suprimer #choix div ul li .oui, #emploie main #choix #suprimer div ul li .oui, #emploie main #choix div ul li .btn {
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+  align-self: center;
+  justify-self: center;
+}
+#emploie main #choix div ul li .btn {
+  grid-column: 2/span 1;
+  text-decoration: none;
+}
+#emploie main #choix div ul li .oui, #emploie main #choix #suprimer div ul li .non, #emploie main #suprimer #choix div ul li .non, #emploie main #suprimer #choix div ul li .btn, #emploie main #choix #suprimer div ul li .btn, #emploie main #suprimer #choix div ul li .oui, #emploie main #choix #suprimer div ul li .oui {
+  grid-column: 3/span 1;
+}
+#emploie main #choix div ul .error {
+  display: inherit;
+  text-align: center;
+}
+#emploie main #suprimer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background: #00000080;
+}
+#emploie main #suprimer div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background: white;
+  height: 20vh;
+  width: 50vw;
+  border: 1px solid black;
+  padding: 1vh 1vw;
+}
+#emploie main #suprimer div p {
+  grid-column: 1/span 2;
+  grid-row: 1/span 1;
+  justify-self: center;
+  align-self: center;
+}
+#emploie main #suprimer div .oui, #emploie main #suprimer div .non, #emploie main #suprimer #choix div ul li .btn, #emploie main #choix #suprimer div ul li .btn, #emploie main #suprimer #choix div ul li .oui, #emploie main #choix #suprimer div ul li .oui, #emploie main #suprimer #choix div ul li .non, #emploie main #choix #suprimer div ul li .non {
+  justify-self: center;
+  align-self: center;
 }
 
 /*# sourceMappingURL=style.css.map */
