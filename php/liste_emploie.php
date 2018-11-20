@@ -35,7 +35,7 @@
                             <h2>{$titre}</h2>
                             <span class=\"date\">{$date}</span>
                             <p>{$offre['description']}</p>
-                            <span clas=\"temp\">{$offre['temp']}</span>
+                            <span class=\"temp\">{$offre['temp']}</span>
                             <button class=\"sup\" value=\"{$offre['id']}\">
                                 Suprimer
                             </button>
