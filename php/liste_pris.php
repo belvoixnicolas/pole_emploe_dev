@@ -1,10 +1,11 @@
 <?php 
     require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/connect.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/verif_img.php');
 
     function liste_pris($id) {
         $dbh = connect();
 
-        $liste = $dbh->prepare('SELECT offre_emploie.id AS idoffre, offre_emploie.titre, offre_emploie.temp, offre_emploie.date, usser.id AS iduser, usser.nom, usser.prenom, usser.img FROM offre_emploie INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN usser ON offre_emploie.id_usser = usser.id WHERE offre_emploie.id_usser IS NOT NULL AND entreprise.id_usser = :id');
+        $liste = $dbh->prepare('SELECT offre_emploie.id AS idoffre, offre_emploie.titre, offre_emploie.temp, offre_emploie.date, offre_emploie.noter_dev, usser.id AS iduser, usser.nom, usser.prenom, usser.img FROM offre_emploie INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN usser ON offre_emploie.id_usser = usser.id WHERE offre_emploie.id_usser IS NOT NULL AND entreprise.id_usser = :id');
 
         $liste->execute(array(
             ':id' => $id
@@ -14,23 +15,40 @@
             $listeHTML = '';
 
             foreach ($liste as $key => $projetv) {
+                $titre = ucfirst($projetv['titre']);
+                $datetime= explode('-', explode(' ', $projetv['date'])[0]);
+                $date = $datetime[2] . ' / ' . $datetime[1] . ' / ' . $datetime[0];
+                $img = verif_img($projetv['img']);
+                $nom = ucfirst($projetv['nom']);
+                $prenom = ucfirst($projetv['prenom']);
+
+                if ($projetv['noter_dev'] == 1) {
+                    $disa = 'disabled';
+                } else {
+                    $disa = '';
+                }
+                
+
                 $listeHTML .= "
                     <li>
                         <h2>
-                            {$projetv['titre']}
+                            {$titre}
                         </h2>
                         <span class=\"date\">
-                            {$projetv['date']}
+                            {$date}
                         </span>
                         <a class=\"ident\" href=\"./profil.php?id={$projetv['iduser']}\" target=\"_blanck\">
-                            <img src=\"./src/profil/{$projetv['img']}\" alt=\"Photo de {$projetv['nom']} {$projetv['prenom']}\" />
+                            <img src=\"./src/profil/{$img}\" alt=\"Photo de {$projetv['nom']} {$projetv['prenom']}\" />
                             <p>
-                                {$projetv['nom']} {$projetv['prenom']}
+                                {$nom} {$prenom}
                             </p>
                         </a>
                         <a class=\"btn\" href=\"./boite_mail.php?section=envoie&id={$projetv['iduser']}\" target=\"_blanck\" >
                             Envoyer un mail
                         </a>
+                        <button id=\"noter\" value=\"{$projetv['idoffre']}\" {$disa}>
+                            Noter
+                        </button>
                     </li>
                 ";
             }

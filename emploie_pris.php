@@ -34,6 +34,7 @@
                 <?php echo liste_pris($_SESSION['user']->get('id')); ?>
             </ul>
         </main>
+        <script src="./js/ajax/noter_pat.js"></script>
 
         <!-- FOOTER -->
         <?php include './content/footer.html' ?>
