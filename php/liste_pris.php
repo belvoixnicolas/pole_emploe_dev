@@ -5,7 +5,7 @@
     function liste_pris($id) {
         $dbh = connect();
 
-        $liste = $dbh->prepare('SELECT offre_emploie.id AS idoffre, offre_emploie.titre, offre_emploie.temp, offre_emploie.date, offre_emploie.noter_dev, usser.id AS iduser, usser.nom, usser.prenom, usser.img FROM offre_emploie INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN usser ON offre_emploie.id_usser = usser.id WHERE offre_emploie.id_usser IS NOT NULL AND entreprise.id_usser = :id');
+        $liste = $dbh->prepare('SELECT offre_emploie.id AS idoffre, offre_emploie.titre, offre_emploie.temp, offre_emploie.date, offre_emploie.noter_dev, usser.id AS iduser, usser.nom, usser.prenom, usser.img FROM offre_emploie INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN usser ON offre_emploie.id_usser = usser.id WHERE offre_emploie.id_usser IS NOT NULL AND entreprise.id_usser = :id ORDER BY offre_emploie.date DESC');
 
         $liste->execute(array(
             ':id' => $id

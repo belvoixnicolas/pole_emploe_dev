@@ -1668,6 +1668,10 @@ main, header {
   border-radius: 20px;
   font-size: 1rem;
 }
+#emploie main .liste .error {
+  display: inherit;
+  text-align: center;
+}
 #emploie main #choix {
   display: flex;
   justify-content: center;
@@ -1795,6 +1799,114 @@ main, header {
 #emploie main #suprimer div .oui, #emploie main #suprimer div .non, #emploie main #suprimer #choix div ul li .btn, #emploie main #choix #suprimer div ul li .btn, #emploie main #suprimer #choix div ul li .oui, #emploie main #choix #suprimer div ul li .oui, #emploie main #suprimer #choix div ul li .non, #emploie main #choix #suprimer div ul li .non {
   justify-self: center;
   align-self: center;
+}
+#emploie_pris main {
+  border: 1px solid black;
+}
+#emploie_pris main ul {
+  padding: 1%;
+  min-height: 70vh;
+}
+#emploie_pris main ul li {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content max-content 1fr;
+  border-bottom: 1px solid black;
+  row-gap: 2vh;
+  padding: 3vh 0;
+}
+#emploie_pris main ul li:last-child {
+  border: none;
+}
+#emploie_pris main ul li:hover .ident {
+  text-decoration: underline;
+}
+#emploie_pris main ul li h2 {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+#emploie_pris main ul li .date {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  justify-self: right;
+  align-self: start;
+  text-decoration: underline;
+}
+#emploie_pris main ul li .ident {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/span 2;
+  grid-row: 2/span 1;
+  justify-self: center;
+  align-self: stretch;
+  text-decoration: none;
+}
+#emploie_pris main ul li .ident img {
+  height: 20vh;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+#emploie_pris main ul li .ident p {
+  margin-top: 1vh;
+  font-size: 2rem;
+}
+#emploie_pris main ul li #noter, #emploie_pris main ul li .btn, #emploie_pris #offreresultat main .resultat ul li .btn, #offreresultat #emploie_pris main .resultat ul li .btn {
+  grid-column: 2/span 1;
+  grid-row: 3/span 1;
+  justify-self: center;
+  align-self: center;
+}
+#emploie_pris main ul li .btn {
+  grid-column: 1/span 1;
+}
+#emploie_pris main #noterform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00000080;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+#emploie_pris main #noterform div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) min-content;
+  grid-template-rows: min-content repeat(3, auto);
+  background: white;
+  border: 1px solid black;
+  height: 50vh;
+  width: 50vw;
+  padding: 1%;
+}
+#emploie_pris main #noterform div h2 {
+  grid-column: 1/span 2;
+  grid-row: 1/span 1;
+}
+#emploie_pris main #noterform div #annuler {
+  grid-column: 3/span 1;
+  grid-row: 1/span 1;
+  background: none;
+  border: none;
+}
+#emploie_pris main #noterform div #note, #emploie_pris main #noterform div #envoyer, #emploie_pris main #noterform div #comment {
+  grid-column: 1/span 3;
+  grid-row: 2/span 1;
+  justify-self: center;
+  align-self: center;
+  width: 80%;
+}
+#emploie_pris main #noterform div #comment {
+  grid-row: 3/span 1;
+  align-self: stretch;
+}
+#emploie_pris main #noterform div #envoyer {
+  grid-row: 4/span 1;
+  width: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
