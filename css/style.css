@@ -1596,7 +1596,7 @@ main, header {
   height: 100%;
   width: 80%;
 }
-#offreresultat #noterform div #envoyer {
+#offreresultat #noterform div #envoyer, #offreresultat #noterform div #emploie_cree main #formprojet form select[name=temp_mesure], #emploie_cree main #formprojet form #offreresultat #noterform div select[name=temp_mesure], #offreresultat #noterform div #emploie_cree main #formprojet form input[name=temp], #emploie_cree main #formprojet form #offreresultat #noterform div input[name=temp], #offreresultat #noterform div #emploie_cree main #formprojet form textarea, #emploie_cree main #formprojet form #offreresultat #noterform div textarea, #offreresultat #noterform div #emploie_cree main #formprojet form input[name=titre], #emploie_cree main #formprojet form #offreresultat #noterform div input[name=titre] {
   grid-column: 1/span 2;
   grid-row: 4/span 1;
   justify-self: center;
@@ -1893,7 +1893,7 @@ main, header {
   background: none;
   border: none;
 }
-#emploie_pris main #noterform div #note, #emploie_pris main #noterform div #envoyer, #emploie_pris main #noterform div #comment {
+#emploie_pris main #noterform div #note, #emploie_pris main #noterform div #envoyer, #emploie_pris #emploie_cree main #noterform div #formprojet form select[name=temp_mesure], #emploie_cree #emploie_pris main #noterform div #formprojet form select[name=temp_mesure], #emploie_pris #emploie_cree main #formprojet form #noterform div select[name=temp_mesure], #emploie_cree #emploie_pris main #formprojet form #noterform div select[name=temp_mesure], #emploie_pris #emploie_cree main #noterform div #formprojet form input[name=temp], #emploie_cree #emploie_pris main #noterform div #formprojet form input[name=temp], #emploie_pris #emploie_cree main #formprojet form #noterform div input[name=temp], #emploie_cree #emploie_pris main #formprojet form #noterform div input[name=temp], #emploie_pris #emploie_cree main #noterform div #formprojet form textarea, #emploie_cree #emploie_pris main #noterform div #formprojet form textarea, #emploie_pris #emploie_cree main #formprojet form #noterform div textarea, #emploie_cree #emploie_pris main #formprojet form #noterform div textarea, #emploie_pris #emploie_cree main #noterform div #formprojet form input[name=titre], #emploie_cree #emploie_pris main #noterform div #formprojet form input[name=titre], #emploie_pris #emploie_cree main #formprojet form #noterform div input[name=titre], #emploie_cree #emploie_pris main #formprojet form #noterform div input[name=titre], #emploie_pris main #noterform div #comment {
   grid-column: 1/span 3;
   grid-row: 2/span 1;
   justify-self: center;
@@ -1904,9 +1904,52 @@ main, header {
   grid-row: 3/span 1;
   align-self: stretch;
 }
-#emploie_pris main #noterform div #envoyer {
+#emploie_pris main #noterform div #envoyer, #emploie_pris #emploie_cree main #noterform div #formprojet form select[name=temp_mesure], #emploie_cree #emploie_pris main #noterform div #formprojet form select[name=temp_mesure], #emploie_pris #emploie_cree main #formprojet form #noterform div select[name=temp_mesure], #emploie_cree #emploie_pris main #formprojet form #noterform div select[name=temp_mesure], #emploie_pris #emploie_cree main #noterform div #formprojet form input[name=temp], #emploie_cree #emploie_pris main #noterform div #formprojet form input[name=temp], #emploie_pris #emploie_cree main #formprojet form #noterform div input[name=temp], #emploie_cree #emploie_pris main #formprojet form #noterform div input[name=temp], #emploie_pris #emploie_cree main #noterform div #formprojet form textarea, #emploie_cree #emploie_pris main #noterform div #formprojet form textarea, #emploie_pris #emploie_cree main #formprojet form #noterform div textarea, #emploie_cree #emploie_pris main #formprojet form #noterform div textarea, #emploie_pris #emploie_cree main #noterform div #formprojet form input[name=titre], #emploie_cree #emploie_pris main #noterform div #formprojet form input[name=titre], #emploie_pris #emploie_cree main #formprojet form #noterform div input[name=titre], #emploie_cree #emploie_pris main #formprojet form #noterform div input[name=titre] {
   grid-row: 4/span 1;
   width: auto;
+}
+
+#emploie_cree main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: stretch;
+  min-height: 70vh;
+  border: 1px solid black;
+}
+#emploie_cree main #formprojet {
+  padding: 1%;
+  width: 100%;
+}
+#emploie_cree main #formprojet form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  row-gap: 2vh;
+  column-gap: 2vw;
+  height: 100%;
+}
+#emploie_cree main #formprojet form #envoyer, #emploie_cree main #formprojet form select[name=temp_mesure], #emploie_cree main #formprojet form input[name=temp], #emploie_cree main #formprojet form textarea, #emploie_cree main #formprojet form input[name=titre] {
+  grid-column: 1/span 2;
+  grid-row: 4/span 1;
+  justify-self: center;
+  align-self: center;
+}
+#emploie_cree main #formprojet form input[name=titre] {
+  grid-row: 1/span 1;
+}
+#emploie_cree main #formprojet form textarea {
+  grid-row: 2/span 1;
+}
+#emploie_cree main #formprojet form input[name=temp] {
+  grid-column: 1/span 1;
+  grid-row: 3/span 1;
+  justify-self: right;
+}
+#emploie_cree main #formprojet form select[name=temp_mesure] {
+  grid-column: 2/span 1;
+  grid-row: 3/span 1;
+  justify-self: left;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,59 @@
+#emploie_cree {
+    main {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: start;
+        align-items: stretch;
+        min-height: 70vh;
+        border: 1px solid black;
+
+        #formprojet {
+            padding: 1%;
+            width: 100%;
+
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(4, auto);
+                row-gap: 2vh;
+                column-gap: 2vw;
+                height: 100%;
+
+                #envoyer {
+                    grid-column: 1 / span 2;
+                    grid-row: 4 / span 1;
+                    justify-self: center;
+                    align-self: center;
+                }
+
+                input[name=titre] {
+                    @extend #envoyer;
+
+                    grid-row: 1 / span 1;
+                }
+
+                textarea {
+                    @extend #envoyer;
+
+                    grid-row: 2 / span 1;
+                }
+
+                input[name=temp] {
+                    @extend #envoyer;
+
+                    grid-column: 1 / span 1;
+                    grid-row: 3 / span 1;
+                    justify-self: right;
+                }
+
+                select[name=temp_mesure] {
+                    @extend #envoyer;
+
+                    grid-column: 2 / span 1;
+                    grid-row: 3 / span 1;
+                    justify-self: left;
+                }
+            }
+        }
+    }
+}
