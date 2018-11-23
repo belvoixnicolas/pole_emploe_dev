@@ -44,7 +44,7 @@
                             </p>
                         </a>
                         <a class=\"btn\" href=\"./boite_mail.php?section=envoie&id={$projetv['iduser']}\" target=\"_blanck\" >
-                            Envoyer un mail
+                            Le cantacter
                         </a>
                         <button id=\"noter\" value=\"{$projetv['idoffre']}\" {$disa}>
                             Noter

@@ -3,7 +3,7 @@
         return '<div id="formcode">
                     <div>
                         <i class="fas fa-times"></i>
-                        <p>On selectionnant un languague déja mis a niveau, vous pourrais redefinir votre niveaux</p>
+                        <p>On sélectionnant un langage déjà mis à niveau, vous pourriez redéfinir votre niveau</p>
                         <form action="#" id="form_code">
                             <select name="code">' . $codes . '</select>
                             <select name="note">

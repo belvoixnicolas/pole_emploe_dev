@@ -46,7 +46,6 @@
             </article>
 
             <article class="resultat">
-                <h2>Resultat</h2>
                 <section>
                     <ul>
                         <?php echo liste_offre($_SESSION['user']->get('id')); ?>

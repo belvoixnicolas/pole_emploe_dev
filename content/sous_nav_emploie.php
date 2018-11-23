@@ -37,7 +37,7 @@
             <a href="./emploie.php">
                 <i class="fas fa-clipboard"></i>
                 <span>
-                    Mes offre
+                    Mes projets
                 </span>
             </a>
         </li>
@@ -46,7 +46,7 @@
             <a href="./emploie_pris.php">
                 <i class="fas fa-user-check"></i>
                 <span>
-                    Machin
+                    Projet valider
                 </span>
             </a>
         </li>
@@ -55,7 +55,7 @@
             <a href="./emploie_cree.php">
                 <i class="fas fa-plus"></i>
                 <span>
-                    Crée une offre
+                    Crée un projet
                 </span>
             </a>
         </li>

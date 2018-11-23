@@ -45,7 +45,7 @@
 
             <article id="connex_pat">
                 <section class="expli">
-                    <h2>Employeur ou Particulier</h2>
+                    <h2>Porteur de projet</h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem amet quae dolore, esse molestias aliquid alias laborum voluptate neque id doloribus consectetur cum earum! Molestias dolorum quibusdam suscipit quidem eius.
                     </p>

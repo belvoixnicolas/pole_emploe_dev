@@ -14,8 +14,6 @@
 ?>
 <main id="reception">
     <section>
-        <h1>Boite de reception</h1>
-
         <ul class="listeMail">
             <?php 
                 if ($mails=liste_mail($_SESSION['user']->get('id'))) {

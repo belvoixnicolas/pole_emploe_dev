@@ -8,16 +8,16 @@
                     <?php 
                         if ($_SESSION['user']->get('role') == 1) { ?>
                             <a href="./offre.php" class="job">
-                                <i class="fas fa-terminal"></i>
+                                <i class="fas fa-search"></i>
                                 <span>
-                                    Chercher offre
+                                    Chercher des projets
                                 </span>
                             </a>
                         <?php } elseif ($_SESSION['user']->get('role') == 2) { ?>
                             <a href="./emploie.php" class="job">
-                                <i class="fas fa-handshake"></i>
+                                <i class="fas fa-chart-line"></i>
                                 <span>
-                                    Chercher un développeur
+                                    Mes projets
                                 </span>
                             </a>
                         <?php }else {
@@ -48,7 +48,7 @@
         <?php if (isset($_SESSION['user']) && $_SESSION['user'] != NULL) { ?>
             <button class="deco">
                 <i class="fas fa-sign-in-alt"></i>
-                <span>Déconnecxion</span>
+                <span>Déconnexion</span>
             </button>
         <?php }else { ?>
             <button class="connect">

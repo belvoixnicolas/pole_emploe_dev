@@ -24,7 +24,7 @@
                     </div>
                     
                     <div>
-                        <h3>Particulier</h3>
+                        <h3>Porteur de projet</h3>
 
                         <ul class="pat">
 
@@ -32,7 +32,7 @@
                     </div>
                     
                     <div>
-                        <h3>Entreprise</h3>
+                        <h3>Projet et entreprise</h3>
 
                         <ul class="entre">
 

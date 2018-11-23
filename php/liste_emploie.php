@@ -37,12 +37,12 @@
                             <p>{$offre['description']}</p>
                             <span class=\"temp\">{$offre['temp']}</span>
                             <button class=\"sup\" value=\"{$offre['id']}\">
-                                Suprimer
+                                J'abandonne le projet
                             </button>
                             <div>
                                 <p class=\"{$anim}\">{$nbpropo}</p>
                                 <button class=\"choix\" value=\"{$offre['id']}\">
-                                    Choisire
+                                    Voir les candidats
                                 </button>
                             </div>
                         </li>

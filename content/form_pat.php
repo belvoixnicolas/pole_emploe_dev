@@ -6,7 +6,7 @@
     }
 ?>
 <form id="form_pat" action="<?php echo $_SERVER['PHP_SELF']?>?form=pat" method="post">
-    <input type="text" name="entreprise" placeholder="Raison social">
+    <input type="text" name="entreprise" placeholder="Nom du projet ou de la societe">
     <input type="text" name="nom" placeholder="Nom">
     <input type="text" name="prenom" placeholder="Prénom">
     <input type="date" name="naissance" id="" placeholder="Date de naissance">

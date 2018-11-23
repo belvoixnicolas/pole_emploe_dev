@@ -64,7 +64,7 @@
                             </p>
 
                             <button type=\"button\" value=\"{$offre['idoffre']}\">
-                                Proposer ces service
+                                Ça m'interesse
                             </button>
                         </li>
                     ";
