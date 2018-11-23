@@ -3,11 +3,12 @@
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        align-items: stretch;
+        align-items: center;
         min-height: 70vh;
         border: 1px solid black;
 
         #formprojet {
+            padding: 1%;
 
             form {
                 display: grid;
@@ -16,7 +17,7 @@
                 row-gap: 2vh;
                 column-gap: 2vw;
                 height: 60vh;
-                width: 50%;
+                width: 50vw;
                 margin: 0 auto;
 
                 @mixin input {
@@ -61,6 +62,12 @@
                     grid-row: 3 / span 1;
                 }
             }
+        }
+
+        #erreur {
+            margin-bottom: 2vh;
+            padding: 1% 0;
+            white-space: nowrap;
         }
     }
 

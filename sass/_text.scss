@@ -18,3 +18,12 @@ h3 {
 i {
     font-size: 3rem;
 }
+
+* {
+    color: $black;
+    font-family: 'Asap', sans-serif;
+}
+
+a:hover {
+    color: $blue;
+}

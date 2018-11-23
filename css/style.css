@@ -391,6 +391,29 @@ i {
   font-size: 3rem;
 }
 
+* {
+  color: #292929;
+  font-family: "Asap", sans-serif;
+}
+
+a:hover {
+  color: #97BEC2;
+}
+
+main {
+  background-color: #7B8B8C;
+}
+
+.main_nav,
+nav[class^=sousnav] {
+  background-color: #7B8B8C;
+}
+.main_nav ul li .job,
+nav[class^=sousnav] ul li .job {
+  color: #C7D4D9;
+  display: none;
+}
+
 nav {
   position: fixed;
   top: 2vh;
@@ -401,7 +424,6 @@ nav .main_nav {
   display: grid;
   grid-template-columns: auto auto min-content;
   grid-template-rows: 1fr;
-  background: white;
   height: 10vh;
   width: 96vw;
   padding: 0 1%;
@@ -424,7 +446,6 @@ nav .main_nav ul li {
   margin: 2%;
 }
 nav .main_nav ul li a {
-  color: black;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1913,9 +1934,12 @@ main, header {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   min-height: 70vh;
   border: 1px solid black;
+}
+#emploie_cree main #formprojet {
+  padding: 1%;
 }
 #emploie_cree main #formprojet form {
   display: grid;
@@ -1924,7 +1948,7 @@ main, header {
   row-gap: 2vh;
   column-gap: 2vw;
   height: 60vh;
-  width: 50%;
+  width: 50vw;
   margin: 0 auto;
 }
 #emploie_cree main #formprojet form #envoyer {
@@ -1962,6 +1986,11 @@ main, header {
   align-self: stretch;
   grid-column: 2/span 1;
   grid-row: 3/span 1;
+}
+#emploie_cree main #erreur {
+  margin-bottom: 2vh;
+  padding: 1% 0;
+  white-space: nowrap;
 }
 #emploie_cree #resultat {
   display: flex;

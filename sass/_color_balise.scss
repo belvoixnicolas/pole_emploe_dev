@@ -1,0 +1,13 @@
+main {
+    background-color: $grey;
+}
+
+.main_nav,
+nav[class^="sousnav"] {
+    background-color: $grey;
+
+    ul li .job {
+        color: $lighgrey;
+        display: none;
+    }
+}
