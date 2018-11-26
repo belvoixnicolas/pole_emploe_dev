@@ -411,7 +411,6 @@ nav[class^=sousnav] {
 .main_nav ul li .job,
 nav[class^=sousnav] ul li .job {
   color: #C7D4D9;
-  display: none;
 }
 
 nav {

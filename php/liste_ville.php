@@ -5,8 +5,8 @@
         $dbh = connect();
         
         $villes = array();
-        foreach ($dbh->query('SELECT ville FROM ville ORDER BY ville ASC') as $row) {
-            $villes[] = htmlentities($row[0]);
+        foreach ($dbh->query('SELECT ville, id FROM ville ORDER BY ville ASC') as $row) {
+            $villes[] = htmlentities($row['ville'] . '/' . $row['id']);
         }
 
         $dbh = '';

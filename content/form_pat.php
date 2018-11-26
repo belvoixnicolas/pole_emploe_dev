@@ -2,10 +2,14 @@
     $viles = liste_ville();
     $content = '';
     foreach ($viles as $row) {
-        $content .= '<option value="' . $row . '">' . $row . '</option>';
+        $row = explode('/', $row);
+        $ville = $row[0];
+        $id = $row[1];
+
+        $content .= '<option value="' . $id . '">' . $ville . '</option>';
     }
 ?>
-<form id="form_pat" action="<?php echo $_SERVER['PHP_SELF']?>?form=pat" method="post">
+<form id="form_pat" action="./php/inscription.php?form=pat" method="post">
     <input type="text" name="entreprise" placeholder="Nom du projet ou de la societe">
     <input type="text" name="nom" placeholder="Nom">
     <input type="text" name="prenom" placeholder="Prénom">

@@ -7,10 +7,10 @@
     }
 
     require_once('./php/connect.php');
+    require_once('./php/notif_error.php');
     require_once('./php/liste_ville.php');
     require_once('./php/ident.php');
-    require_once('./php/inscription.php');
-    require_once('./php/notif_error.php');
+    
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
