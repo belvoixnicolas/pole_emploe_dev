@@ -1,8 +1,13 @@
+$noir: rgba(30, 16, 20, 1);
+$violet: rgba(105, 72, 115, 1);
+$rouge: rgb(195, 49, 73);
+$vert: rgba(133, 203, 51, 1);
+$bleu: rgb(83, 134, 228);
+
 @import 'animate.css';
 @import '_reset';
-@import '_colorandfont';
+@import '_balise_style';
 @import '_text';
-@import '_color_balise';
 @import '_nav';
 @import '_index';
 @import '_formDev';

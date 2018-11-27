@@ -392,25 +392,8 @@ i {
 }
 
 * {
-  color: #292929;
+  color: black;
   font-family: "Asap", sans-serif;
-}
-
-a:hover {
-  color: #97BEC2;
-}
-
-main {
-  background-color: #7B8B8C;
-}
-
-.main_nav,
-nav[class^=sousnav] {
-  background-color: #7B8B8C;
-}
-.main_nav ul li .job,
-nav[class^=sousnav] ul li .job {
-  color: #C7D4D9;
 }
 
 nav {
@@ -427,7 +410,9 @@ nav .main_nav {
   width: 96vw;
   padding: 0 1%;
   margin: 0 auto;
-  border: 1px solid grey;
+  border-radius: 15px;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  background-color: #694873;
 }
 nav .main_nav img {
   min-height: 50%;
@@ -1420,27 +1405,36 @@ main, header {
 }
 
 .accept i, .accept span {
-  color: #47b347;
+  color: #85cb33;
 }
 
 .att i, .att span {
-  color: #4d91d1;
+  color: #5386e4;
 }
 
 .refu i, .refu span {
-  color: #ff5656;
+  color: #c33149;
 }
 
 .rep0 {
-  background: blue;
+  background-image: url("../src/resource/attent.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30vh;
 }
 
 .rep2 {
-  background: green;
+  background-image: url("../src/resource/accept.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30vh;
 }
 
 .rep1 {
-  background: red;
+  background-image: url("../src/resource/refu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30vh;
 }
 
 #offreresultat main {
@@ -1533,6 +1527,8 @@ main, header {
   grid-row: 3/span 1;
   justify-self: left;
   align-self: baseline;
+  max-width: 100%;
+  overflow: hidden;
 }
 #offreresultat main .resultat ul li .periode {
   grid-column: 1/span 1;

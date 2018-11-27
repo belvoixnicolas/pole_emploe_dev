@@ -4,7 +4,7 @@
     function liste_reponse ($id, $val=NULL) {
         $dbh = connect();
 
-        $sqlbase = 'SELECT offre_emploie.id AS idoffre, offre_emploie.noter, entreprise.id_usser AS id, offre_emploie.date, titre, offre_emploie.description, temp, offre_emploie.id_entreprise, nom, ville, choix from postule INNER JOIN offre_emploie ON postule.id = offre_emploie.id INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id WHERE postule.id_usser = :id';
+        $sqlbase = 'SELECT offre_emploie.id AS idoffre, offre_emploie.noter, entreprise.id_usser AS id, offre_emploie.date, titre, offre_emploie.description, temp, offre_emploie.id_entreprise, nom, ville, choix from postule INNER JOIN offre_emploie ON postule.id = offre_emploie.id INNER JOIN entreprise ON offre_emploie.id_entreprise = entreprise.id INNER JOIN ville ON entreprise.id_ville = ville.id WHERE';
 
         if ($val != NULL) {
             $sql = $sqlbase;
@@ -15,7 +15,7 @@
                 switch ($key) {
                     case 'ac':
                         if ($value) {
-                            $condition = " postule.choix = '2'";
+                            $condition = " postule.id_usser = :id AND postule.choix = '2'";
                         }else {
                             $condition = '';
                         }
@@ -23,7 +23,7 @@
                     
                     case 'at':
                         if ($value) {
-                            $condition = " postule.choix = '0'";
+                            $condition = " postule.id_usser = :id AND postule.choix = '0'";
                         }else {
                             $condition = '';
                         }
@@ -31,7 +31,7 @@
 
                     case 'refu':
                         if ($value) {
-                            $condition = " postule.choix = '1'";
+                            $condition = " postule.id_usser = :id AND postule.choix = '1'";
                         }else {
                             $condition = '';
                         }
@@ -42,7 +42,7 @@
                 }
 
                 if ($i == 0 && $condition != '') {
-                    $sql .= ' AND' .$condition;
+                    $sql .= $condition;
                     ++$i;
                 }elseif ($i != 0 && $condition != '') {
                     $sql .= ' OR' . $condition;
@@ -51,11 +51,15 @@
                 }
             }
 
-            $req = $dbh->prepare($sql . ' ORDER BY postule.date DESC');
+            if ($sql != $sqlbase) {
+                $req = $dbh->prepare($sql . ' ORDER BY postule.date DESC');
+            }else {
+                $req = $dbh->prepare($sqlbase . ' postule.id_usser = :id ORDER BY postule.date DESC');
+            }
 
             $donner = array(':id' => $id);
         }else {
-            $req = $dbh->prepare($sqlbase . ' ORDER BY postule.date DESC');
+            $req = $dbh->prepare($sqlbase . ' postule.id_usser = :id ORDER BY postule.date DESC');
 
             $donner = array(':id' => $id);
         }

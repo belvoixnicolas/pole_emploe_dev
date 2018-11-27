@@ -101,6 +101,8 @@
                         grid-row: 3 / span 1;
                         justify-self: left;
                         align-self: baseline;
+                        max-width: 100%;
+                        overflow: hidden;
                     }
 
                     .periode {

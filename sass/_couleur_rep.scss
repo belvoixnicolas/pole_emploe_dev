@@ -1,11 +1,20 @@
+@mixin tuile_rep {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30vh;
+}
+
 .rep0 {
-    background: blue;
+    background-image: url('../src/resource/attent.svg');
+    @include tuile_rep;
 }
 
 .rep2 {
-    background: green;
+    background-image: url('../src/resource/accept.svg');
+    @include tuile_rep;
 }
 
 .rep1 {
-    background: red;
+    background-image: url('../src/resource/refu.svg');
+    @include tuile_rep;
 }
