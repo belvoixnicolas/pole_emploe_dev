@@ -1,6 +1,5 @@
 p, span, li, a {
     font-size: 1.5rem;
-    color: #000;
 }
 
 h1 {
@@ -19,7 +18,7 @@ i {
     font-size: 3rem;
 }
 
-* {
-    color: black;
+html {
+    color: $noir;
     font-family: 'Asap', sans-serif;
 }

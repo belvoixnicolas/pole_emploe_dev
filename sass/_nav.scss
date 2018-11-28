@@ -37,16 +37,22 @@ nav {
                 a {
                     text-decoration: none;
                     display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
                     align-items: center;
+                    color: #fff;
 
                     i {
-                        margin-right: 8%;
+                        margin-bottom: 8%;
                     }
 
                     span {
                         width: fit-content;
                         white-space: nowrap;
                         font-size: 2rem;
+                        text-align: center;
+                        height: 0;
+                        overflow: hidden;
                     }
                 }
             }
@@ -54,17 +60,21 @@ nav {
 
         button {
             display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
             background: transparent;
             border: none;
             align-self: center;
             justify-self: flex-end;
-
-            i {
-                margin-right: 8%;
-            }
+            color: #fff;
+            box-shadow: none;
+            font-weight: normal;
 
             span {
                 font-size: 2rem;
+                height: 0;
+                overflow: hidden;
             }
         }
     }
@@ -72,11 +82,12 @@ nav {
     form {
         display: flex;
         flex-flow: column nowrap;
+        background-color: #fff;
         width: 20vw;
         margin: .5vh 2vw;
         padding: 1%;
         float: right;
-        border: 1px solid black;
+        box-shadow: 2px 4px 10px 0 rgba(0,0,0,.30);
 
         h3 {
             margin: 0 auto 5%;
@@ -87,9 +98,24 @@ nav {
         }
 
         input[type=submit] {
-            width: 30%;
             margin: 5% auto 0;
         }
+    }
+
+    i, span {
+        color: inherit;
+    }
+}
+
+.navscroll {
+    top: 0;
+    transition: top .5s;
+
+    .main_nav {
+        margin: 0px;
+        width: 100%;
+        border-radius: 0;
+        transition: border-radius .5s;
     }
 }
 

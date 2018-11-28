@@ -1,6 +1,6 @@
 <nav>
     <div class="main_nav">
-        <img src="./img/resource/logo.jpg" alt="logo">
+        <img src="./src/resource/logo_sans_titre.png" alt="Logo de Ardennedev">
 
         <ul>
             <?php if (isset($_SESSION['user']) && $_SESSION['user'] != NULL) { ?>
@@ -10,7 +10,7 @@
                             <a href="./offre.php" class="job">
                                 <i class="fas fa-search"></i>
                                 <span>
-                                    Chercher des projets
+                                    Chercher
                                 </span>
                             </a>
                         <?php } elseif ($_SESSION['user']->get('role') == 2) { ?>

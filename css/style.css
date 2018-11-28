@@ -372,7 +372,6 @@ html {
 
 p, span, li, a {
   font-size: 1.5rem;
-  color: #000;
 }
 
 h1 {
@@ -391,9 +390,35 @@ i {
   font-size: 3rem;
 }
 
-* {
-  color: black;
+html {
+  color: #1e1014 !important;
   font-family: "Asap", sans-serif;
+}
+
+button, .btn, input[type=submit] {
+  padding: 2% 5%;
+  border: none;
+  transition: box-shadow 0.5s;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 2px solid;
+}
+button:hover, button:focus, .btn:hover, .btn:focus, input[type=submit]:hover, input[type=submit]:focus {
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+}
+button:active, .btn:active, input[type=submit]:active {
+  box-shadow: 0 0 0 0;
+  transition: 0s;
+}
+
+input[type=submit] {
+  background: #85cb33;
+  color: #fff;
+  border-color: #85cb33;
+}
+input[type=submit]:hover, input[type=submit]:focus {
+  background: #fff;
+  color: #85cb33;
 }
 
 nav {
@@ -432,37 +457,49 @@ nav .main_nav ul li {
 nav .main_nav ul li a {
   text-decoration: none;
   display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
   align-items: center;
+  color: #fff;
 }
 nav .main_nav ul li a i {
-  margin-right: 8%;
+  margin-bottom: 8%;
 }
 nav .main_nav ul li a span {
   width: fit-content;
   white-space: nowrap;
   font-size: 2rem;
+  text-align: center;
+  height: 0;
+  overflow: hidden;
 }
 nav .main_nav button {
   display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   background: transparent;
   border: none;
   align-self: center;
   justify-self: flex-end;
-}
-nav .main_nav button i {
-  margin-right: 8%;
+  color: #fff;
+  box-shadow: none;
+  font-weight: normal;
 }
 nav .main_nav button span {
   font-size: 2rem;
+  height: 0;
+  overflow: hidden;
 }
 nav form {
   display: flex;
   flex-flow: column nowrap;
+  background-color: #fff;
   width: 20vw;
   margin: 0.5vh 2vw;
   padding: 1%;
   float: right;
-  border: 1px solid black;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 nav form h3 {
   margin: 0 auto 5%;
@@ -471,8 +508,21 @@ nav form input {
   margin: 1% 0;
 }
 nav form input[type=submit] {
-  width: 30%;
   margin: 5% auto 0;
+}
+nav i, nav span {
+  color: inherit;
+}
+
+.navscroll {
+  top: 0;
+  transition: top 0.5s;
+}
+.navscroll .main_nav {
+  margin: 0px;
+  width: 100%;
+  border-radius: 0;
+  transition: border-radius 0.5s;
 }
 
 body {

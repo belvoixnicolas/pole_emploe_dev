@@ -1,7 +1,6 @@
 jQuery(document).ready(function(){
 
     $('nav form').hide();
-    $('.main_nav span').hide();
 
     $('nav .deco').click(function () {
          window.location.href = 'index.php';
@@ -11,11 +10,26 @@ jQuery(document).ready(function(){
         $('nav form').animate({height: 'toggle'}, 'slow');
     });
 
-    $('.main_nav a').hover(function () {
-        $(this).parent().find('span').animate({width: 'toggle'}, 'slow');
+    $('.main_nav li').mouseenter(function () {
+        $(this).find('span').animate({height: '2rem'}, 'slow');
+    }).mouseleave(function () {
+        $(this).find('span').animate({height: '0px'}, 'slow');
     });
 
-    $('.main_nav button').hover(function () {
-        $(this).find('span').animate({width: 'toggle'}, 'slow');
+    $('.main_nav button').mouseenter(function () {
+        $(this).find('span').animate({height: '2rem'}, 'slow');
+    }).mouseleave(function () {
+        $(this).find('span').animate({height: '0px'}, 'slow');
+    });
+
+    //$('nav:nth-child(1)').
+
+    $(window).scroll(function () {
+        let scroll = $('html').scrollTop();
+        if (scroll != 0) {
+            $('nav:nth-child(1)').addClass('navscroll');
+        }else {
+            $('nav:nth-child(1)').removeClass('navscroll');
+        }
     });
 });

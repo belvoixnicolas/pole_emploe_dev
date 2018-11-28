@@ -1,0 +1,28 @@
+button, .btn, input[type=submit] {
+    padding: 2% 5%;
+    border: none;
+    transition: box-shadow .5s;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 2px solid;
+
+    &:hover, &:focus {
+        box-shadow: 2px 4px 10px 0 rgba(0,0,0,.30);
+    }
+
+    &:active {
+        box-shadow: 0 0 0 0;
+        transition: 0s;
+    }
+}
+
+input[type=submit]{
+    background: $vert;
+    color: #fff;
+    border-color: $vert;
+
+    &:hover, &:focus {
+        background: #fff;
+        color: $vert;
+    }
+}
