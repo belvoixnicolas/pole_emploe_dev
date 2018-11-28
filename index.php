@@ -32,6 +32,10 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem amet quae dolore, esse molestias aliquid alias laborum voluptate neque id doloribus consectetur cum earum! Molestias dolorum quibusdam suscipit quidem eius.
                     </p>
+
+                    <button id="inscriptdev">
+                        Je m'inscrie
+                    </button>
                 </section>
 
                 <section class="inscription">
@@ -49,6 +53,10 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem amet quae dolore, esse molestias aliquid alias laborum voluptate neque id doloribus consectetur cum earum! Molestias dolorum quibusdam suscipit quidem eius.
                     </p>
+
+                    <button id="inscriptpat">
+                        Je m'inscrie
+                    </button>
                 </section>
 
                 <section class="inscription">

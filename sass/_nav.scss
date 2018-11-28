@@ -14,7 +14,7 @@ nav {
         width: 96vw;
         padding: 0 1%;
         margin: 0 auto;
-        border-radius: 15px;
+        border-radius: 10px;
         box-shadow: 2px 4px 10px 0 rgba(0,0,0,.30);
         background-color: $violet;
 
@@ -80,10 +80,10 @@ nav {
     }
 
     form {
-        display: flex;
+        display: none;
         flex-flow: column nowrap;
         background-color: #fff;
-        width: 20vw;
+        width: 30vw;
         margin: .5vh 2vw;
         padding: 1%;
         float: right;
@@ -91,6 +91,7 @@ nav {
 
         h3 {
             margin: 0 auto 5%;
+            font-size: 3rem;
         }
 
         input {

@@ -1,0 +1,17 @@
+input {
+    border: none;
+    border-bottom: 2px solid $violet;
+    font-size: 200%;
+    color: $noir;
+
+    &::placeholder {
+        color: $violet;
+    }
+}
+
+select {
+    border: none;
+    border-bottom: 2px solid $violet;
+    font-size: 200%;
+    color: $noir;
+}

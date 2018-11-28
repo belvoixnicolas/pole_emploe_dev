@@ -1,16 +1,16 @@
 jQuery(document).ready(function(){
-    $('.inscription').hide();
 
-    $('#connex_dev, #connex_pat').hover(function () {
-        $(this).find('.expli').animate({opacity: '0'}, 'slow', function () {
+    $('body').on('click', '#inscriptpat', function () {
+        $('#connex_pat .expli').animate({opacity: '0'}, 'slow', function () {
             $(this).hide();
-            $(this).parent().find('.inscription').css({opacity: '0'}).show().animate({opacity: '1'}, 'slow');
+            $('#connex_pat .inscription').css('display', 'grid').fadeTo(0).animate({opacity: '1'}, 'slow');
         });
-    },
-    function () {
-        $(this).find('.inscription').animate({opacity: '0'}, 'slow', function () {
+    });
+
+    $('body').on('click', '#inscriptdev', function () {
+        $('#connex_dev .expli').animate({opacity: '0'}, 'slow', function () {
             $(this).hide();
-            $(this).parent().find('.expli').css({opacity: '0'}).show().animate({opacity: '1'}, 'slow');
+            $('#connex_dev .inscription').css('display', 'grid').fadeTo(0).animate({opacity: '1'}, 'slow');
         });
     });
 });

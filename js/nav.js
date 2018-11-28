@@ -1,13 +1,17 @@
 jQuery(document).ready(function(){
 
-    $('nav form').hide();
-
     $('nav .deco').click(function () {
          window.location.href = 'index.php';
     });
 
     $('nav .connect').click(function () {
-        $('nav form').animate({height: 'toggle'}, 'slow');
+        let display = document.querySelector('nav form').style.display;
+        
+        if (display == 'flex') {
+            $('nav form').animate({height: 'toggle'}, 'slow');
+        }else {
+            $('nav form').css('display', 'flex').hide().animate({height: 'toggle'}, 'slow');
+        }
     });
 
     $('.main_nav li').mouseenter(function () {

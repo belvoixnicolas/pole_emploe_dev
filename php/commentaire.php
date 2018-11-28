@@ -6,7 +6,7 @@ require_once('./php/note_etoil.php');
 function commentaire($id) {
     $dbh = connect();
 
-    $req=$dbh->prepare('SELECT note, description, date, nom, prenom, img FROM note INNER JOIN usser ON note.noter_par = usser.id WHERE note.id_usser = :id ORDER BY note.id DESC');
+    $req=$dbh->prepare('SELECT usser.id, note, description, date, nom, prenom, img FROM note INNER JOIN usser ON note.noter_par = usser.id WHERE note.id_usser = :id ORDER BY note.id DESC');
     $req->execute(array(':id' => $id));
 
     if ($req=$req->fetchAll()) {
@@ -15,8 +15,10 @@ function commentaire($id) {
         foreach ($req as $key => $value) {
             $liste .= 
             '<li>
-                <img src="./src/profil/' . verif_img($value['img']) . '" alt="photo de ' . $value['nom'] . ' ' . $value['prenom'] . '" />
-                <span class="nom">' . $value['nom'] . ' ' . $value['prenom'] . '</span>
+                <a class=lienident href="./profil.php?id=' . $value['id'] . '" target="_blanck">
+                    <img src="./src/profil/' . verif_img($value['img']) . '" alt="photo de ' . $value['nom'] . ' ' . $value['prenom'] . '" />
+                    <span class="nom">' . $value['nom'] . ' ' . $value['prenom'] . '</span>
+                </a> 
                 <span class="date">' . str_replace('-', ' / ', $value['date']) . '</span>
                 <span class="note">' . note_etoil($value['note']) . '</span>
                 <p class="com">

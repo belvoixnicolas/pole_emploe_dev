@@ -376,14 +376,17 @@ p, span, li, a {
 
 h1 {
   font-size: 3rem;
+  color: #5386e4;
 }
 
 h2 {
   font-size: 3rem;
+  color: #5386e4;
 }
 
 h3 {
   font-size: 2rem;
+  color: #5386e4;
 }
 
 i {
@@ -391,7 +394,7 @@ i {
 }
 
 html {
-  color: #1e1014 !important;
+  color: #1e1014;
   font-family: "Asap", sans-serif;
 }
 
@@ -402,6 +405,7 @@ button, .btn, input[type=submit] {
   font-size: 1.5rem;
   font-weight: bold;
   border: 2px solid;
+  border-radius: 3px;
 }
 button:hover, button:focus, .btn:hover, .btn:focus, input[type=submit]:hover, input[type=submit]:focus {
   box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
@@ -409,6 +413,16 @@ button:hover, button:focus, .btn:hover, .btn:focus, input[type=submit]:hover, in
 button:active, .btn:active, input[type=submit]:active {
   box-shadow: 0 0 0 0;
   transition: 0s;
+}
+
+button {
+  background-color: #694873;
+  color: #fff;
+  border-color: #694873;
+}
+button:hover, button:focus {
+  background: #fff;
+  color: #694873;
 }
 
 input[type=submit] {
@@ -419,6 +433,23 @@ input[type=submit] {
 input[type=submit]:hover, input[type=submit]:focus {
   background: #fff;
   color: #85cb33;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #694873;
+  font-size: 200%;
+  color: #1e1014;
+}
+input::placeholder {
+  color: #694873;
+}
+
+select {
+  border: none;
+  border-bottom: 2px solid #694873;
+  font-size: 200%;
+  color: #1e1014;
 }
 
 nav {
@@ -435,7 +466,7 @@ nav .main_nav {
   width: 96vw;
   padding: 0 1%;
   margin: 0 auto;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #694873;
 }
@@ -492,10 +523,10 @@ nav .main_nav button span {
   overflow: hidden;
 }
 nav form {
-  display: flex;
+  display: none;
   flex-flow: column nowrap;
   background-color: #fff;
-  width: 20vw;
+  width: 30vw;
   margin: 0.5vh 2vw;
   padding: 1%;
   float: right;
@@ -503,6 +534,7 @@ nav form {
 }
 nav form h3 {
   margin: 0 auto 5%;
+  font-size: 3rem;
 }
 nav form input {
   margin: 1% 0;
@@ -535,21 +567,29 @@ main, header {
 }
 
 #index header {
-  border: 1px solid black;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: stretch;
-  height: 50vh;
+  min-height: 50vh;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 #index header article {
   width: 50%;
 }
+#index header article:nth-child(1) {
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+#index header article:nth-child(2) {
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
 #index header article .expli, #index header article .inscription {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: min-content auto;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content auto 20%;
   height: 100%;
+  overflow: hidden;
 }
 #index header article .expli h2, #index header article .inscription h2, #index header article .expli h3, #index header article .inscription h3 {
   padding: 1%;
@@ -557,7 +597,17 @@ main, header {
 }
 #index header article .expli p, #index header article .inscription p {
   align-self: center;
-  padding: 20%;
+  justify-self: center;
+  align-self: center;
+  max-width: 80%;
+}
+#index header article .expli button, #index header article .inscription button {
+  justify-self: center;
+  align-self: center;
+}
+#index header article .inscription {
+  display: none;
+  grid-template-rows: min-content auto;
 }
 #index main {
   margin-top: 2vh;
@@ -569,7 +619,8 @@ main, header {
   justify-content: space-around;
   align-items: center;
   min-height: 20vh;
-  border: 1px solid black;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 #index main article p {
   padding: 0 1vw;
@@ -577,7 +628,7 @@ main, header {
 
 #form_dev {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 48.5% 48.5%;
   grid-template-rows: repeat(5, 1fr);
   grid-auto-rows: 1fr;
   grid-gap: 3%;
@@ -593,7 +644,7 @@ main, header {
 
 #form_pat {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 48.5% 48.5%;
   grid-template-rows: repeat(6, 1fr);
   grid-auto-rows: 1fr;
   grid-gap: 3%;
@@ -645,14 +696,15 @@ main, header {
 
 #profil main {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 100%;
   grid-template-rows: repeat(3, minmax(10vh, auto));
   grid-auto-rows: minmax(10vh, auto);
   grid-gap: 2vh;
 }
 #profil main article {
-  border: 1px solid black;
   padding: 1%;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 #profil main article h3 {
   text-align: left !important;
@@ -671,6 +723,7 @@ main, header {
   justify-self: end;
   align-self: flex-start;
   position: relative;
+  color: #85cb33;
 }
 #profil main .identite #verif i {
   transform: rotate(-12deg);
@@ -689,6 +742,10 @@ main, header {
   justify-self: center;
   position: relative;
 }
+#profil main .identite .photo:hover .note {
+  top: 29px;
+  right: -27px;
+}
 #profil main .identite .photo img {
   border: 1px solid black;
   border-radius: 50%;
@@ -699,10 +756,12 @@ main, header {
 }
 #profil main .identite .photo .note {
   position: absolute;
-  top: 29px;
-  right: -27px;
+  top: 57px;
+  right: 16px;
   transform: rotate(48deg);
   font-size: 2rem;
+  z-index: -1;
+  transition: all 0.5s;
 }
 #profil main .identite .photo .note span {
   font-size: inherit;
@@ -722,6 +781,10 @@ main, header {
   grid-row: 1/span 1;
   justify-self: start;
   align-self: flex-start;
+  color: #5386e4;
+}
+#profil main .identite .signaler:hover span, #profil main .identite .modif:hover span {
+  height: 1.7rem;
 }
 #profil main .identite .signaler p, #profil main .identite .modif p {
   text-align: center;
@@ -729,6 +792,9 @@ main, header {
 }
 #profil main .identite .signaler p span, #profil main .identite .modif p span {
   display: block;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.5s;
 }
 #profil main .commentaire ul {
   max-height: 60vh;
@@ -736,8 +802,8 @@ main, header {
 }
 #profil main .commentaire ul li {
   display: grid;
-  grid-template-columns: min-content auto 26%;
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: min-content 1fr max-content;
+  grid-template-rows: auto min-content;
   row-gap: 1vh;
   min-height: 5vh;
   margin: 1vh 0;
@@ -747,21 +813,30 @@ main, header {
 #profil main .commentaire ul li:last-child {
   border: none;
 }
-#profil main .commentaire ul li img {
+#profil main .commentaire ul li .lienident {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  grid-column: 1/span 1;
+  grid-column: 1/span 1;
+  justify-self: stretch;
+  align-self: stretch;
+  text-decoration: none;
+  color: #1e1014;
+}
+#profil main .commentaire ul li .lienident img {
   height: 10vh;
   border-radius: 50%;
   border: 1px solid black;
   box-shadow: 0px 0px 6px 1px black;
-  margin: 6px 6px 0;
-  grid-column: 1/span 1;
-  grid-row: 1/span 1;
 }
-#profil main .commentaire ul li .nom, #profil #emploie main .commentaire #choix div ul li .ident .prenom, #emploie #profil main .commentaire #choix div ul li .ident .prenom, #profil #emploie main #choix div .commentaire ul li .ident .prenom, #emploie #profil main #choix div .commentaire ul li .ident .prenom {
-  grid-column: 2/span 1;
-  grid-row: 1/span 1;
-  align-self: center;
+#profil main .commentaire ul li .lienident .nom, #profil #emploie main .commentaire #choix div ul li .lienident .ident .prenom, #emploie #profil main .commentaire #choix div ul li .lienident .ident .prenom, #profil #emploie main #choix div .commentaire ul li .lienident .ident .prenom, #emploie #profil main #choix div .commentaire ul li .lienident .ident .prenom, #profil #emploie main .commentaire #choix div ul li .ident .lienident .prenom, #emploie #profil main .commentaire #choix div ul li .ident .lienident .prenom, #profil #emploie main #choix div .commentaire ul li .ident .lienident .prenom, #emploie #profil main #choix div .commentaire ul li .ident .lienident .prenom {
   margin-left: 1%;
   text-transform: capitalize;
+  white-space: nowrap;
+  text-overflow: clip;
+  writing-mode: vertical-lr;
 }
 #profil main .commentaire ul li .date {
   grid-column: 3/span 1;
@@ -769,20 +844,26 @@ main, header {
   justify-self: end;
 }
 #profil main .commentaire ul li .note {
-  grid-column: 2/span 1;
-  grid-row: 1/span 1;
-  align-self: flex-end;
-  margin-bottom: 2%;
+  display: flex;
+  flex-flow: row nowrap;
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+  justify-self: left;
+  align-self: center;
   white-space: nowrap;
   font-size: 2rem;
 }
 #profil main .commentaire ul li .note i {
   font-size: inherit;
+  margin: 0 2px;
+  color: #ffd700;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 #profil main .commentaire ul li .com {
-  grid-column: 1/span 3;
-  grid-row: 2/span 1;
-  min-height: 1vh;
+  grid-column: 2/span 1;
+  grid-row: 1/span 2;
+  justify-self: center;
+  align-self: center;
 }
 #profil main .commentaire ul .nocomment {
   display: inherit;
@@ -885,8 +966,11 @@ main, header {
   position: fixed;
   bottom: 0;
   left: 0;
-  border: 1px solid black;
+  background: #5386e4;
+  box-shadow: 2px -4px 10px 0 rgba(0, 0, 0, 0.3);
   padding: 1%;
+  color: #fff;
+  border-radius: 0 10px 0 0;
 }
 #profil #mail {
   display: grid;
@@ -899,8 +983,18 @@ main, header {
 #profil #mail span:nth-child(1) {
   justify-self: end;
   padding: 0.5vw;
-  border: 1px solid black;
+  box-shadow: 2px -4px 10px -3px rgba(0, 0, 0, 0.3);
+  background: #5386e4;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
   cursor: pointer;
+  z-index: 1;
+}
+#profil #mail #form_mail {
+  background: #5386e4;
+  box-shadow: 2px -4px 10px 0 rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 10px 0 0 0;
 }
 #profil #formcode {
   display: flex;

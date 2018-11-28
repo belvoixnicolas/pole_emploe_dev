@@ -5,6 +5,7 @@ button, .btn, input[type=submit] {
     font-size: 1.5rem;
     font-weight: bold;
     border: 2px solid;
+    border-radius: 3px;
 
     &:hover, &:focus {
         box-shadow: 2px 4px 10px 0 rgba(0,0,0,.30);
@@ -13,6 +14,17 @@ button, .btn, input[type=submit] {
     &:active {
         box-shadow: 0 0 0 0;
         transition: 0s;
+    }
+}
+
+button {
+    background-color: $violet;
+    color: #fff;
+    border-color: $violet;
+
+    &:hover, &:focus {
+        background: #fff;
+        color: $violet;
     }
 }
 

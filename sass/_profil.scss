@@ -2,14 +2,15 @@
 
     main {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 100%;
         grid-template-rows: repeat(3, minmax(10vh, auto));
         grid-auto-rows: minmax(10vh, auto);
         grid-gap: 2vh;
 
         article {
-            border: 1px solid black;
             padding: 1%;
+            border-radius: 10px;
+            box-shadow: 2px 4px 10px 0 rgba(0,0,0,.30);
 
             h3 {
                 text-align: left !important;
@@ -30,6 +31,7 @@
                 justify-self: end;
                 align-self: flex-start;
                 position: relative;
+                color: $vert;
 
                 i {
                     transform: rotate(-12deg);
@@ -51,6 +53,11 @@
                 justify-self: center;
                 position: relative;
 
+                &:hover .note {
+                    top: 29px;
+                    right: -27px;
+                }
+
                 img {
                     border: 1px solid black;
                     border-radius: 50%;
@@ -62,10 +69,12 @@
 
                 .note {
                     position: absolute;
-                    top: 29px;
-                    right: -27px;
+                    top: 57px;
+                    right: 16px;
                     transform: rotate(48deg);
                     font-size: 2rem;
+                    z-index: -1;
+                    transition: all .5s;
 
                     span {
                         font-size: inherit;
@@ -90,6 +99,11 @@
                 grid-row: 1 / span 1;
                 justify-self: start;
                 align-self: flex-start;
+                color: $bleu;
+
+                &:hover span {
+                    height: 1.7rem;
+                }
 
                 p {
                     text-align: center;
@@ -97,6 +111,9 @@
 
                     span {
                         display: block;
+                        overflow: hidden;
+                        height: 0;
+                        transition: height .5s;
                     }
                 }
             }
@@ -113,8 +130,8 @@
 
                 li {
                     display: grid;
-                    grid-template-columns: min-content auto 26%;
-                    grid-template-rows: repeat(2, auto);
+                    grid-template-columns: min-content 1fr max-content;
+                    grid-template-rows: auto min-content;
                     row-gap: 1vh;
                     min-height: 5vh;
                     margin: 1vh 0;
@@ -124,23 +141,34 @@
                     &:last-child {
                         border: none;
                     }
-    
-                    img {
-                        height: 10vh;
-                        border-radius: 50%;
-                        border: 1px solid black;
-                        box-shadow: 0px 0px 6px 1px black;
-                        margin: 6px 6px 0;
+                    
+                    .lienident {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-around;
+                        align-items: center;
                         grid-column: 1 / span 1;
-                        grid-row: 1 / span 1;
-                    }
-    
-                    .nom {
-                        grid-column: 2 / span 1;
-                        grid-row: 1 / span 1;
-                        align-self: center;
-                        margin-left: 1%;
-                        text-transform: capitalize;
+                        grid-column: 1 / span 1;
+                        justify-self: stretch;
+                        align-self: stretch;
+                        text-decoration: none;
+                        color: $noir;
+
+                        img {
+                            height: 10vh;
+                            border-radius: 50%;
+                            border: 1px solid black;
+                            box-shadow: 0px 0px 6px 1px black;
+                        }
+
+                        .nom {
+                            margin-left: 1%;
+                            text-transform: capitalize;
+                            white-space: nowrap;
+                            text-overflow: clip;
+                            writing-mode: vertical-lr;
+                            //text-orientation: upright;
+                        }
                     }
     
                     .date {
@@ -150,22 +178,28 @@
                     }
     
                     .note {
-                        grid-column: 2 / span 1;
-                        grid-row: 1 / span 1;
-                        align-self: flex-end;
-                        margin-bottom: 2%;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        grid-column: 1 / span 1;
+                        grid-row: 2 / span 1;
+                        justify-self: left;
+                        align-self: center;
                         white-space: nowrap;
                         font-size: 2rem;
 
                         i {
                             font-size: inherit;
+                            margin: 0 2px;
+                            color: #ffd700;
+                            text-shadow: 1px 2px 3px rgba(0,0,0,.30);
                         }
                     }
     
                     .com {
-                        grid-column: 1 / span 3;
-                        grid-row: 2 / span 1;
-                        min-height: 1vh;
+                        grid-column: 2 / span 1;
+                        grid-row: 1 / span 2;
+                        justify-self: center;
+                        align-self: center;
                     }
                 }
 
@@ -293,8 +327,11 @@
         position: fixed;
         bottom: 0;
         left: 0;
-        border: 1px solid black;
+        background: $bleu;
+        box-shadow: 2px -4px 10px 0 rgba(0,0,0,.30);
         padding: 1%;
+        color: #fff;
+        border-radius: 0 10px 0 0;
     }
 
     #mail {
@@ -308,8 +345,19 @@
         span:nth-child(1) {
             justify-self: end;
             padding: .5vw;
-            border: 1px solid black;
+            box-shadow: 2px -4px 10px -3px rgba(0,0,0,.30);
+            background: $bleu;
+            color: #fff;
+            border-radius: 5px 5px 0 0;
             cursor: pointer;
+            z-index: 1;
+        }
+
+        #form_mail {
+            background: $bleu;
+            box-shadow: 2px -4px 10px 0 rgba(0,0,0,.30);
+            border: none;
+            border-radius: 10px 0 0 0;
         }
     }
 
