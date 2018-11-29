@@ -60,7 +60,7 @@
         <!-- nav -->
         <main>
             <article class="info"> 
-                <section classe="retour">
+                <section class="retour">
                     <a href="./boite_mail.php">
                         <i class="fas fa-reply"></i>
                     </a>

@@ -2,18 +2,8 @@ p, span, li, a {
     font-size: 1.5rem;
 }
 
-h1 {
+h1, h2, h3 {
     font-size: 3rem;
-    color: $bleu;
-}
-
-h2 {
-    font-size: 3rem;
-    color: $bleu;
-}
-
-h3 {
-    font-size: 2rem;
     color: $bleu;
 }
 
@@ -21,7 +11,7 @@ i {
     font-size: 3rem;
 }
 
-html {
+html, textarea, a {
     color: $noir;
     font-family: 'Asap', sans-serif;
 }

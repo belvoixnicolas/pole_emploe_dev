@@ -1,8 +1,7 @@
 input {
     border: none;
     border-bottom: 2px solid $violet;
-    font-size: 200%;
-    color: $noir;
+    color: $noir; 
 
     &::placeholder {
         color: $violet;
@@ -14,4 +13,14 @@ select {
     border-bottom: 2px solid $violet;
     font-size: 200%;
     color: $noir;
+}
+
+input, textarea, select {
+    padding-left: 2%;
+    font-size: 200%;
+}
+
+textarea {
+    padding: 2%;
+
 }

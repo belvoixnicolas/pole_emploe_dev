@@ -1,3 +1,47 @@
+@mixin violet {
+    background-color: $violet;
+    color: #fff;
+    border-color: $violet;
+
+    &:hover, &:focus {
+        background: transparent;
+        color: $violet;
+    }
+}
+
+@mixin vert {
+    background: $vert;
+    color: #fff;
+    border-color: $vert;
+
+    &:hover, &:focus {
+        background: transparent;
+        color: $vert;
+    }
+}
+
+@mixin bleu {
+    background: $bleu;
+    color: #fff;
+    border-color: $bleu;
+
+    &:hover, &:focus {
+        background: transparent;
+        color: $bleu;
+    }
+}
+
+@mixin rouge {
+    background: $rouge;
+    color: #fff;
+    border-color: $rouge;
+
+    &:hover, &:focus {
+        background: transparent;
+        color: $rouge;
+    }
+}
+
 button, .btn, input[type=submit] {
     padding: 2% 5%;
     border: none;
@@ -18,23 +62,13 @@ button, .btn, input[type=submit] {
 }
 
 button {
-    background-color: $violet;
-    color: #fff;
-    border-color: $violet;
-
-    &:hover, &:focus {
-        background: #fff;
-        color: $violet;
-    }
+    @include violet();
 }
 
-input[type=submit]{
-    background: $vert;
-    color: #fff;
-    border-color: $vert;
+input[type=submit], .submit{
+    @include vert();
+}
 
-    &:hover, &:focus {
-        background: #fff;
-        color: $vert;
-    }
+.btn {
+    @include bleu();
 }
