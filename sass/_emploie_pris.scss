@@ -1,6 +1,7 @@
 #emploie_pris {
     main {
-        border: 1px solid black;
+        box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
         
         ul {
             padding: 1%;
@@ -10,8 +11,9 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: min-content max-content 1fr;
-                border-bottom: 1px solid black;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.3);
                 row-gap: 2vh;
+                column-gap: 2vw;
                 padding: 3vh 0;
 
                 &:last-child {
@@ -25,6 +27,11 @@
                 h2 {
                     grid-column: 1 / span 1;
                     grid-row: 1 / span 1;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: 2ch;
+                    width: 100%;
                 }
 
                 .date {
@@ -32,7 +39,6 @@
                     grid-row: 1 / span 1;
                     justify-self: right;
                     align-self: start;
-                    text-decoration: underline;
                 }
 
                 .ident {
@@ -48,7 +54,7 @@
 
                     img {
                         height: 20vh;
-                        border: 1px solid black;
+                        box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
                         border-radius: 50%;
                     }
 
@@ -63,12 +69,23 @@
                     grid-row: 3 / span 1;
                     justify-self: center;
                     align-self: center;
+                    @include vert();
+
+                    &[disabled] {
+                        background: transparent;
+                        color: $vert;
+
+                        &:hover {
+                            box-shadow: 0 0 0 0;
+                        }
+                    }
                 }
 
                 .btn {
                     @extend #noter;
 
                     grid-column: 1 / span 1;
+                    @include bleu();
                 }
             }
         }
@@ -79,53 +96,90 @@
             align-items: center;
             position: fixed;
             top: 0;
+            bottom: 0;
             left: 0;
-            background: #00000080;
-            height: 100vh;
-            width: 100vw;
+            right: 0;
             z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
 
             div {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr) min-content;
-                grid-template-rows: min-content repeat(3, auto);
-                background: white;
-                border: 1px solid black;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: max-content auto 1fr max-content;
+                row-gap: 2vh;
                 height: 50vh;
                 width: 50vw;
+                box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
                 padding: 1%;
+                background-color:$bleu;
+
+                #annuler {
+                    grid-column: 2 / span 1;
+                    grid-row: 1 / span 1;
+                    justify-self: right;
+                    align-self: start;
+                    background: none;
+                    border: none;
+                    color: #fff;
+                    text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.3);
+
+                    &:hover {
+                        color: #fff;
+                        box-shadow: 0 0 0 transparent;
+                        border: none;
+                        border-radius: 0;
+                    }
+                }
 
                 h2 {
                     grid-column: 1 / span 2;
-                    grid-row: 1/ span 1;
-                }
-
-                #annuler {
-                    grid-column: 3 / span 1;
                     grid-row: 1 / span 1;
-                    background: none;
-                    border: none;
+                    justify-self: left;
+                    align-self: center;
+                    color: #fff;
                 }
 
-                #note {
-                    grid-column: 1 / span 3;
+                #note, textarea {
+                    background: #d8ebfb;
+                    border: none;
+                    box-shadow: inset 4px 3px 8px 0 rgba(0,0,0,.2);
+                    border-radius: 3px;
+
+                    &::placeholder {
+                        color: $bleu;
+                    }
+                }
+
+                input {
+                    grid-column: 1 / span 2;
                     grid-row: 2 / span 1;
                     justify-self: center;
-                    align-self: center;
+                    align-self: end;
+                    height: 3vh;
+                    width: 82.4%;
+                    margin-top: 2vh;
+                    color: $bleu;
+                }
+
+                textarea {
+                    grid-column: 1 / span 2;
+                    grid-row: 3 / span 1;
+                    justify-self: center;
+                    align-self: start;
+                    height: 100%;
                     width: 80%;
                 }
 
-                #comment {
-                    @extend #note;
-
-                    grid-row: 3 / span 1;
-                    align-self: stretch;
-                }
-
                 #envoyer {
-                    @extend #note;
+                    grid-column: 1 / span 2;
                     grid-row: 4 / span 1;
-                    width: auto;
+                    justify-self: center;
+                    align-self: end;
+                    height: 5vh;
+                    width: 50%;
+                    margin: 2vh 0;
+                    @include vert();
                 }
             }
         }

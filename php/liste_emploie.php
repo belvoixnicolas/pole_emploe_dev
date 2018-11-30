@@ -37,12 +37,18 @@
                             <p>{$offre['description']}</p>
                             <span class=\"temp\">{$offre['temp']}</span>
                             <button class=\"sup\" value=\"{$offre['id']}\">
-                                J'abandonne le projet
+                                <i class=\"fas fa-times\"></i>
+                                <span>
+                                    J'abandonne le projet
+                                </span>
                             </button>
                             <div>
                                 <p class=\"{$anim}\">{$nbpropo}</p>
                                 <button class=\"choix\" value=\"{$offre['id']}\">
-                                    Voir les candidats
+                                    <i class=\"far fa-eye\"></i>
+                                    <span>
+                                        Voir les candidats
+                                    </span>
                                 </button>
                             </div>
                         </li>

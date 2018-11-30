@@ -1,6 +1,7 @@
 #emploie {
     main {
-        border: 1px solid black;
+        box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
 
         .liste {
             padding: 1%; 
@@ -8,12 +9,12 @@
 
             li {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 50% 1fr max-content;
                 grid-auto-rows: max-content repeat(3, auto);
-                row-gap: 1vh;
-                column-gap: 1vw;
+                row-gap: 2vh;
+                column-gap: 2vw;
                 padding: 3vh 0;
-                border-bottom: 1px solid black;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 
                 &:last-child {
                     border: none;
@@ -25,16 +26,21 @@
                 }
 
                 .date {
-                    grid-column: 2 / span 1;
+                    grid-column: 3 / span 1;
                     grid-row: 1 / span 1;
                     justify-self: right;
                     align-self: start;
-                    text-decoration: underline;
                 }
 
                 p {
-                    grid-column: 1 / span 2;
+                    grid-column: 1 / span 3;
                     grid-row: 2 / span 1;
+                    letter-spacing: .1rem;
+                    word-spacing: .1rem;
+                    line-height: 1.6rem;
+                    word-wrap: break-word;
+                    text-overflow: ellipsis;
+                    width: 100%;
                 }
 
                 .temp {
@@ -49,23 +55,31 @@
                     grid-row: 4 / span 1;
                     justify-self: center;
                     align-self: center;
+                    @include rouge();
                 }
 
                 div {
                     position: relative;
-                    grid-column: 2 / span 1;
+                    grid-column: 2 / span 2;
                     grid-row: 4 / 1 span;
                     justify-self: center;
                     align-self: center;
 
                     p {
                         position: absolute;
-                        right: -5px;
-                        top: -5px;
-                        background: red;
-                        padding: 1ch;
+                        right: -20px;
+                        top: -17px;
+                        background: $vert;
+                        color: #fff;
+                        padding: 1ch 2ch;
                         border-radius: 20px;
-                        font-size: 1rem;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        width: inherit;
+                    }
+
+                    .choix {
+                        @include bleu();
                     }
                 }
             }
@@ -93,8 +107,9 @@
                 grid-auto-columns: rapeat(2, 1fr);
                 grid-template-rows: auto 1fr;
                 row-gap: 2vh;
-                background: white;
-                border: 1px solid black;
+                background: $violet;
+                box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
                 padding: 1vh 1vw;
                 max-height: 80vh;
                 width: 50vw;
@@ -103,6 +118,7 @@
                     grid-column: 1 / span 1;
                     grid-row: 1/ span 1;
                     align-self: center;
+                    color: #fff;
                 }
 
                 .annul {
@@ -112,6 +128,13 @@
                     align-self: start;
                     background: none;
                     border: none;
+                    color: #fff;
+                    text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.3);
+
+                    &:hover {
+                        box-shadow: 0 0 0 0 transparent;
+                        color: #fff;
+                    }
                 }
 
                 ul {
@@ -124,7 +147,7 @@
                         grid-template-columns: repeat(3, 1fr);
                         grid-template-rows: max-content auto;
                         row-gap: 2vh;
-                        border-bottom: 1px solid black;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
                         padding: 1vh 1vw;
 
                         &:last-child {
@@ -143,19 +166,21 @@
                             row-gap: 1vh;
                             column-gap: .5vw;
                             text-decoration: none;
+                            color: #fff;
 
                             img {
                                 grid-column: 1 / span 2;
                                 justify-self: center;
                                 align-self: center;
                                 height: 17vh;
-                                border: 1px solid black;
+                                box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
                                 border-radius: 50%;
                             }
                             
                             .nom {
                                 justify-self: right;
                                 align-self: center;
+                                font-weight: bold;
                             }
 
                             .prenom {
@@ -170,25 +195,30 @@
                             grid-row: 2 / span 1;
                             align-self: center;
                             justify-self: center;
+                            min-width: 50%;
+                            @include rouge();
                         }
 
                         .btn {
                             @extend .non;
 
                             grid-column: 2 / span 1;
-                            text-decoration: none;
+                            @include bleu();
                         }
 
                         .oui {
                             @extend .non;
 
                             grid-column: 3 / span 1;
+                            @include vert();
                         }
                     }
 
                     .error {
                         display: inherit;
                         text-align: center;
+                        color: #fff;
+                        font-size: 2rem;
                     }
                 }
             }
@@ -210,10 +240,11 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: repeat(2, 1fr);
-                background: white;
+                background: $bleu;
                 height: 20vh;
                 width: 50vw;
-                border: 1px solid black;
+                box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
                 padding: 1vh 1vw;
 
                 p {
@@ -221,15 +252,19 @@
                     grid-row: 1 / span 1;
                     justify-self: center;
                     align-self: center;
+                    font-size: 2rem;
+                    color: #fff;
                 }
 
                 .oui {
                     justify-self: center;
                     align-self: center;
+                    @include vert();
                 }
 
                 .non {
                     @extend .oui;
+                    @include rouge();
                 }
             }
         }

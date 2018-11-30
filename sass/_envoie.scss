@@ -181,23 +181,73 @@
     }
 
     main #form_mail {
+        display: grid;
+        grid-template-columns: 2vw 1fr 2vw;
+        grid-template-rows: min-content min-content 1fr max-content min-content;
+        row-gap: 3vh;
         width: 100%;
         height: 70vh;
         box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
         border-radius: 10px;
         padding: 2vh 0;
+        border: none;
+    }
+
+    @mixin positionenvoie {
+        grid-column: 2 / span 1;
+    }
+
+    h3 {
+        @include positionenvoie();
+        grid-row: 1 / span 1;
+        justify-self: center;
     }
 
     input[type=text] {
-        height: 5%;
+        @include positionenvoie();
+        grid-row: 2 / span 1;
+        height: 5vh;
+        width: 100%;
+        box-sizing: border-box;
+        background: #f8f8f8;
     }
 
     textarea {
-        height: 20%;
+        @include positionenvoie();
+        grid-row: 3 / span 1;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        background: #f8f8f8;
+    }
+
+    label {
+        @include positionenvoie();
+        grid-row: 4 / span 1;
+        width: 100%;
+
+        .add {
+            color: $violet;
+        }
+
+        .listefichier {
+            li {
+                min-width: 150px;
+                box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+                border: none;
+                
+                span {
+                    border-top: 1px solid rgba(0, 0, 0, 0.3);
+                    border-radius: 0 0 10px 10px;
+                }
+            }
+        }
     }
 
     button[type=submit] {
-        height: 2%;
+        @include positionenvoie();
+        grid-row: 5 / span 1;
+        justify-self: center;
         padding: 1%;
     }
 }

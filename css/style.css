@@ -394,7 +394,6 @@ button, .btn, input[type=submit] {
   justify-content: center;
   align-items: center;
   padding: 2% 5%;
-  border: none;
   transition: box-shadow 0.5s;
   font-size: 1.5rem;
   font-weight: bold;
@@ -1139,7 +1138,7 @@ main, header {
   grid-template-rows: min-content;
   grid-auto-columns: auto;
   grid-template-rows: 1fr;
-  overflow: auto;
+  overflow-y: auto;
   min-height: 18vh;
 }
 #form_mail label .listefichier {
@@ -1599,20 +1598,59 @@ main, header {
   filter: blur(5px);
 }
 #mail main #form_mail {
+  display: grid;
+  grid-template-columns: 2vw 1fr 2vw;
+  grid-template-rows: min-content min-content 1fr max-content min-content;
+  row-gap: 3vh;
   width: 100%;
   height: 70vh;
   box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 2vh 0;
+  border: none;
+}
+#mail h3 {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  justify-self: center;
 }
 #mail input[type=text] {
-  height: 5%;
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
+  height: 5vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f8f8f8;
 }
 #mail textarea {
-  height: 20%;
+  grid-column: 2/span 1;
+  grid-row: 3/span 1;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f8f8f8;
+}
+#mail label {
+  grid-column: 2/span 1;
+  grid-row: 4/span 1;
+  width: 100%;
+}
+#mail label .add {
+  color: #694873;
+}
+#mail label .listefichier li {
+  min-width: 150px;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border: none;
+}
+#mail label .listefichier li span {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 10px 10px;
 }
 #mail button[type=submit] {
-  height: 2%;
+  grid-column: 2/span 1;
+  grid-row: 5/span 1;
+  justify-self: center;
   padding: 1%;
 }
 
@@ -1970,13 +2008,13 @@ main, header {
   align-self: center;
   color: #fff;
 }
-#offreresultat #noterform div #note, #offreresultat #emploie_pris main #noterform div #envoyer, #emploie_pris main #offreresultat #noterform div #envoyer, #offreresultat #emploie_pris main #noterform div #comment, #emploie_pris main #offreresultat #noterform div #comment, #offreresultat #noterform div textarea {
+#offreresultat #noterform div #note, #offreresultat #noterform div textarea {
   background: #d8ebfb;
   border: none;
   box-shadow: inset 4px 3px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
-#offreresultat #noterform div #note::placeholder, #offreresultat #emploie_pris main #noterform div #envoyer::placeholder, #emploie_pris main #offreresultat #noterform div #envoyer::placeholder, #offreresultat #emploie_pris main #noterform div #comment::placeholder, #emploie_pris main #offreresultat #noterform div #comment::placeholder, #offreresultat #noterform div textarea::placeholder {
+#offreresultat #noterform div #note::placeholder, #offreresultat #noterform div textarea::placeholder {
   color: #5386e4;
 }
 #offreresultat #noterform div input {
@@ -2018,7 +2056,8 @@ main, header {
 }
 
 #emploie main {
-  border: 1px solid black;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 #emploie main .liste {
   padding: 1%;
@@ -2026,12 +2065,12 @@ main, header {
 }
 #emploie main .liste li {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 50% 1fr max-content;
   grid-auto-rows: max-content repeat(3, auto);
-  row-gap: 1vh;
-  column-gap: 1vw;
+  row-gap: 2vh;
+  column-gap: 2vw;
   padding: 3vh 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 #emploie main .liste li:last-child {
   border: none;
@@ -2041,15 +2080,20 @@ main, header {
   grid-row: 1/span 1;
 }
 #emploie main .liste li .date {
-  grid-column: 2/span 1;
+  grid-column: 3/span 1;
   grid-row: 1/span 1;
   justify-self: right;
   align-self: start;
-  text-decoration: underline;
 }
 #emploie main .liste li p {
-  grid-column: 1/span 2;
+  grid-column: 1/span 3;
   grid-row: 2/span 1;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
+  line-height: 1.6rem;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 #emploie main .liste li .temp {
   grid-column: 1/span 1;
@@ -2062,22 +2106,47 @@ main, header {
   grid-row: 4/span 1;
   justify-self: center;
   align-self: center;
+  background: #c33149;
+  color: #fff;
+  border-color: #c33149;
+}
+#emploie main .liste li .sup:hover, #emploie main .liste li .sup:focus {
+  background: transparent;
+  color: #c33149;
+}
+#emploie main .liste li .sup i {
+  margin-right: 1vw;
 }
 #emploie main .liste li div {
   position: relative;
-  grid-column: 2/span 1;
+  grid-column: 2/span 2;
   grid-row: 4/1 span;
   justify-self: center;
   align-self: center;
 }
 #emploie main .liste li div p {
   position: absolute;
-  right: -5px;
-  top: -5px;
-  background: red;
-  padding: 1ch;
+  right: -20px;
+  top: -17px;
+  background: #85cb33;
+  color: #fff;
+  padding: 1ch 2ch;
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: inherit;
+}
+#emploie main .liste li div .choix {
+  background: #5386e4;
+  color: #fff;
+  border-color: #5386e4;
+}
+#emploie main .liste li div .choix:hover, #emploie main .liste li div .choix:focus {
+  background: transparent;
+  color: #5386e4;
+}
+#emploie main .liste li div .choix i {
+  margin-right: 1vw;
 }
 #emploie main .liste .error {
   display: inherit;
@@ -2100,8 +2169,9 @@ main, header {
   grid-auto-columns: rapeat(2, 1fr);
   grid-template-rows: auto 1fr;
   row-gap: 2vh;
-  background: white;
-  border: 1px solid black;
+  background: #694873;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
   padding: 1vh 1vw;
   max-height: 80vh;
   width: 50vw;
@@ -2110,6 +2180,7 @@ main, header {
   grid-column: 1/span 1;
   grid-row: 1/span 1;
   align-self: center;
+  color: #fff;
 }
 #emploie main #choix div .annul {
   grid-column: 2/span 1;
@@ -2118,6 +2189,12 @@ main, header {
   align-self: start;
   background: none;
   border: none;
+  color: #fff;
+  text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.3);
+}
+#emploie main #choix div .annul:hover {
+  box-shadow: 0 0 0 0 transparent;
+  color: #fff;
 }
 #emploie main #choix div ul {
   grid-column: 1/span 2;
@@ -2129,7 +2206,7 @@ main, header {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: max-content auto;
   row-gap: 2vh;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding: 1vh 1vw;
 }
 #emploie main #choix div ul li:last-child {
@@ -2146,18 +2223,20 @@ main, header {
   row-gap: 1vh;
   column-gap: 0.5vw;
   text-decoration: none;
+  color: #fff;
 }
 #emploie main #choix div ul li .ident img {
   grid-column: 1/span 2;
   justify-self: center;
   align-self: center;
   height: 17vh;
-  border: 1px solid black;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 50%;
 }
 #emploie main #choix div ul li .ident .nom, #emploie main #choix div ul li .ident .prenom {
   justify-self: right;
   align-self: center;
+  font-weight: bold;
 }
 #emploie main #choix div ul li .ident .prenom {
   justify-self: left;
@@ -2167,17 +2246,49 @@ main, header {
   grid-row: 2/span 1;
   align-self: center;
   justify-self: center;
+  min-width: 50%;
+  background: #c33149;
+  color: #fff;
+  border-color: #c33149;
+}
+#emploie main #choix div ul li .non:hover, #emploie main #choix div ul li .oui:hover, #emploie main #choix div ul li .btn:hover, #emploie main #choix div ul li .non:focus, #emploie main #choix div ul li .oui:focus, #emploie main #choix div ul li .btn:focus {
+  background: transparent;
+  color: #c33149;
+}
+#emploie main #choix div ul li .non i, #emploie main #choix div ul li .oui i, #emploie main #choix #suprimer div ul li .non i, #emploie main #suprimer #choix div ul li .non i, #emploie main #suprimer #choix div ul li .btn i, #emploie main #choix #suprimer div ul li .btn i, #emploie main #suprimer #choix div ul li .oui i, #emploie main #choix #suprimer div ul li .oui i, #emploie main #choix div ul li .btn i {
+  margin-right: 1vw;
 }
 #emploie main #choix div ul li .btn {
   grid-column: 2/span 1;
-  text-decoration: none;
+  background: #5386e4;
+  color: #fff;
+  border-color: #5386e4;
+}
+#emploie main #choix div ul li .btn:hover, #emploie main #choix div ul li .btn:focus {
+  background: transparent;
+  color: #5386e4;
+}
+#emploie main #choix div ul li .btn i {
+  margin-right: 1vw;
 }
 #emploie main #choix div ul li .oui, #emploie main #choix #suprimer div ul li .non, #emploie main #suprimer #choix div ul li .non, #emploie main #suprimer #choix div ul li .btn, #emploie main #choix #suprimer div ul li .btn, #emploie main #suprimer #choix div ul li .oui, #emploie main #choix #suprimer div ul li .oui {
   grid-column: 3/span 1;
+  background: #85cb33;
+  color: #fff;
+  border-color: #85cb33;
+}
+#emploie main #choix div ul li .oui:hover, #emploie main #choix #suprimer div ul li .non:hover, #emploie main #suprimer #choix div ul li .non:hover, #emploie main #suprimer #choix div ul li .btn:hover, #emploie main #choix #suprimer div ul li .btn:hover, #emploie main #choix div ul li .oui:focus, #emploie main #choix #suprimer div ul li .non:focus, #emploie main #suprimer #choix div ul li .non:focus, #emploie main #suprimer #choix div ul li .btn:focus, #emploie main #choix #suprimer div ul li .btn:focus {
+  background: transparent;
+  color: #85cb33;
+}
+#emploie main #choix div ul li .oui i, #emploie main #choix #suprimer div ul li .non i, #emploie main #suprimer #choix div ul li .non i, #emploie main #suprimer #choix div ul li .btn i, #emploie main #choix #suprimer div ul li .btn i, #emploie main #suprimer #choix div ul li .oui i, #emploie main #choix #suprimer div ul li .oui i {
+  margin-right: 1vw;
 }
 #emploie main #choix div ul .error {
   display: inherit;
   text-align: center;
+  color: #fff;
+  font-size: 2rem;
 }
 #emploie main #suprimer {
   display: flex;
@@ -2195,10 +2306,11 @@ main, header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  background: white;
+  background: #5386e4;
   height: 20vh;
   width: 50vw;
-  border: 1px solid black;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
   padding: 1vh 1vw;
 }
 #emploie main #suprimer div p {
@@ -2206,13 +2318,39 @@ main, header {
   grid-row: 1/span 1;
   justify-self: center;
   align-self: center;
+  font-size: 2rem;
+  color: #fff;
 }
 #emploie main #suprimer div .oui, #emploie main #suprimer div .non, #emploie main #suprimer #choix div ul li .btn, #emploie main #choix #suprimer div ul li .btn, #emploie main #suprimer #choix div ul li .oui, #emploie main #choix #suprimer div ul li .oui, #emploie main #suprimer #choix div ul li .non, #emploie main #choix #suprimer div ul li .non {
   justify-self: center;
   align-self: center;
+  background: #85cb33;
+  color: #fff;
+  border-color: #85cb33;
 }
+#emploie main #suprimer div .oui:hover, #emploie main #suprimer div .non:hover, #emploie main #suprimer #choix div ul li .btn:hover, #emploie main #choix #suprimer div ul li .btn:hover, #emploie main #suprimer #choix div ul li .oui:hover, #emploie main #choix #suprimer div ul li .oui:hover, #emploie main #suprimer #choix div ul li .non:hover, #emploie main #choix #suprimer div ul li .non:hover, #emploie main #suprimer div .oui:focus, #emploie main #suprimer div .non:focus, #emploie main #suprimer #choix div ul li .btn:focus, #emploie main #choix #suprimer div ul li .btn:focus, #emploie main #suprimer #choix div ul li .oui:focus, #emploie main #choix #suprimer div ul li .oui:focus, #emploie main #suprimer #choix div ul li .non:focus, #emploie main #choix #suprimer div ul li .non:focus {
+  background: transparent;
+  color: #85cb33;
+}
+#emploie main #suprimer div .oui i, #emploie main #suprimer div .non i, #emploie main #suprimer #choix div ul li .btn i, #emploie main #choix #suprimer div ul li .btn i, #emploie main #suprimer #choix div ul li .oui i, #emploie main #choix #suprimer div ul li .oui i, #emploie main #suprimer #choix div ul li .non i, #emploie main #choix #suprimer div ul li .non i {
+  margin-right: 1vw;
+}
+#emploie main #suprimer div .non, #emploie main #suprimer #choix div ul li .btn, #emploie main #choix #suprimer div ul li .btn, #emploie main #suprimer #choix div ul li .oui, #emploie main #suprimer #choix div ul li .non, #emploie main #choix #suprimer div ul li .oui, #emploie main #choix #suprimer div ul li .non {
+  background: #c33149;
+  color: #fff;
+  border-color: #c33149;
+}
+#emploie main #suprimer div .non:hover, #emploie main #suprimer #choix div ul li .btn:hover, #emploie main #choix #suprimer div ul li .btn:hover, #emploie main #suprimer #choix div ul li .oui:hover, #emploie main #choix #suprimer div ul li .oui:hover, #emploie main #choix #suprimer div ul li .non:hover, #emploie main #suprimer #choix div ul li .non:hover, #emploie main #suprimer div .non:focus, #emploie main #suprimer #choix div ul li .btn:focus, #emploie main #choix #suprimer div ul li .btn:focus, #emploie main #suprimer #choix div ul li .oui:focus, #emploie main #choix #suprimer div ul li .oui:focus, #emploie main #choix #suprimer div ul li .non:focus, #emploie main #suprimer #choix div ul li .non:focus {
+  background: transparent;
+  color: #c33149;
+}
+#emploie main #suprimer div .non i, #emploie main #suprimer #choix div ul li .btn i, #emploie main #choix #suprimer div ul li .btn i, #emploie main #suprimer #choix div ul li .oui i, #emploie main #choix #suprimer div ul li .oui i, #emploie main #choix #suprimer div ul li .non i, #emploie main #suprimer #choix div ul li .non i {
+  margin-right: 1vw;
+}
+
 #emploie_pris main {
-  border: 1px solid black;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 #emploie_pris main ul {
   padding: 1%;
@@ -2222,8 +2360,9 @@ main, header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: min-content max-content 1fr;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   row-gap: 2vh;
+  column-gap: 2vw;
   padding: 3vh 0;
 }
 #emploie_pris main ul li:last-child {
@@ -2235,13 +2374,17 @@ main, header {
 #emploie_pris main ul li h2 {
   grid-column: 1/span 1;
   grid-row: 1/span 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2ch;
+  width: 100%;
 }
 #emploie_pris main ul li .date {
   grid-column: 2/span 1;
   grid-row: 1/span 1;
   justify-self: right;
   align-self: start;
-  text-decoration: underline;
 }
 #emploie_pris main ul li .ident {
   display: flex;
@@ -2256,7 +2399,7 @@ main, header {
 }
 #emploie_pris main ul li .ident img {
   height: 20vh;
-  border: 1px solid black;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 50%;
 }
 #emploie_pris main ul li .ident p {
@@ -2268,9 +2411,36 @@ main, header {
   grid-row: 3/span 1;
   justify-self: center;
   align-self: center;
+  background: #85cb33;
+  color: #fff;
+  border-color: #85cb33;
+}
+#emploie_pris main ul li #noter:hover, #emploie_pris main ul li .btn:hover, #emploie_pris main ul li #noter:focus, #emploie_pris main ul li .btn:focus {
+  background: transparent;
+  color: #85cb33;
+}
+#emploie_pris main ul li #noter i, #emploie_pris main ul li .btn i {
+  margin-right: 1vw;
+}
+#emploie_pris main ul li #noter[disabled], #emploie_pris main ul li [disabled].btn {
+  background: transparent;
+  color: #85cb33;
+}
+#emploie_pris main ul li #noter[disabled]:hover, #emploie_pris main ul li [disabled].btn:hover {
+  box-shadow: 0 0 0 0;
 }
 #emploie_pris main ul li .btn {
   grid-column: 1/span 1;
+  background: #5386e4;
+  color: #fff;
+  border-color: #5386e4;
+}
+#emploie_pris main ul li .btn:hover, #emploie_pris main ul li .btn:focus {
+  background: transparent;
+  color: #5386e4;
+}
+#emploie_pris main ul li .btn i {
+  margin-right: 1vw;
 }
 #emploie_pris main #noterform {
   display: flex;
@@ -2278,46 +2448,92 @@ main, header {
   align-items: center;
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
-  background: #00000080;
-  height: 100vh;
-  width: 100vw;
+  right: 0;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #emploie_pris main #noterform div {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) min-content;
-  grid-template-rows: min-content repeat(3, auto);
-  background: white;
-  border: 1px solid black;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content auto 1fr max-content;
+  row-gap: 2vh;
   height: 50vh;
   width: 50vw;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
   padding: 1%;
+  background-color: #5386e4;
+}
+#emploie_pris main #noterform div #annuler {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  justify-self: right;
+  align-self: start;
+  background: none;
+  border: none;
+  color: #fff;
+  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.3);
+}
+#emploie_pris main #noterform div #annuler:hover {
+  color: #fff;
+  box-shadow: 0 0 0 transparent;
+  border: none;
+  border-radius: 0;
 }
 #emploie_pris main #noterform div h2 {
   grid-column: 1/span 2;
   grid-row: 1/span 1;
+  justify-self: left;
+  align-self: center;
+  color: #fff;
 }
-#emploie_pris main #noterform div #annuler {
-  grid-column: 3/span 1;
-  grid-row: 1/span 1;
-  background: none;
+#emploie_pris main #noterform div #note, #emploie_pris main #noterform div textarea {
+  background: #d8ebfb;
   border: none;
+  box-shadow: inset 4px 3px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
-#emploie_pris main #noterform div #note, #emploie_pris main #noterform div #envoyer, #emploie_pris main #noterform div #comment {
-  grid-column: 1/span 3;
+#emploie_pris main #noterform div #note::placeholder, #emploie_pris main #noterform div textarea::placeholder {
+  color: #5386e4;
+}
+#emploie_pris main #noterform div input {
+  grid-column: 1/span 2;
   grid-row: 2/span 1;
   justify-self: center;
-  align-self: center;
+  align-self: end;
+  height: 3vh;
+  width: 82.4%;
+  margin-top: 2vh;
+  color: #5386e4;
+}
+#emploie_pris main #noterform div textarea {
+  grid-column: 1/span 2;
+  grid-row: 3/span 1;
+  justify-self: center;
+  align-self: start;
+  height: 100%;
   width: 80%;
 }
-#emploie_pris main #noterform div #comment {
-  grid-row: 3/span 1;
-  align-self: stretch;
-}
 #emploie_pris main #noterform div #envoyer {
+  grid-column: 1/span 2;
   grid-row: 4/span 1;
-  width: auto;
+  justify-self: center;
+  align-self: end;
+  height: 5vh;
+  width: 50%;
+  margin: 2vh 0;
+  background: #85cb33;
+  color: #fff;
+  border-color: #85cb33;
+}
+#emploie_pris main #noterform div #envoyer:hover, #emploie_pris main #noterform div #envoyer:focus {
+  background: transparent;
+  color: #85cb33;
+}
+#emploie_pris main #noterform div #envoyer i {
+  margin-right: 1vw;
 }
 
 #emploie_cree main {
@@ -2326,7 +2542,8 @@ main, header {
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  border: 1px solid black;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 #emploie_cree main #formprojet {
   padding: 1%;
@@ -2347,40 +2564,98 @@ main, header {
   font-size: 2rem;
   justify-self: stretch;
   align-self: stretch;
+  box-shadow: inset 4px 3px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: #f8f8f8;
+  color: #5386e4;
+  box-shadow: 0 0 0 transparent;
+  background: #85cb33;
+  color: #fff;
+  border-color: #85cb33;
+}
+#emploie_cree main #formprojet form #envoyer::placeholder {
+  color: #5386e4;
+}
+#emploie_cree main #formprojet form #envoyer:hover, #emploie_cree main #formprojet form #envoyer:focus {
+  background: transparent;
+  color: #85cb33;
+}
+#emploie_cree main #formprojet form #envoyer i {
+  margin-right: 1vw;
 }
 #emploie_cree main #formprojet form input[name=titre] {
   font-size: 2rem;
   justify-self: stretch;
   align-self: stretch;
+  box-shadow: inset 4px 3px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: #f8f8f8;
+  color: #5386e4;
   grid-column: 1/span 2;
   grid-row: 1/span 1;
+  border: none;
+}
+#emploie_cree main #formprojet form input[name=titre]::placeholder {
+  color: #5386e4;
 }
 #emploie_cree main #formprojet form textarea {
   font-size: 2rem;
   justify-self: stretch;
   align-self: stretch;
+  box-shadow: inset 4px 3px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: #f8f8f8;
+  color: #5386e4;
   grid-column: 1/span 2;
   grid-row: 2/span 1;
+  border: none;
+}
+#emploie_cree main #formprojet form textarea::placeholder {
+  color: #5386e4;
 }
 #emploie_cree main #formprojet form input[name=temp] {
   font-size: 2rem;
   justify-self: stretch;
   align-self: stretch;
+  box-shadow: inset 4px 3px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: #f8f8f8;
+  color: #5386e4;
   grid-column: 1/span 1;
   grid-row: 3/span 1;
   width: 100%;
+  border: none;
+}
+#emploie_cree main #formprojet form input[name=temp]::placeholder {
+  color: #5386e4;
 }
 #emploie_cree main #formprojet form select[name=temp_mesure] {
   font-size: 2rem;
   justify-self: stretch;
   align-self: stretch;
+  box-shadow: inset 4px 3px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: #f8f8f8;
+  color: #5386e4;
   grid-column: 2/span 1;
   grid-row: 3/span 1;
+  border: none;
+}
+#emploie_cree main #formprojet form select[name=temp_mesure]::placeholder {
+  color: #5386e4;
 }
 #emploie_cree main #erreur {
   margin-bottom: 2vh;
   padding: 1% 0;
   white-space: nowrap;
+  width: 50vw;
+}
+#emploie_cree main #erreur h3 {
+  margin-bottom: 1vh;
+}
+#emploie_cree main #erreur ul {
+  margin-left: 3vw;
+  list-style-type: unset;
 }
 #emploie_cree #resultat {
   display: flex;
@@ -2389,7 +2664,7 @@ main, header {
   position: fixed;
   bottom: 0;
   right: 0;
-  border: 1px solid black;
+  box-shadow: -2px -4px 10px 0 rgba(0, 0, 0, 0.3);
   width: 30vw;
   height: 7vh;
 }
@@ -2404,6 +2679,16 @@ main, header {
 #emploie_cree #resultat p {
   flex: 1;
   text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+#emploie_cree #resultat[class=valid] {
+  background: #85cb33;
+  color: #fff;
+}
+#emploie_cree #resultat[class=notvalid] {
+  background: #c33149;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

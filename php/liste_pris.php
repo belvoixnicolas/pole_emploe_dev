@@ -44,10 +44,16 @@
                             </p>
                         </a>
                         <a class=\"btn\" href=\"./boite_mail.php?section=envoie&id={$projetv['iduser']}\" target=\"_blanck\" >
-                            Le cantacter
+                            <i class=\"far fa-envelope\"></i>
+                            <span>
+                                Le cantacter
+                            </span>
                         </a>
                         <button id=\"noter\" value=\"{$projetv['idoffre']}\" {$disa}>
-                            Noter
+                            <i class=\"fas fa-star\"></i>
+                            <span>
+                                Noter
+                            </span>
                         </button>
                     </li>
                 ";
