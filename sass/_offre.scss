@@ -3,7 +3,8 @@
         display: grid;
         grid-auto-columns: 1fr;
         grid-template-rows: max-content auto;
-        border: 1px solid black;
+        box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
         min-height: 70vh;
 
         .recherche select {
@@ -12,6 +13,11 @@
             width: 90%;
             margin: 2vh auto;
             font-size: 2.5rem;
+            border: none;
+            background: #fefefe;
+            box-shadow: inset 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+            color: $bleu;
         }
 
         .resultat {
@@ -30,12 +36,12 @@
 
                 li {
                     display: grid;
-                    grid-template-columns: 1fr 1fr;
+                    grid-template-columns: minmax(200px, 1fr) 1fr;
                     grid-template-rows: repeat(4, max-content);
-                    row-gap: 1vh;
+                    row-gap: 3vh;
                     column-gap: 1vw;
                     padding: 2vh 0;
-                    border-bottom: 1px solid black; 
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
 
                     &:last-child {
                         border: none;
@@ -54,6 +60,10 @@
                         grid-row: 1 / span 1;
                         justify-self: left;
                         align-self: baseline;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 100%;
                     }
 
                     .date {
@@ -61,7 +71,6 @@
                         grid-row: 1 / span 1;
                         justify-self: right;
                         align-self: flex-start;
-                        text-decoration: underline;
                     }
 
                     .entreprise {
@@ -83,6 +92,12 @@
                         grid-row: 3 / span 1;
                         justify-self: left;
                         align-self: baseline;
+                        letter-spacing: .1rem;
+                        word-spacing: .1rem;
+                        line-height: 1.6rem;
+                        word-wrap: break-word;
+                        text-overflow: ellipsis;
+                        width: 100%;
                     }
 
                     .periode {
@@ -93,11 +108,16 @@
                     }
 
                     button {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: center;
+                        align-items: center;
                         grid-column: 2 / span 1;
                         grid-row: 4 / span 1;
                         justify-self: right;
                         height: 5rem;
-                        width: 50%;
+                        min-width: 167px;
+                        @include vert();
                     }
                 }
 

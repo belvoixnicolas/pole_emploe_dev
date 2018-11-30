@@ -64,7 +64,11 @@
                             </p>
 
                             <button type=\"button\" value=\"{$offre['idoffre']}\">
-                                Ça m'interesse
+                                <i class=\"far fa-thumbs-up\"></i>
+
+                                <span>
+                                    Ça m'interesse
+                                </span>
                             </button>
                         </li>
                     ";

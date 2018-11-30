@@ -87,13 +87,19 @@
 
                     $lien = "
                         <button id=\"noter\" value=\"{$reponse['idoffre']}\" {$disable}>
-                            Notter
+                            <i class=\"fas fa-star\"></i>
+                            <span>
+                                Notter
+                            </span> 
                         </button
                     ";
                 }else {
                     $lien = "
                         <a class=\"btn\" href=\"./boite_mail.php?section=envoie&id={$reponse['id']}\"   target=\"_blanck\">
-                            Contact
+                            <i class=\"fas fa-envelope\"></i>
+                            <span>
+                                Contact
+                            </span>
                         </a>
                     ";
                 }

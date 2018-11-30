@@ -12,6 +12,11 @@
         </label>
         <input type="file" name="join[]" id="join" multiple class='hiden'>
 
-    <input type="submit" value="Evoyer">
+    <button type="submit">
+        <i class="far fa-envelope-open"></i>
+        <span>
+            Envoyer
+        </span>
+    </button>
 </form>
 <script src="./js/file_mail.js"></script>

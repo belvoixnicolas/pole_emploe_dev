@@ -71,6 +71,9 @@
                 letter-spacing: .1rem;
                 word-spacing: .1rem;
                 line-height: 1.6rem;
+                word-wrap: break-word;
+                text-overflow: ellipsis;
+                width: 100%;
             }
 
             .piecejoin ul {

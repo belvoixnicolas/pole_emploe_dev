@@ -7,6 +7,10 @@
         background: transparent;
         color: $violet;
     }
+
+    i {
+        margin-right: 1vw;
+    }
 }
 
 @mixin vert {
@@ -17,6 +21,10 @@
     &:hover, &:focus {
         background: transparent;
         color: $vert;
+    }
+
+    i {
+        margin-right: 1vw;
     }
 }
 
@@ -29,6 +37,10 @@
         background: transparent;
         color: $bleu;
     }
+
+    i {
+        margin-right: 1vw;
+    }
 }
 
 @mixin rouge {
@@ -40,9 +52,17 @@
         background: transparent;
         color: $rouge;
     }
+
+    i {
+        margin-right: 1vw;
+    }
 }
 
 button, .btn, input[type=submit] {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
     padding: 2% 5%;
     border: none;
     transition: box-shadow .5s;
@@ -50,6 +70,8 @@ button, .btn, input[type=submit] {
     font-weight: bold;
     border: 2px solid;
     border-radius: 3px;
+    text-align: center;
+    text-decoration: none !important;
 
     &:hover, &:focus {
         box-shadow: 2px 4px 10px 0 rgba(0,0,0,.30);

@@ -371,16 +371,18 @@
 
             input[type=text], textarea {
                 background: #d8ebfb;
-                border: none;
-                box-shadow: inset 4px 3px 8px 0 rgba(0,0,0,.2);
-                border-radius: 3px;
 
                 &::placeholder {
                     color: $bleu;
                 }
             }
 
+            input[type=text] {
+                height: 10%;
+            }
+
             textarea {
+                height: 45%;
                 width: 78%;
             }
         }

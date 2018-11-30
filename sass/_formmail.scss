@@ -16,6 +16,12 @@
         height: 10%;
     }
 
+    input[name=sujet], textarea {
+        border: none;
+        box-shadow: inset 4px 3px 8px 0 rgba(0,0,0,.2);
+        border-radius: 3px;
+    }
+
     textarea {
         height: 40%;
     }
@@ -69,7 +75,8 @@
         }
     }
 
-    input[type=submit] {
+    button[type=submit] {
         width: 20%;
+        @include vert();
     }
 }
