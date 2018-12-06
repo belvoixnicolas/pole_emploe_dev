@@ -25,6 +25,7 @@
                 grid-template-rows: min-content auto 20%;
                 height: 100%;
                 overflow: hidden;
+                padding: 2%;
 
                 h2, h3 {
                     padding: 1%;
@@ -60,16 +61,56 @@
         }
 
         article {
-            display: flex;
+            display: inline-flex;
             flex-flow: column nowrap;
             justify-content: space-around;
-            align-items: center;
             min-height: 20vh;
             box-shadow: 2px 4px 10px 0 rgba(0,0,0,.30);
             border-radius: 10px;
+            padding: 1vh 1vw;
 
             p {
                 padding: 0 1vw;
+            }
+        }
+    }
+
+    @media all and (max-width: 610px) {
+        header {
+            min-height: 80vh;
+        }
+    }
+    
+    @media all and (max-width: 450px) {
+        header {
+            justify-content: inherit;
+            align-items: inherit;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 1fr;
+            row-gap: 2vh;
+            box-shadow: inherit;
+            margin: 0;
+            width: 100%;
+
+            article {
+                border: none;
+                height: 80vh;
+                width: inherit;
+                box-shadow: 2px 4px 10px 0 rgba(0,0,0,.30);
+                border-radius: 10px;
+
+                &:nth-child(1), &:nth-child(2) {
+                    border: none;
+                }
+            }
+        }
+
+        main {
+            width: 100%;
+            
+            article {
+                box-sizing: content-box;
             }
         }
     }

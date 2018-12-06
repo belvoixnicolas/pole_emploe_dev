@@ -1,9 +1,12 @@
+$heuteurcel: (100% - (3 * 6)) / 7;
+$largeurcel: 97% / 2;
+
 #form_dev {
     display: grid;
-    grid-template-columns: 48.5% 48.5%;
-    grid-template-rows: repeat(5, 1fr);
-    grid-auto-rows: 1fr;
-    grid-gap: 3%;
+    grid-template-columns: repeat(2, $largeurcel);
+    grid-template-rows: repeat(7, $heuteurcel);
+    row-gap: 3%;
+    column-gap: 3%;
     padding: 2%;
 
     input[type=email], input[type=password], input[type=submit] {
@@ -11,7 +14,23 @@
     }
 
     input[type=submit] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
         width: 50%;
         justify-self: center;
+    }
+}
+
+@media all and (max-width: 610px) {
+    $hauteurmedia: (100% - (3 * 8)) / 9;
+
+    #form_dev {
+        grid-template-rows: repeat(9, $hauteurmedia);
+        
+        input, select {
+            grid-column: span 2;
+        }
     }
 }

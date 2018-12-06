@@ -639,6 +639,7 @@ main, header {
   grid-template-rows: min-content auto 20%;
   height: 100%;
   overflow: hidden;
+  padding: 2%;
 }
 #index header article .expli h2, #index header article .inscription h2, #index header article .expli h3, #index header article .inscription h3 {
   padding: 1%;
@@ -666,54 +667,102 @@ main, header {
   margin-bottom: 2vh;
 }
 #index main article {
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -ms-flex-flow: column nowrap;
       flex-flow: column nowrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -ms-flex-align: center;
-      align-items: center;
   min-height: 20vh;
   box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  padding: 0 1vw;
 }
 #index main article p {
   padding: 0 1vw;
 }
+@media all and (max-width: 610px) {
+  #index header {
+    min-height: 80vh;
+  }
+}
+@media all and (max-width: 450px) {
+  #index header {
+    -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+    -ms-flex-pack: stretch;
+        justify-content: stretch;
+  }
+  #index header article {
+    width: inherit;
+    border: none;
+  }
+}
 
 #form_dev {
   display: grid;
-  grid-template-columns: 48.5% 48.5%;
-  grid-template-rows: repeat(5, 1fr);
-  grid-auto-rows: 1fr;
-  grid-gap: 3%;
+  grid-template-columns: repeat(2, 48.5%);
+  grid-template-rows: repeat(7, 11.7142857143%);
+  row-gap: 3%;
+  -moz-column-gap: 3%;
+       column-gap: 3%;
   padding: 2%;
 }
 #form_dev input[type=email], #form_dev input[type=password], #form_dev input[type=submit] {
   grid-column: span 2;
 }
 #form_dev input[type=submit] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0;
   width: 50%;
   justify-self: center;
 }
 
+@media all and (max-width: 610px) {
+  #form_dev {
+    grid-template-rows: repeat(9, 8.4444444444%);
+  }
+  #form_dev input, #form_dev select {
+    grid-column: span 2;
+  }
+}
 #form_pat {
   display: grid;
-  grid-template-columns: 48.5% 48.5%;
-  grid-template-rows: repeat(6, 1fr);
-  grid-auto-rows: 1fr;
-  grid-gap: 3%;
+  grid-template-columns: repeat(2, 48.5%);
+  grid-template-rows: repeat(8, 9.875%);
+  row-gap: 3%;
+  -moz-column-gap: 3%;
+       column-gap: 3%;
   padding: 2%;
 }
 #form_pat input[name=entreprise], #form_pat input[type=email], #form_pat input[type=password], #form_pat input[type=submit] {
   grid-column: span 2;
 }
 #form_pat input[type=submit] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0;
   width: 50%;
   justify-self: center;
 }
 
+@media all and (max-width: 610px) {
+  #form_pat {
+    grid-template-rows: repeat(10, 7.3%);
+  }
+  #form_pat input, #form_pat select {
+    grid-column: span 2;
+  }
+}
 #error {
   display: grid;
   grid-template-columns: 1fr;

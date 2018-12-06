@@ -3,12 +3,13 @@ $hauteur: 10vh;
 nav {
     position: fixed;
     top: 2vh;
+    left: 0;
     width: 100%;
     z-index: 1;
 
     .main_nav {
         display: grid;
-        grid-template-columns: auto auto min-content;
+        grid-template-columns: min-content auto 1fr min-content;
         grid-template-rows: 100%;
         height: $hauteur;
         width: 96vw;
@@ -19,8 +20,8 @@ nav {
         background-color: $violet;
 
         img {
-            min-height: 50%;
-            max-height: 80%;
+            height: 80%;
+            max-width: 100px;
             align-self: center;
             justify-self: left;
         }
@@ -30,6 +31,7 @@ nav {
             flex-flow: row nowrap;
             justify-content: flex-end;
             align-items: center;
+            grid-column: 3 / span 1;
 
             li {
                 margin: 2%;
@@ -59,6 +61,7 @@ nav {
         }
 
         button {
+            grid-column: 4 / span 1;
             display: flex;
             flex-flow: column nowrap;
             justify-content: center;
@@ -106,10 +109,28 @@ nav {
     i, span {
         color: inherit;
     }
+
+    @media all and (max-width: 679px) {
+        form {
+            width: 60vw;
+        }
+    }
+
+    @media all and (max-width: 450px) {
+        form {
+            margin: 1vh 0;
+            height: 50vh;
+            float: inherit;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
 }
 
 .navscroll {
     top: 0;
+    left: 0;
     transition: top .5s;
 
     .main_nav {
@@ -129,4 +150,22 @@ body {
 main, header {
     width: 96vw;
     margin: 0 auto;
+}
+
+@media all and (max-width: 450px) {
+    body {
+        margin: 0 3vw;
+    }
+
+    nav {
+        padding: 0 3vw;
+
+        .main_nav {
+            width: inherit;
+        }
+    }
+
+    .navscroll {
+        padding: 0;
+    }
 }

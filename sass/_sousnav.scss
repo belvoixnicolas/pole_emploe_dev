@@ -50,4 +50,10 @@
             }
         }
     }
+
+    @media all and (max-width: 450px) {
+        left: 3vw;
+        right: 3vw;
+        width: inherit;
+    }
 }
