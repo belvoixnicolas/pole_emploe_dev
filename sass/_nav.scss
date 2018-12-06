@@ -9,7 +9,7 @@ nav {
     .main_nav {
         display: grid;
         grid-template-columns: auto auto min-content;
-        grid-template-rows: 1fr;
+        grid-template-rows: 100%;
         height: $hauteur;
         width: 96vw;
         padding: 0 1%;

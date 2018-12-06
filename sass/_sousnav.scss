@@ -1,5 +1,5 @@
 .sousnavmail, .sousnavoffre, .sousnavemploie {
-    z-index: inherit;
+    z-index: 1;
     position: sticky;
     position: -webkit-sticky;
     top: 14vh;
@@ -9,6 +9,7 @@
     box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background: $bleu;
+    padding: 2vh 0;
 
     ul {
         display: flex;
@@ -18,7 +19,6 @@
         height: 100%;
         width: 50vw;
         margin: 0 auto;
-        padding: 2vh 0;
 
         li a {
             display: flex;

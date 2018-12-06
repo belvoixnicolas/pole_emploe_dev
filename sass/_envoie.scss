@@ -182,7 +182,7 @@
 
     main #form_mail {
         display: grid;
-        grid-template-columns: 2vw 1fr 2vw;
+        grid-template-columns: 2% 96% 2%;
         grid-template-rows: min-content min-content 1fr max-content min-content;
         row-gap: 3vh;
         width: 100%;
