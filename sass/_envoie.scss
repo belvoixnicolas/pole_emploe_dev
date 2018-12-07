@@ -10,8 +10,7 @@
         .bar_rech input {
             display: block;
             height: 5vh;
-            width: 97.6%;
-            margin: 2vh auto;
+            margin: 2vh 0;
             font-size: 2.5rem;
             border: none;
             background: #fefefe;
@@ -249,5 +248,11 @@
         grid-row: 5 / span 1;
         justify-self: center;
         padding: 1%;
+    }
+
+    @media all and (max-width: 450px) {
+        main {
+            width: inherit;
+        }
     }
 }

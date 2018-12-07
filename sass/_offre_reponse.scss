@@ -173,7 +173,7 @@
 
         div {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr max-content;
             grid-template-rows: max-content auto 1fr max-content;
             row-gap: 2vh;
             height: 50vh;
@@ -192,6 +192,7 @@
                 border: none;
                 color: #fff;
                 text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.3);
+                z-index: 1;
 
                 &:hover {
                     color: #fff;
@@ -202,7 +203,7 @@
             }
 
             h2 {
-                grid-column: 1 / span 2;
+                grid-column: 1 / span 1;
                 grid-row: 1 / span 1;
                 justify-self: left;
                 align-self: center;
@@ -250,6 +251,65 @@
                 margin: 2vh 0;
                 @include vert();
             }
+        }
+    }
+
+    @media all and (max-width: 450px) {
+        main {
+            width: inherit;
+            box-shadow: inherit;
+
+            .optien {
+                justify-content: space-around;
+                border-radius: 10px;
+                margin-bottom: 2vh;
+                box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+
+                label {
+                    margin: 0;
+                }
+            }
+
+            .resultat {
+                padding: inherit;
+
+                ul li {
+                    grid-template-columns: 1fr max-content;
+                    grid-template-rows: repeat(6, auto);
+                    margin: 0 0 1vh;
+                    border-radius: 10px;
+                    box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+
+                    .entreprise {
+                        grid-column: 1 / span 2;
+                    }
+
+                    .ville {
+                        grid-column: 1 / span 2;
+                        grid-row: 3 / span 1;
+                        justify-self: left;
+                        align-self: center;
+                    }
+
+                    .description {
+                        grid-row: 4 / span 1;
+                    }
+
+                    .periode {
+                        grid-row: 5 / span 1;
+                    }
+
+                    #noter, .btn {
+                        grid-column: 1 / span 2;
+                        grid-row: 6 / span 1;
+                        justify-self: center;
+                    }
+                }
+            }
+        }
+
+        #noterform div {
+            width: 80vw;
         }
     }
 }

@@ -672,7 +672,7 @@ main, header {
   margin-bottom: 2vh;
 }
 #index main article {
-  display: inline-flex;
+  display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
   min-height: 20vh;
@@ -1152,7 +1152,8 @@ main, header {
   grid-template-columns: 1fr min-content;
   grid-template-rows: min-content repeat(2, auto);
   background: #5386e4;
-  height: 80%;
+  height: 50%;
+  max-width: 80%;
   padding: 1%;
   border-radius: 10px;
   box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
@@ -1201,6 +1202,93 @@ main, header {
   grid-row: 2/span 1;
   justify-self: center;
   align-self: center;
+}
+@media all and (max-width: 760px) {
+  #profil main .code ul {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+@media all and (max-width: 450px) {
+  #profil main {
+    width: inherit;
+  }
+  #profil main .identite .signaler p span, #profil main .identite .modif p span {
+    display: none;
+  }
+  #profil main .identite .photo:hover .note {
+    top: 89%;
+    right: -10%;
+  }
+  #profil main .identite .photo .note {
+    top: 50%;
+    right: 38%;
+    transform: rotate(-48deg);
+  }
+  #profil main .identite .photo img {
+    width: 50vw;
+    height: inherit;
+  }
+  #profil main .commentaire ul li {
+    grid-template-rows: min-content min-content auto;
+    grid-template-columns: 100%;
+  }
+  #profil main .commentaire ul li .lienident {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+  }
+  #profil main .commentaire ul li .lienident img {
+    width: 25vw;
+    height: inherit;
+  }
+  #profil main .commentaire ul li .lienident .nom, #profil #emploie main .commentaire #choix div ul li .lienident .ident .prenom, #emploie #profil main .commentaire #choix div ul li .lienident .ident .prenom, #profil #emploie main #choix div .commentaire ul li .lienident .ident .prenom, #emploie #profil main #choix div .commentaire ul li .lienident .ident .prenom, #profil #emploie main .commentaire #choix div ul li .ident .lienident .prenom, #emploie #profil main .commentaire #choix div ul li .ident .lienident .prenom, #profil #emploie main #choix div .commentaire ul li .ident .lienident .prenom, #emploie #profil main #choix div .commentaire ul li .ident .lienident .prenom {
+    display: none;
+  }
+  #profil main .commentaire ul li .note {
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    justify-self: center;
+  }
+  #profil main .commentaire ul li .com {
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
+  }
+  #profil main .commentaire ul li .date {
+    display: none;
+  }
+  #profil main .code ul {
+    grid-template-columns: repeat(2, auto);
+  }
+  #profil main .code ul li img {
+    height: 30vw;
+    width: 30vw;
+  }
+  #profil main .entreprise section .descript {
+    grid-column: 1/span 2;
+  }
+  #profil main .entreprise section .img {
+    display: none;
+  }
+  #profil #dernco {
+    padding: 2%;
+  }
+  #profil #dernco span .phrase {
+    display: none;
+  }
+  #profil #mail {
+    left: 3vw;
+    right: 3vw;
+  }
+  #profil #mail span:nth-child(1) {
+    padding: 2vw;
+  }
+  #profil #mail #form_mail {
+    width: 100%;
+    height: 80vh;
+  }
+  #profil #mail #form_mail button[type=submit] {
+    max-width: 50%;
+    min-width: 120px;
+  }
 }
 
 #form_mail {
@@ -1272,7 +1360,7 @@ main, header {
   cursor: pointer;
 }
 #form_mail button[type=submit] {
-  width: 20%;
+  min-width: 120px;
   background: #85cb33;
   color: #fff;
   border-color: #85cb33;
@@ -1285,6 +1373,16 @@ main, header {
   margin-right: 1vw;
 }
 
+@media all and (max-width: 640px) {
+  #form_mail button[type=submit] {
+    width: inherit;
+  }
+}
+@media all and (max-width: 450px) {
+  /*#form_mail {
+      background: red;
+  }*/
+}
 #reception section {
   display: grid;
   grid-template-columns: 100%;
@@ -1369,6 +1467,32 @@ main, header {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+@media all and (max-width: 450px) {
+  #reception {
+    width: inherit;
+  }
+  #reception .listeMail li {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 1vh;
+  }
+  #reception .listeMail li .date_sup {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+    justify-self: stretch;
+    align-self: stretch;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+  }
+  #reception .listeMail li .ident {
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+  }
+  #reception .listeMail li .sujet {
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
+  }
+}
 #viewmail main {
   border-radius: 10px;
   box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
@@ -1505,6 +1629,46 @@ main, header {
 #viewmail main .boutton button i {
   margin-right: 1vw;
 }
+@media all and (max-width: 560px) {
+  #viewmail main .info {
+    display: grid;
+    grid-template-columns: min-content 1fr max-content;
+  }
+  #viewmail main .info .ident a {
+    justify-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #viewmail main .info .ident a img {
+    margin: inherit;
+  }
+  #viewmail main .info .ident a .nom, #viewmail #emploie main .info #choix div ul li .ident a .prenom, #emploie #viewmail main .info #choix div ul li .ident a .prenom, #viewmail #emploie main #choix div ul li .info .ident a .prenom, #emploie #viewmail main #choix div ul li .info .ident a .prenom {
+    height: 2.5ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}
+@media all and (max-width: 450px) {
+  #viewmail main {
+    width: inherit;
+  }
+  #viewmail main .info .ident {
+    display: none;
+  }
+  #viewmail main .info .date {
+    justify-self: right;
+  }
+  #viewmail main .corp .piecejoin ul li a {
+    min-width: 100px;
+  }
+  #viewmail main .boutton {
+    justify-content: space-around;
+  }
+}
 
 .sousnavmail, .sousnavoffre, .sousnavemploie {
   z-index: 1;
@@ -1569,8 +1733,7 @@ main, header {
 #mail main .recherche .bar_rech input {
   display: block;
   height: 5vh;
-  width: 97.6%;
-  margin: 2vh auto;
+  margin: 2vh 0;
   font-size: 2.5rem;
   border: none;
   background: #fefefe;
@@ -1755,6 +1918,11 @@ main, header {
   justify-self: center;
   padding: 1%;
 }
+@media all and (max-width: 450px) {
+  #mail main {
+    width: inherit;
+  }
+}
 
 #offre main {
   display: grid;
@@ -1889,6 +2057,7 @@ main, header {
     padding: 0 2vw 1vh;
   }
   #offre main .resultat ul li {
+    grid-template-columns: 1fr max-content;
     grid-template-rows: repeat(6, max-content);
   }
   #offre main .resultat ul li .ville {
@@ -2104,7 +2273,7 @@ main, header {
 }
 #offreresultat #noterform div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr max-content;
   grid-template-rows: max-content auto 1fr max-content;
   row-gap: 2vh;
   height: 50vh;
@@ -2123,6 +2292,7 @@ main, header {
   border: none;
   color: #fff;
   text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 #offreresultat #noterform div #annuler:hover {
   color: #fff;
@@ -2131,7 +2301,7 @@ main, header {
   border-radius: 0;
 }
 #offreresultat #noterform div h2 {
-  grid-column: 1/span 2;
+  grid-column: 1/span 1;
   grid-row: 1/span 1;
   justify-self: left;
   align-self: center;
@@ -2182,6 +2352,54 @@ main, header {
 }
 #offreresultat #noterform div #envoyer i {
   margin-right: 1vw;
+}
+@media all and (max-width: 450px) {
+  #offreresultat main {
+    width: inherit;
+    box-shadow: inherit;
+  }
+  #offreresultat main .optien {
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-bottom: 2vh;
+    box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  }
+  #offreresultat main .optien label {
+    margin: 0;
+  }
+  #offreresultat main .resultat {
+    padding: inherit;
+  }
+  #offreresultat main .resultat ul li {
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: repeat(6, auto);
+    margin: 0 0 1vh;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+  }
+  #offreresultat main .resultat ul li .entreprise {
+    grid-column: 1/span 2;
+  }
+  #offreresultat main .resultat ul li .ville {
+    grid-column: 1/span 2;
+    grid-row: 3/span 1;
+    justify-self: left;
+    align-self: center;
+  }
+  #offreresultat main .resultat ul li .description {
+    grid-row: 4/span 1;
+  }
+  #offreresultat main .resultat ul li .periode {
+    grid-row: 5/span 1;
+  }
+  #offreresultat main .resultat ul li #noter, #offreresultat main .resultat ul li .btn {
+    grid-column: 1/span 2;
+    grid-row: 6/span 1;
+    justify-self: center;
+  }
+  #offreresultat #noterform div {
+    width: 80vw;
+  }
 }
 
 #emploie main {

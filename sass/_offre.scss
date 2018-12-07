@@ -142,7 +142,7 @@
                 padding: 0 2vw 1vh;
 
                 ul li {
-                    grid-auto-columns: auto max-content;
+                    grid-template-columns: 1fr max-content;
                     grid-template-rows: repeat(6, max-content);
 
                     .ville {

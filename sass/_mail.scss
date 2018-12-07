@@ -140,4 +140,56 @@
             }
         }
     }
+
+    @media all and (max-width: 560px) {
+        main {
+            .info {
+                display: grid;
+                grid-template-columns: min-content 1fr max-content;
+
+                .ident a {
+                    justify-self: center;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        margin: inherit;
+                    }
+
+                    .nom {
+                        height: 2.5ch;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 450px) {
+        main {
+            width: inherit;
+
+            .info {
+                .ident {
+                    display: none;
+                }
+
+                .date {
+                    justify-self: right;
+                }
+            }
+            .corp .piecejoin ul li a {
+                min-width: 100px;
+            }
+
+            .boutton {
+                justify-content: space-around;
+            }
+        }
+    }
 }

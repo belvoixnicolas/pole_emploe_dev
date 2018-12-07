@@ -76,7 +76,19 @@
     }
 
     button[type=submit] {
-        width: 20%;
+        min-width: 120px;
         @include vert();
     }
+}
+
+@media all and (max-width: 640px) {
+    #form_mail button[type="submit"] {
+        width: inherit;
+    }
+}
+
+@media all and (max-width: 450px) {
+    /*#form_mail {
+        background: red;
+    }*/
 }

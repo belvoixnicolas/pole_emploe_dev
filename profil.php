@@ -209,7 +209,13 @@
         <!-- FOOTER -->
 
         <div id="dernco">
-            <span>Derniére connexion : <?php echo $date; ?></span>
+            <span>
+                <span class="phrase">
+                Derniére connexion : 
+                </span>
+                
+                <?php echo $date; ?>
+            </span>
         </div>
 
         <?php if ($_GET['id'] != $_SESSION['user']->get('id')) { ?>
