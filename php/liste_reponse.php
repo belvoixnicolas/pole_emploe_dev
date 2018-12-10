@@ -1,5 +1,7 @@
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/connect.php');
+    //require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/connect.php');
+
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/php/connect.php');
 
     function liste_reponse ($id, $val=NULL) {
         $dbh = connect();

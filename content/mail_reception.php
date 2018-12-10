@@ -2,12 +2,6 @@
     require_once('./php/connect.php');
     require_once('./php/liste_mail.php');
 
-    if (isset($_GET['id']) && $_GET['id'] != '') {
-        $_SESSION['idMail'] = $_GET['id'];
-        header('Location: ./mail.php');
-        exit();
-    }
-
     $dbh = connect();
     $vuemail = $dbh->prepare('UPDATE notification SET vu = 1 WHERE type = "mail" AND id_usser = :id');
     $vuemail->execute(array(':id' => $_SESSION['user']->get('id')));

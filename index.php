@@ -1,4 +1,5 @@
 <?php 
+    session_set_cookie_params(0, '/', '', true, true);
     session_start();
 
     if (isset($_SESSION['user'])) {
@@ -15,9 +16,9 @@
 <!DOCTYPE HTML>
   <html lang="fr">
     <head>
-        <meta name="theme-color" content="white">
+         
         <?php include './content/header_base.html' ?>
-        <title>site web</title>
+         
     </head>
     <body id="index">
         <?php echo notif_error($errors); ?>

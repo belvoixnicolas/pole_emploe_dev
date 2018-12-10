@@ -1,6 +1,9 @@
 <?php 
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/connect.php');
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/verif_img.php');
+    //require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/connect.php');
+    //require_once($_SERVER['DOCUMENT_ROOT'] . '/pole_emploe_dev/php/verif_img.php');
+
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/php/connect.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/php/verif_img.php');
 
     function liste_pris($id) {
         $dbh = connect();

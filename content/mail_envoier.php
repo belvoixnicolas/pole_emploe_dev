@@ -1,8 +1,7 @@
 <?php
     if (isset($_POST['sujet']) && isset($_POST['text']) && isset($_GET['id'])) {
         if (envoie_mail($_POST['sujet'], $_POST['text'], $_GET['id'])) {
-            header('Location: ./boite_mail.php');
-            exit();
+            echo '<script src="./js/redirect_mail.js"></script>';
         }
     }
 ?>

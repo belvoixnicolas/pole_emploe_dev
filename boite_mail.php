@@ -10,13 +10,18 @@
     autoris_acces(0);
 
     $_SESSION['id'] = $_SESSION['user']->get('id');
+
+    if (isset($_GET['id']) && isset($_GET['section']) && $_GET['section'] == 'reception' && $_GET['id'] != '') {
+        $_SESSION['idMail'] = $_GET['id'];
+        header('Location: /mail.php');
+        exit();
+    }
 ?>
 <!DOCTYPE HTML>
   <html lang="fr">
     <head>
-        <meta name="theme-color" content="white">
+         
         <?php include './content/header_base.html' ?>
-        <title>Mail</title>
     </head>
     <body id="mail">
     <?php echo notif_error($errors); ?>

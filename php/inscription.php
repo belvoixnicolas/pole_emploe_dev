@@ -57,7 +57,7 @@
         }
 
         $dbh = connect();
-        $inscription = $dbh->prepare('INSERT INTO usser (id, nom, prenom, date_naissance, date_creation, date_modif, derniere_connexion, mail, salt, mot_de_passe, img, verif, role, id_ville) VALUES (NULL, :nom, :prenom, :naissance, :inscri, NULL, NULL, :mail, :salt, :mdp, NULL, 0, :role, :ville)');
+        $inscription = $dbh->prepare('INSERT INTO usser (nom, prenom, date_naissance, date_creation, date_modif, derniere_connexion, mail, salt, mot_de_passe, img, verif, role, id_ville) VALUES (:nom, :prenom, :naissance, :inscri, NULL, NULL, :mail, :salt, :mdp, NULL, 0, :role, :ville)');
 
         $salt = password_hash(time(), PASSWORD_DEFAULT);
         $mdp = hash('sha512', $salt.$mdp);
@@ -87,7 +87,7 @@
                 if ($inscription->execute($donner)) {
                     $lastid = $dbh->lastInsertId();
                     
-                    $entreprise = $dbh->prepare('INSERT INTO entreprise (id, nom, description, img, id_usser, id_ville) VALUES (NULL, :projet, NULL, NULL, :id, :ville)');
+                    $entreprise = $dbh->prepare('INSERT INTO entreprise (nom, description, img, id_usser, id_ville) VALUES (:projet, NULL, NULL, :id, :ville)');
 
                     $donner = array(
                         ':projet' => $projet,

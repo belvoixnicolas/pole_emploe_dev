@@ -4,7 +4,7 @@ jQuery(document).ready(function(){
     function notif() {
         var donner = $(int).serialize();
         $.post(
-            './js/ajax/php/notif.php',
+            'http://ardennesdev.fr/js/ajax/php/notif.php',
             'id=' + int,
             function injecter(data) {
                 data = data.split('/');

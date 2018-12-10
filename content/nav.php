@@ -74,3 +74,4 @@
 
 <script src="./js/nav.js"></script>
 <script src="./js/error.js"></script>
+<script src="./js/ajax/test.js"></script>

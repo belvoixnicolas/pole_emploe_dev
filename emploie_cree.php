@@ -13,9 +13,9 @@
 <!DOCTYPE HTML>
   <html lang="fr">
     <head>
-        <meta name="theme-color" content="white">
+         
         <?php include './content/header_base.html' ?>
-        <title>Emploie</title>
+         
     </head>
     <body id="emploie_cree">
         <?php echo notif_error($errors); ?>

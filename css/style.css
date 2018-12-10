@@ -2316,7 +2316,7 @@ main, header {
 #offreresultat #noterform div #note::placeholder, #offreresultat #noterform div textarea::placeholder {
   color: #5386e4;
 }
-#offreresultat #noterform div input {
+#offreresultat #noterform div #note {
   grid-column: 1/span 2;
   grid-row: 2/span 1;
   justify-self: center;
@@ -2845,7 +2845,7 @@ main, header {
 #emploie_pris main #noterform div #note::placeholder, #emploie_pris main #noterform div textarea::placeholder {
   color: #5386e4;
 }
-#emploie_pris main #noterform div input {
+#emploie_pris main #noterform div #note {
   grid-column: 1/span 2;
   grid-row: 2/span 1;
   justify-self: center;

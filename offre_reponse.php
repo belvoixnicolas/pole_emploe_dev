@@ -18,9 +18,9 @@
 <!DOCTYPE HTML>
   <html lang="fr">
     <head>
-        <meta name="theme-color" content="white">
+         
         <?php include './content/header_base.html' ?>
-        <title>Réponse</title>
+         
     </head>
     <body id="offreresultat">
     <?php echo notif_error($errors); ?>

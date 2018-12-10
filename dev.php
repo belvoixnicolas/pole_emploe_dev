@@ -11,9 +11,9 @@
 <!DOCTYPE HTML>
   <html lang="fr">
     <head>
-        <meta name="theme-color" content="white">
+         
         <?php include './content/header_base.html' ?>
-        <title>dev</title>
+         
     </head>
     <body id="dev">
     <?php echo notif_error($errors); ?>
