@@ -65,7 +65,7 @@
         <script src="./js/ajax/noter.js"></script>
         
         <!-- FOOTER -->
-            <?php include './content/footer.html' ?>
+            <?php include './content/footer.php' ?>
         <!-- FOOTER -->
     </body>
   </html>

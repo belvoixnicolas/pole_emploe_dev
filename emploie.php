@@ -46,7 +46,7 @@
         <script src="./js/ajax/choix_offre.js"></script>
 
         <!-- FOOTER -->
-            <?php include './content/footer.html' ?>
+            <?php include './content/footer.php' ?>
         <!-- FOOTER -->
     </body>
   </html>

@@ -156,7 +156,7 @@
             </article>
         </main>
         <!-- FOOTER -->
-            <?php include './content/footer.html' ?>
+            <?php include './content/footer.php' ?>
         <!-- FOOTER -->
     </body>
     <script src="./js/lien.js"></script>

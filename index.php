@@ -82,7 +82,7 @@
         </main>
 
         <!-- FOOTER -->
-            <?php include './content/footer.html' ?>
+            <?php include './content/footer.php' ?>
         <!-- FOOTER -->
 
         <script src="./js/header.js"></script>

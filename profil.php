@@ -207,7 +207,7 @@
         
         
         <!-- FOOTER -->
-        <?php include './content/footer.html' ?>
+        <?php include './content/footer.php' ?>
         <!-- FOOTER -->
 
         <div id="dernco">
