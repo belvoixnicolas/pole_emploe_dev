@@ -49,7 +49,7 @@
                         <a class=\"btn\" href=\"./boite_mail.php?section=envoie&id={$projetv['iduser']}\" target=\"_blanck\" >
                             <i class=\"far fa-envelope\"></i>
                             <span>
-                                Le cantacter
+                                Le contacter
                             </span>
                         </a>
                         <button id=\"noter\" value=\"{$projetv['idoffre']}\" {$disa}>

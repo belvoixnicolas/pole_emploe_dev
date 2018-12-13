@@ -69,7 +69,7 @@
                                 <i class=\"far fa-thumbs-up\"></i>
 
                                 <span>
-                                    Ça m'interesse
+                                    Ça m'intéresse
                                 </span>
                             </button>
                         </li>

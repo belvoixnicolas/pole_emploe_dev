@@ -176,7 +176,7 @@
 
             <!-- COMMENTAIRE -->
             <article class="commentaire" id="commentaire">
-                <h3>Commentaire</h3>
+                <h3>Commentaires</h3>
 
                 <ul>
                     <?php echo commentaire($_GET['id']); ?>
@@ -187,7 +187,7 @@
             <!-- CODE CONNUE SI DEV -->
             <?php if ($user['role'] == 1) { ?>
             <article class="code">
-                <h3>Compétence</h3>
+                <h3>Compétences</h3>
                 <ul>
                     <?php echo liste_code($_GET['id'], $_SESSION['user']->get('id')); ?>
 

@@ -20,7 +20,7 @@
             <a href="./boite_mail.php?section=reception">
                 <i class="fas fa-inbox"></i>
                 <span>
-                    Boite de reception
+                    Boite de réception
                 </span>
             </a>
         </li>

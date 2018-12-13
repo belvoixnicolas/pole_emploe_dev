@@ -1,14 +1,3 @@
-<?php
-        require_once('./php/user.php');
-         
-        session_start();
-
-        require_once('./php/offre.php');
-
-   if (isset($_GET['test'])) {
-       $offre->engage($_SESSION['user']->get('id'), 5);
-   }
-?>
 <!DOCTYPE HTML>
   <html lang="fr">
     <head>
@@ -17,6 +6,6 @@
          
     </head>
     <body>
-        <a href="?test=5">Click ici</a>
+        <?php include './content/footer.php' ?>
     </body>
   </html>

@@ -15,7 +15,7 @@
 
                 <section class="resultat">
                     <div>
-                        <h3>Developpeur</h3>
+                        <h3>Développeur</h3>
 
                         <ul class="dev">
 
