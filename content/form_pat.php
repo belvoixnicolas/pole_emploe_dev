@@ -13,7 +13,7 @@
     <input type="text" name="entreprise" placeholder="Nom du projet ou de la societe">
     <input type="text" name="nom" placeholder="Nom">
     <input type="text" name="prenom" placeholder="Prénom">
-    <input type="date" name="naissance" id="" placeholder="Date de naissance">
+    <input type="date" name="naissance">
     <select name="ville">
         <option value="none">Ville</option>
         <?php echo $content ?>

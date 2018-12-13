@@ -12,7 +12,7 @@
 <form id="form_dev" action="./php/inscription.php?form=dev" method="post">
     <input type="text" name="nom" placeholder="Nom">
     <input type="text" name="prenom" placeholder="Prénom">
-    <input type="date" name="naissance" id="" placeholder="Date de naissance">
+    <input type="date" name="naissance">
     <select name="ville">
         <option value="none">Ville</option>
         <?php echo $content ?>

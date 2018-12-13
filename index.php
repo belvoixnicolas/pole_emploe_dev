@@ -1,9 +1,10 @@
 <?php 
-    session_set_cookie_params(0, '/', '', true, true);
+     
     session_start();
 
     if (isset($_SESSION['user'])) {
         session_destroy();
+         
         session_start();
     }
 

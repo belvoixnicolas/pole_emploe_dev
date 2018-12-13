@@ -1,5 +1,6 @@
 <?php 
     require_once('./php/user.php');
+     
     session_start();
 
     require_once('./php/connect.php');
@@ -37,8 +38,10 @@
                     <?php
                         $villes = liste_ville();
 
-                        foreach ($villes as $villes) { ?>
-                            <option value="<?php echo $villes ?>"><?php echo ucfirst(mb_strtolower($villes)) ?></option>
+                        foreach ($villes as $ville) { 
+                            $ville = explode('/', $ville)[0];
+                            ?>
+                            <option value="<?php echo $ville ?>"><?php echo ucfirst(mb_strtolower($ville)) ?></option>
                         <?php }
                     ?>
                 </optgroup>
