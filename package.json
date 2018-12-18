@@ -1,0 +1,34 @@
+{
+  "name": "pole_emploe_dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belvoixnicolas/pole_emploe_dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belvoixnicolas/pole_emploe_dev/issues"
+  },
+  "homepage": "https://github.com/belvoixnicolas/pole_emploe_dev#readme",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-postcss": "^0.9.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.4.3",
+    "cssnano": "^4.1.7",
+    "pixrem": "^4.0.1"
+  }
+}
