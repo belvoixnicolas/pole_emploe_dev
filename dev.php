@@ -1,4 +1,6 @@
 <?php 
+    header('Location: ../offre.php');
+    exit();
     require_once('./php/user.php');
      
     session_start();

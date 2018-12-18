@@ -1,4 +1,6 @@
 <?php 
+    header('Location: ../emploie.php');
+    exit();
     require_once('./php/user.php');
      
     session_start();
