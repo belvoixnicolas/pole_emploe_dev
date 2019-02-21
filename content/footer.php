@@ -9,7 +9,7 @@
         <h6>Auteur</h6>
 
         <a href="http://nicolas-belvoix.fr/" target="_blank" rel="external">
-            <img src="http://nicolas-belvoix.fr/img/logo.png" alt="Photo de l'auteur">
+            <img src="http://nicolas-belvoix.fr/src/logo.png" alt="Photo de l'auteur">
 
             <p class="ident">
                 Belvoix Nicolas
